@@ -1,0 +1,400 @@
+<section class="capitulo" id="c12" data-codigo="C12" data-titulo="Rúbricas e instrumentos">
+  <h1>Rúbricas e instrumentos</h1>
+  <p class="resumen">Cómo preparar rúbricas con sus ítems, niveles de calificación y puntos; importarlas desde Excel y compartirlas con profesores. También explica cómo organizar los instrumentos de evaluación y asignarlos a las materias.</p>
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead><tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#c12-consultar-rubricas">Consultar, duplicar y descargar una rúbrica</a></td><td>Usuario con sesión y acceso a la rúbrica</td><td>Lista de Rúbricas</td></tr>
+        <tr><td><a href="#c12-mantener-rubricas">Crear, editar y eliminar rúbricas</a></td><td>Usuario con sesión; acciones según su relación con la rúbrica</td><td>Lista de Rúbricas</td></tr>
+        <tr><td><a href="#c12-importar">Importar una rúbrica desde Excel</a></td><td>Usuario con sesión</td><td>Importar desde Excel</td></tr>
+        <tr><td><a href="#c12-compartir">Compartir una rúbrica y administrar sus accesos</a></td><td>Propietario o administración, con permiso para compartir</td><td>Detalle de la rúbrica</td></tr>
+        <tr><td><a href="#c12-mantener-niveles">Crear, editar y eliminar niveles de calificación</a></td><td>Permisos de niveles</td><td>Niveles de Calificación</td></tr>
+        <tr><td><a href="#c12-mantener-grupos">Crear, editar y eliminar grupos de calificación</a></td><td>Permisos de niveles; creación rápida con sesión</td><td>Administrar grupos</td></tr>
+        <tr><td><a href="#c12-configurar-niveles">Elegir los niveles de una rúbrica</a></td><td>Usuario con sesión y acceso de edición</td><td>Configurar Niveles</td></tr>
+        <tr><td><a href="#c12-mantener-items">Crear, editar y eliminar ítems de evaluación</a></td><td>Permisos de ítems y acceso a la rúbrica</td><td>Items de Evaluación</td></tr>
+        <tr><td><a href="#c12-puntos-por-item">Asignar puntos por ítem de evaluación</a></td><td>Usuario con sesión y acceso de edición</td><td>Asignar Niveles a Items</td></tr>
+        <tr><td><a href="#c12-mantener-valores">Crear, editar y eliminar valores de rúbricas</a></td><td>Permisos de rúbricas</td><td>Valores de Rúbricas</td></tr>
+        <tr><td><a href="#c12-configurar-valores">Configurar los puntos de una rúbrica en conjunto</a></td><td>Permiso de edición y acceso a la rúbrica</td><td>Gestionar Valores</td></tr>
+        <tr><td><a href="#c12-mantener-instrumentos">Crear, editar y eliminar instrumentos de evaluación</a></td><td>Permisos de instrumentos</td><td>Instrumentos de Evaluación</td></tr>
+        <tr><td><a href="#c12-asignar-rubricas">Asignar, editar y quitar rúbricas de un instrumento</a></td><td>Listado con permiso; demás pantallas con sesión</td><td>Asignar Rúbricas a Instrumentos</td></tr>
+        <tr><td><a href="#c12-asignar-materias">Asignar, editar y quitar instrumentos de una materia</a></td><td>Permisos de instrumentos por materia</td><td>Asignar Instrumentos a Materias</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>Trabaje con la institución activa correcta. Si falta una entrada del menú o recibe una denegación de acceso, consulte a quien administra sus permisos. El <a href="#c19">glosario</a> reúne los términos del manual.</p>
+    <dl>
+      <dt>Rúbrica</dt><dd>Reúne los ítems de evaluación y los niveles de calificación con que se valora un trabajo.</dd>
+      <dt>Ítem de evaluación</dt><dd>Describe un aspecto que se evalúa dentro de una rúbrica.</dd>
+      <dt>Nivel de calificación</dt><dd>Expresa un grado de logro, por ejemplo Excelente o Bueno. Los puntos se asignan para cada combinación de rúbrica, ítem y nivel de calificación.</dd>
+      <dt>Grupo de calificación</dt><dd>Reúne niveles de calificación para utilizarlos al preparar una rúbrica. No es un grupo de estudiantes.</dd>
+      <dt>Instrumento de evaluación</dt><dd>Se califica con una o varias rúbricas y se asigna a una materia en un período académico.</dd>
+      <dt>Ponderación</dt><dd>Porcentaje de la nota final de la materia que aporta una rúbrica asignada a un instrumento. El instrumento vale la suma de sus rúbricas; los instrumentos de la materia deben sumar 100 % en ese período académico.</dd>
+    </dl>
+    <p>Prepare primero los niveles de calificación y, si corresponde, sus grupos. Después cree la rúbrica, agregue sus ítems y asigne puntos. Para utilizarla con un instrumento, asocie ambos y asigne el instrumento a la materia.</p>
+    <aside class="nota"><p>Usted puede ver sus rúbricas, las compartidas con usted o con toda la institución y las usadas por los instrumentos de las materias que imparte. Administrador y Super Administrador ven las de la institución activa. Poder usar una rúbrica no significa poder modificarla, compartirla o eliminarla.</p></aside>
+  </section>
+  <section class="tarea" id="c12-consultar-rubricas">
+    <h2>Consultar, duplicar y descargar una rúbrica</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para encontrar una rúbrica disponible, revisar sus datos, obtener una copia propia o descargarla en Excel.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra la lista a quien tenga <span class="valor">rubricas.ver</span> o <span class="valor">rubricas.ver_todas</span>. Solo puede consultar, duplicar o descargar rúbricas a las que tenga acceso.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Lista de Rúbricas</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Escriba parte del nombre, descripción o creador en <span class="campo">Buscar rúbrica</span>.</li>
+      <li>Elija <span class="campo">Estado</span> y <span class="campo">Propiedad</span> si desea reducir el listado.</li>
+      <li>Abra el nombre de la rúbrica o pulse el icono <span class="boton">Ver detalles</span> de su fila.</li>
+      <li>Revise la información general, el propietario y con cuántos destinatarios se comparte.</li>
+      <li>Pulse <span class="boton">Duplicar como mía</span> si necesita una copia que pueda modificar.</li>
+      <li>Pulse <span class="boton">Descargar Excel</span> desde el detalle de la rúbrica que desea descargar.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>Los filtros cambian las filas visibles. La duplicación abre el detalle de una copia propia con sus ítems, niveles y puntos; conserva el estado del original y no queda compartida. La descarga entrega un archivo de Excel con la información de la rúbrica.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No hay coincidencias: pulse <span class="boton">Limpiar filtros</span> y revise otra vez.</li>
+      <li>La rúbrica recibida no permite cambios: úsela para evaluar o duplíquela para modificar su copia.</li>
+      <li>La rúbrica no está disponible: solicite que su propietario la comparta con usted o revise la materia cuyos instrumentos la utilizan.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-rubricas">Crear, editar y eliminar rúbricas</a>.</li><li><a href="#c12-compartir">Compartir una rúbrica</a>.</li><li><a href="#c13">Evaluaciones y cuaderno calificador</a>.</li></ul>
+    <figure class="captura" data-captura="c12-01"><figcaption>Lista de Rúbricas con una rúbrica propia y otra compartida de ejemplo. Resaltar Buscar rúbrica, Estado, Propiedad y las acciones diferentes de cada fila.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-mantener-rubricas">
+    <h2>Crear, editar y eliminar rúbricas</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para mantener el nombre, la descripción y el estado de las rúbricas, y retirar las que ya no necesita.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra la lista con los permisos indicados en la tarea anterior. Los botones de creación se muestran a Super Administrador, Administrador, Coordinador y Profesor. Para editar debe ser propietario, tener acceso compartido de edición o ser Administrador o Super Administrador. Para eliminar debe ser propietario, Administrador o Super Administrador.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Lista de Rúbricas</span>.</p>
+    <h3>Pasos</h3>
+    <p>El formulario utiliza <span class="campo">Nombre de la Rúbrica</span> (hasta 100 caracteres), <span class="campo">Descripción</span> (opcional, hasta 1000) y <span class="campo">Estado</span>, con las opciones <span class="valor">Activo</span> e <span class="valor">Inactivo</span>.</p>
+    <h4>Crear</h4>
+    <ol>
+      <li>Pulse <span class="boton">Nueva Rúbrica</span> y complete la información general.</li>
+      <li>Elija una opción de <span class="campo">Grupo de calificación</span>: <span class="valor">Configurar después</span>, <span class="valor">Grupo existente</span> o <span class="valor">Grupo dinámico</span>.</li>
+      <li>Elija el grupo en <span class="campo">Seleccionar Grupo</span>, o marque los niveles para el grupo dinámico, según la opción anterior.</li>
+      <li>Pulse <span class="boton">Guardar rúbrica</span>.</li>
+    </ol>
+    <h4>Editar</h4>
+    <ol><li>Pulse <span class="boton">Editar</span> en la fila y cambie la información general.</li><li>Pulse <span class="boton">Actualizar rúbrica</span>.</li></ol>
+    <h4>Eliminar</h4>
+    <ol><li>Pulse <span class="boton">Eliminar</span> en la fila y revise la rúbrica.</li><li>Pulse <span class="boton">Eliminar rúbrica</span> para confirmar, o <span class="boton">Cancelar</span> para conservarla.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La operación completada regresa al listado. Un grupo existente aporta sus niveles a la nueva rúbrica; el grupo dinámico crea copias de los niveles elegidos. Crear la rúbrica todavía no agrega sus ítems ni sus puntos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>No se permite guardar el nombre: complete el campo obligatorio y respete su longitud.</li><li>Falta el grupo o sus niveles: elija una opción válida o use <span class="valor">Configurar después</span>.</li><li>La eliminación se rechaza por datos relacionados: conserve la rúbrica y revise sus usos; puede cambiar su estado en la edición.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-grupos">Mantener grupos de calificación</a>.</li><li><a href="#c12-configurar-niveles">Elegir los niveles de una rúbrica</a>.</li><li><a href="#c12-mantener-items">Mantener ítems de evaluación</a>.</li></ul>
+    <figure class="captura" data-captura="c12-02"><figcaption>Nueva Rúbrica con el nombre ficticio Rúbrica de ejemplo y la opción Grupo existente. Resaltar las tres opciones de grupo y Guardar rúbrica.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-importar">
+    <h2>Importar una rúbrica desde Excel</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para crear una rúbrica con sus ítems, niveles de calificación y puntos a partir de una hoja de Excel.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra la lista de rúbricas con <span class="valor">rubricas.ver</span> o <span class="valor">rubricas.ver_todas</span>. El botón de importación se muestra allí a Super Administrador, Administrador, Coordinador y Profesor.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Lista de Rúbricas</span>, botón <span class="boton">Importar desde Excel</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Prepare la primera hoja de un archivo <span class="valor">.xlsx</span> con el encabezado <span class="valor">Criterio</span> en la primera columna y, a continuación, al menos dos niveles de calificación.</li>
+      <li>Escriba un ítem de evaluación por fila y sus puntos numéricos en las columnas de los niveles; use nombres de ítem de hasta 200 caracteres y puntos entre 0 y 999,99.</li>
+      <li>Pulse <span class="boton">Importar desde Excel</span>.</li>
+      <li>Complete <span class="campo">Nombre de la Rúbrica *</span>, con hasta 100 caracteres.</li>
+      <li>Elija el archivo en <span class="campo">Archivo Excel *</span>; el selector limita el tamaño a 5 MB.</li>
+      <li>Complete <span class="campo">Descripción (Opcional)</span> si la necesita, con hasta 500 caracteres.</li>
+      <li>Revise la <span class="valor">Vista Previa del Archivo</span> y pulse <span class="boton">Importar Rúbrica</span>.</li>
+    </ol>
+    <table>
+      <caption>Ejemplo de la primera hoja, sin columnas adicionales</caption>
+      <thead><tr><th>Criterio</th><th>Excelente</th><th>Bueno</th><th>Regular</th></tr></thead>
+      <tbody><tr><td>Presentación del trabajo</td><td>4</td><td>3</td><td>1</td></tr><tr><td>Organización de ideas</td><td>6</td><td>4</td><td>2</td></tr></tbody>
+    </table>
+    <h3>Qué pasa después</h3>
+    <p>Al completarse la importación se abre el detalle de la nueva rúbrica, que queda a su nombre. El sistema reutiliza niveles de calificación que reconoce por su nombre o crea los que faltan; agrega los ítems y los puntos correspondientes. La vista previa muestra solo una parte del archivo.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El archivo supera 5 MB: reduzca su tamaño antes de elegirlo otra vez.</li><li>La importación no llega al detalle: revise que la primera hoja tenga encabezados continuos, al menos dos niveles y algún ítem; use el formato del ejemplo.</li><li>Los puntos importados no son los esperados: use celdas numéricas, sin frases descriptivas ni encabezados intermedios, y revise los valores guardados antes de evaluar.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-puntos-por-item">Revisar puntos por ítem</a>.</li><li><a href="#c12-mantener-items">Mantener ítems de evaluación</a>.</li><li><a href="#c12-compartir">Compartir la rúbrica importada</a>.</li></ul>
+    <figure class="captura" data-captura="c12-03"><figcaption>Importar Rúbrica desde Excel con un archivo ficticio de dos ítems y tres niveles. Resaltar los campos obligatorios, la vista previa y el botón Importar Rúbrica.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-compartir">
+    <h2>Compartir una rúbrica y administrar sus accesos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para permitir que otros profesores usen una rúbrica y, si usted lo decide, modifiquen sus ítems, niveles y puntos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">rubricas.compartir</span> y sea propietario de la rúbrica, Administrador o Super Administrador.</p>
+    <h3>Dónde está</h3>
+    <p>Desde el detalle de la rúbrica, <span class="boton">Compartir con profesores</span>; también desde el icono <span class="boton">Compartir</span> de su fila.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise los destinatarios actuales en <span class="valor">Con quién la comparte</span>.</li>
+      <li>Busque un profesor en <span class="campo">Buscar profesor por nombre o cédula</span> y pulse <span class="boton">Buscar</span>, si necesita localizarlo.</li>
+      <li>Marque los profesores deseados, o la casilla <span class="campo">Todos los profesores de la institución</span> si desea incluir también a los que se agreguen después.</li>
+      <li>Marque <span class="campo">También pueden editarla</span> solo si desea autorizar cambios en la rúbrica.</li>
+      <li>Pulse el botón de compartir, cuyo texto indica los destinatarios elegidos; con la opción general dice <span class="boton">Compartir con toda la institución</span>.</li>
+      <li>Pulse <span class="boton">Permitir editar</span> o <span class="boton">Quitar edición</span> junto a un destinatario para cambiar su acceso.</li>
+      <li>Pulse el icono <span class="boton">Dejar de compartir</span> del destinatario cuyo acceso compartido desea retirar.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>La lista muestra <span class="valor">Solo usa</span> o <span class="valor">Usa y edita</span> para cada destinatario. Quien todavía no tiene un usuario vinculado verá la rúbrica cuando se le vincule uno. Retirar un acceso compartido conserva las evaluaciones hechas.</p>
+    <aside class="nota"><p>Los profesores de una materia también ven las rúbricas de sus instrumentos. Si retira un acceso individual pero sigue compartiendo con toda la institución, o la rúbrica sigue en los instrumentos de su materia, el profesor puede conservar acceso por esos otros motivos.</p></aside>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El botón de compartir está deshabilitado: marque al menos un profesor o la opción de toda la institución.</li><li>Un profesor no aparece para agregarlo: revise la búsqueda, que esté activo y que no figure ya como destinatario.</li><li>El profesor aparece sin usuario vinculado: gestione su vinculación antes de esperar que pueda utilizar el acceso.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-consultar-rubricas">Duplicar una rúbrica recibida</a>.</li><li><a href="#c06">Profesores y vinculación de usuarios</a>.</li><li><a href="#c12-asignar-rubricas">Asignar rúbricas a instrumentos</a>.</li></ul>
+    <figure class="captura" data-captura="c12-04"><figcaption>Compartir una rúbrica de ejemplo con dos profesores ficticios, uno con Solo usa y otro con Usa y edita. Resaltar la opción de toda la institución y los controles para cambiar o retirar cada acceso.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-mantener-niveles">
+    <h2>Crear, editar y eliminar niveles de calificación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para mantener los nombres, descripciones y orden de los niveles de calificación que se utilizarán en las rúbricas.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">niveles.ver</span> para el listado y detalle, <span class="valor">niveles.crear</span> para crear, <span class="valor">niveles.editar</span> para editar o <span class="valor">niveles.eliminar</span> para eliminar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Niveles de Calificación</span>.</p>
+    <h3>Pasos</h3>
+    <p>Los formularios comparten <span class="campo">Nombre del nivel</span>, obligatorio y de hasta 50 caracteres; <span class="campo">Descripción</span>, opcional y de hasta 200; y <span class="campo">Orden de presentación</span>, opcional. Un orden vacío se muestra al final del listado.</p>
+    <h4>Crear</h4>
+    <ol><li>Pulse <span class="boton">Nuevo nivel de calificación</span> y complete los campos.</li><li>Pulse <span class="boton">Guardar nivel</span>.</li></ol>
+    <h4>Consultar y editar</h4>
+    <ol><li>Localice el nivel con <span class="campo">Buscar nivel</span> y pulse <span class="boton">Ver</span> para consultar sus datos.</li><li>Pulse <span class="boton">Editar nivel</span> desde el detalle, o <span class="boton">Editar</span> desde el listado.</li><li>Cambie los datos necesarios y pulse <span class="boton">Guardar cambios</span>.</li></ol>
+    <h4>Eliminar</h4>
+    <ol><li>Pulse <span class="boton">Eliminar</span> en el listado y revise el nivel.</li><li>Pulse <span class="boton">Eliminar nivel</span>, o <span class="boton">Cancelar</span> para conservarlo.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La operación completada vuelve al listado. El nivel nuevo queda disponible para elegirlo al preparar grupos o configurar rúbricas; todavía no tiene los puntos de cada ítem. Después de editar un nivel, revise su presencia en el grupo de calificación correspondiente.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El nombre ya existe: utilice otro nombre; la comprobación no distingue mayúsculas de minúsculas.</li><li>La eliminación se rechaza por uso en evaluaciones: conserve el nivel y revise sus relaciones antes de cambiar la configuración.</li><li>La búsqueda no muestra resultados: pulse <span class="boton">Limpiar búsqueda</span>.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-grupos">Mantener grupos de calificación</a>.</li><li><a href="#c12-configurar-niveles">Elegir niveles para una rúbrica</a>.</li></ul>
+  </section>
+  <section class="tarea" id="c12-mantener-grupos">
+    <h2>Crear, editar y eliminar grupos de calificación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para reunir niveles de calificación y reutilizar esa elección al crear una rúbrica.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>El listado y detalle exigen <span class="valor">niveles.ver</span>; crear exige <span class="valor">niveles.crear</span>; continuar con la elección de niveles, editar y elegir niveles exigen <span class="valor">niveles.editar</span>; eliminar exige <span class="valor">niveles.eliminar</span>. La creación rápida desde una rúbrica solo pide sesión iniciada.</p>
+    <h3>Dónde está</h3>
+    <p>Al crear una rúbrica, elija <span class="valor">Grupo existente</span> y pulse <span class="boton">Administrar grupos</span>; se abre otra pestaña. Para la creación rápida use <span class="boton">Crear Nuevo Grupo</span> en ese mismo lugar.</p>
+    <h3>Pasos</h3>
+    <h4>Crear y elegir niveles</h4>
+    <ol><li>Pulse <span class="boton">Nuevo grupo</span> en la administración de grupos.</li><li>Complete <span class="campo">Nombre *</span> y, si lo necesita, <span class="campo">Descripción</span>.</li><li>Pulse <span class="boton">Crear y elegir niveles</span>.</li><li>Marque los niveles que deben pertenecer al grupo y pulse <span class="boton">Guardar niveles</span>.</li></ol>
+    <h4>Editar, consultar y eliminar</h4>
+    <ol><li>Abra el nombre del grupo para consultar sus niveles y las rúbricas que lo usan.</li><li>Pulse <span class="boton">Editar</span> para cambiar nombre, descripción o la casilla <span class="campo">Activo</span>, y termine con <span class="boton">Guardar cambios</span>.</li><li>Pulse <span class="boton">Elegir niveles</span> para cambiar los niveles del grupo y confirme con <span class="boton">Guardar niveles</span>.</li><li>Pulse <span class="boton">Eliminar</span> cuando el grupo no tenga niveles ni rúbricas y confirme con <span class="boton">Eliminar definitivamente</span>.</li></ol>
+    <h4>Crear un grupo sin salir de la nueva rúbrica</h4>
+    <ol><li>Pulse <span class="boton">Crear Nuevo Grupo</span>.</li><li>Complete <span class="campo">Nombre del Grupo</span> y <span class="campo">Descripción (opcional)</span> si la necesita.</li><li>Marque al menos un nivel y pulse <span class="boton">Crear y Seleccionar</span>.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La creación normal continúa con la elección de niveles; el guardado de estos abre el detalle. Un nivel ya perteneciente a otro grupo no se puede elegir en ese recorrido. La creación rápida deja el nuevo grupo elegido en la rúbrica, que todavía debe guardar. Desactivar un grupo lo conserva para las rúbricas que ya lo usan.</p>
+    <aside class="aviso"><p>Revise qué niveles marca en la creación rápida: esta operación los asigna al nuevo grupo. Para obtener copias propias de niveles al preparar una rúbrica, utilice la opción de grupo dinámico.</p></aside>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El nombre está repetido en la creación normal: escriba otro nombre.</li><li>No hay niveles libres para elegir: cree nuevos niveles de calificación o revise el grupo al que pertenecen.</li><li>Eliminar aparece bloqueado: quite primero los niveles del grupo y revise las rúbricas que lo usan; puede desactivarlo para conservarlo.</li><li>El cambio de niveles no coincide con lo que ve en una rúbrica: revise también los niveles y puntos de esa rúbrica antes de utilizarla.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-niveles">Mantener niveles de calificación</a>.</li><li><a href="#c12-mantener-rubricas">Crear rúbricas con grupos</a>.</li><li><a href="#c12-configurar-niveles">Revisar los niveles de cada rúbrica</a>.</li></ul>
+    <figure class="captura" data-captura="c12-05"><figcaption>Elegir niveles de un grupo ficticio con dos niveles propios, uno libre y otro perteneciente a otro grupo. Resaltar cuáles se pueden marcar y el botón Guardar niveles.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-configurar-niveles">
+    <h2>Elegir los niveles de una rúbrica</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para elegir los niveles de calificación que utilizará una rúbrica, o crear un grupo con copias de esos niveles.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra la lista de rúbricas con <span class="valor">rubricas.ver</span> o <span class="valor">rubricas.ver_todas</span>. Para cambiar los niveles debe poder modificar esa rúbrica: por ser propietario, por acceso compartido de edición o por ser Administrador o Super Administrador.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle de la rúbrica, botón <span class="boton">Configurar Niveles</span>.</p>
+    <h3>Pasos</h3>
+    <ol><li>Abra <span class="boton">Configurar Niveles</span>.</li><li>Marque los niveles que desea utilizar; puede ayudarse con <span class="boton">Seleccionar todos</span> o <span class="boton">Ninguno</span>.</li><li>Marque <span class="campo">Crear grupo dinámico</span> si necesita copias de los niveles para esta rúbrica.</li><li>Pulse <span class="boton">Guardar Configuración</span>.</li><li>Revise los puntos de los ítems después de cambiar los niveles.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>El sistema guarda la elección y regresa al detalle. Con la opción de grupo dinámico crea un grupo nuevo y copias de los niveles elegidos. Elegir niveles no asigna por sí solo los puntos de cada ítem.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>No se permite guardar sin niveles: marque al menos uno.</li><li>No hay niveles disponibles: use <span class="boton">Crear niveles primero</span>, si tiene permiso para ello.</li><li>Los puntos no corresponden a la nueva elección: revíselos y vuelva a configurarlos por ítem antes de evaluar.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-niveles">Crear niveles de calificación</a>.</li><li><a href="#c12-puntos-por-item">Asignar puntos por ítem</a>.</li><li><a href="#c12-mantener-valores">Revisar o eliminar valores individuales</a>.</li></ul>
+  </section>
+  <section class="tarea" id="c12-mantener-items">
+    <h2>Crear, editar y eliminar ítems de evaluación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para definir los aspectos que se evalúan en cada rúbrica y su orden de presentación.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">items_evaluacion.ver</span> para consultar, <span class="valor">items_evaluacion.crear</span> para crear, <span class="valor">items_evaluacion.editar</span> para editar o <span class="valor">items_evaluacion.eliminar</span> para eliminar. Además, debe poder usar la rúbrica para consultar y modificarla para cambiar sus ítems.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Items de Evaluación</span>.</p>
+    <h3>Pasos</h3>
+    <p>Elija una rúbrica activa que pueda modificar. Los formularios piden el nombre del ítem, la descripción opcional y el orden opcional. El nombre admite hasta 200 caracteres.</p>
+    <h4>Crear</h4>
+    <ol><li>Pulse <span class="boton">Nuevo ítem de evaluación</span>.</li><li>Elija <span class="campo">Rúbrica *</span> y complete <span class="campo">Nombre del Item *</span>, <span class="campo">Descripción</span> y <span class="campo">Orden</span>.</li><li>Pulse <span class="boton">Crear Item</span>.</li></ol>
+    <h4>Consultar y editar</h4>
+    <ol><li>Elija <span class="campo">Rúbrica</span> y pulse <span class="boton">Filtrar</span> para ver sus ítems.</li><li>Use <span class="campo">Buscar en el listado</span> si necesita localizar uno y pulse <span class="boton">Ver</span>.</li><li>Pulse <span class="boton">Editar ítem</span>, cambie <span class="campo">Rúbrica</span>, <span class="campo">Nombre del ítem</span>, <span class="campo">Descripción</span> u <span class="campo">Orden</span>, según corresponda.</li><li>Pulse <span class="boton">Guardar cambios</span>.</li></ol>
+    <h4>Eliminar</h4>
+    <ol><li>Pulse <span class="boton">Eliminar</span> en el listado y compruebe el ítem y su rúbrica.</li><li>Pulse <span class="boton">Eliminar</span> en la confirmación, o <span class="boton">Cancelar</span>.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La operación completada regresa al listado. El ítem nuevo necesita puntos para sus niveles de calificación. La eliminación retira también sus valores asociados cuando puede completarse.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>La rúbrica no aparece en el formulario: compruebe que esté activa y que pueda modificarla.</li><li>La búsqueda no encuentra el ítem: quite el filtro de rúbrica o pulse <span class="boton">Limpiar búsqueda</span>, según lo que haya aplicado.</li><li>La eliminación se rechaza por uso en evaluaciones: conserve el ítem y revise sus puntos antes de continuar.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-puntos-por-item">Asignar puntos por ítem</a>.</li><li><a href="#c12-mantener-rubricas">Mantener rúbricas</a>.</li></ul>
+  </section>
+  <section class="tarea" id="c12-puntos-por-item">
+    <h2>Asignar puntos por ítem de evaluación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para completar los puntos de cada nivel de calificación de un ítem, mediante una asignación automática o valores escritos por usted.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra la lista de rúbricas con <span class="valor">rubricas.ver</span> o <span class="valor">rubricas.ver_todas</span>. Para asignar puntos debe poder modificar esa rúbrica.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle de la rúbrica, botón <span class="boton">Asignar Niveles a Items</span>; también desde <span class="boton">Gestionar valores</span> en su fila del listado.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra la pantalla y revise los totales de ítems configurados y sin configurar.</li>
+      <li>Pulse <span class="boton">Asignar automáticamente</span> junto a un ítem sin valores si desea una asignación inicial.</li>
+      <li>Revise los puntos que aparecen en la tabla; la asignación automática utiliza 4, 3, 2 y 1 para niveles con orden 1, 2, 3 y 4, y 2 para los demás.</li>
+      <li>Pulse <span class="boton">Configurar manualmente</span> para un ítem pendiente, o <span class="boton">Editar valores</span> en su fila, si necesita otros puntos.</li>
+      <li>Escriba los puntos de cada nivel que desea conservar; el formulario admite de 0 a 999,99, con dos decimales.</li>
+      <li>Pulse <span class="boton">Guardar Valores</span>.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>La pantalla se recarga con los puntos guardados. La configuración manual reemplaza los valores anteriores de ese ítem: un nivel que deje vacío queda sin valor. Debe escribir al menos un valor numérico, que puede ser cero. El contador considera configurado un ítem que tenga algún valor; revise también las celdas restantes.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>La rúbrica no tiene ítems: use <span class="boton">Ir a ítems de evaluación</span> y agréguelos.</li><li>No hay niveles: use <span class="boton">Configurar Niveles</span>.</li><li>La asignación automática indica que ya hay valores: use la edición manual para cambiarlos.</li><li>No se permite guardar: complete al menos una casilla y respete el intervalo de puntos.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-items">Mantener ítems de evaluación</a>.</li><li><a href="#c12-configurar-niveles">Elegir niveles</a>.</li><li><a href="#c12-configurar-valores">Configurar puntos en conjunto</a>.</li></ul>
+    <figure class="captura" data-captura="c12-06"><figcaption>Gestionar Valores de una rúbrica ficticia con un ítem pendiente y otro con puntos. Abrir Configurar Valores Personalizados y resaltar la diferencia entre cero y una casilla vacía.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-mantener-valores">
+    <h2>Crear, editar y eliminar valores de rúbricas</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para mantener los puntos de una combinación concreta de rúbrica, ítem y nivel de calificación.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Consultar exige <span class="valor">rubricas.ver</span>; crear y editar exigen <span class="valor">rubricas.editar</span>; eliminar exige <span class="valor">rubricas.eliminar</span>. Además, debe poder modificar la rúbrica para cambiar sus puntos. El menú muestra esta entrada con <span class="valor">niveles.ver</span>, que por sí solo no permite entrar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Valores de Rúbricas</span>.</p>
+    <h3>Pasos</h3>
+    <p>El formulario utiliza <span class="campo">Rúbrica</span>, <span class="campo">Ítem de evaluación</span>, <span class="campo">Nivel de calificación</span> y <span class="campo">Valor en puntos</span>. Todos son obligatorios; este formulario pide puntos entre 0 y 100 y admite hasta tres decimales.</p>
+    <h4>Crear</h4>
+    <ol><li>Pulse <span class="boton">Nuevo valor</span>.</li><li>Elija la rúbrica para cargar sus ítems y complete la combinación y los puntos.</li><li>Pulse <span class="boton">Crear valor</span>.</li></ol>
+    <h4>Consultar y editar</h4>
+    <ol><li>Elija <span class="campo">Rúbrica</span> e <span class="campo">Ítem de evaluación</span> en el listado y pulse <span class="boton">Filtrar</span>.</li><li>Use <span class="campo">Buscar en el listado</span> si lo necesita y pulse <span class="boton">Ver</span> para comprobar los datos.</li><li>Pulse <span class="boton">Editar valor</span>, cambie los campos necesarios y termine con <span class="boton">Guardar cambios</span>.</li></ol>
+    <h4>Eliminar</h4>
+    <ol><li>Pulse <span class="boton">Eliminar</span> en el listado o detalle y revise la combinación.</li><li>Pulse <span class="boton">Confirmar eliminación</span> para quitarla.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>El guardado vuelve al listado filtrado por rúbrica e ítem. La eliminación completada quita esa combinación de puntos y vuelve al listado general.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>Ya existe la combinación: edite el valor existente en vez de crear otro.</li><li>No se cargan los ítems: elija la rúbrica y pulse <span class="boton">Reintentar carga de ítems</span>.</li><li>Faltan opciones: necesita una rúbrica activa que pueda modificar y niveles de calificación disponibles.</li><li>La eliminación se rechaza por uso en evaluaciones: conserve el valor y revise su uso antes de modificarlo.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-configurar-valores">Configurar puntos en conjunto</a>.</li><li><a href="#c12-puntos-por-item">Configurar puntos por ítem</a>.</li></ul>
+  </section>
+  <section class="tarea" id="c12-configurar-valores">
+    <h2>Configurar los puntos de una rúbrica en conjunto</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar y cambiar los puntos de varios ítems y niveles de una rúbrica desde una sola tabla.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">rubricas.editar</span> y pueda modificar la rúbrica.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle de la rúbrica, botón <span class="boton">Gestionar Valores</span>. También puede filtrar el listado de valores por rúbrica y pulsar <span class="boton">Configurar rúbrica</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise los ítems y los niveles de la tabla; desplácela horizontalmente para ver todas las columnas.</li>
+      <li>Escriba los puntos en las celdas correspondientes, entre 0 y 100.</li>
+      <li>Pulse <span class="boton">Aplicar Valores Lineales</span> si desea sustituir las celdas por una distribución decreciente desde 100 hasta 0 según el orden de los niveles; con un solo nivel asigna 100. Revise el resultado.</li>
+      <li>Pulse <span class="boton">Copiar Fila Completa</span> si desea reutilizar los puntos de un ítem; elija la fila de origen, marque las de destino y pulse <span class="boton">Aplicar</span>.</li>
+      <li>Pulse <span class="boton">Previsualizar</span> para revisar los puntos escritos.</li>
+      <li>Pulse <span class="boton">Guardar Configuración</span>.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>El sistema crea o actualiza las combinaciones con un número escrito y abre el listado de valores de esa rúbrica. Las celdas vacías no eliminan valores ya guardados.</p>
+    <aside class="aviso"><p><span class="boton">Limpiar Todo</span> y <span class="boton">Limpiar fila</span> vacían las casillas de esta pantalla. Para eliminar un valor guardado, use su acción de eliminación en el listado. Escribir cero conserva una combinación con cero puntos.</p></aside>
+    <h3>Errores frecuentes</h3>
+    <ul><li>No se recibió ningún valor: escriba al menos un número antes de guardar.</li><li>Un valor reaparece después de limpiar: las casillas vacías se omiten al guardar; elimínelo desde el listado si desea retirarlo.</li><li>Una distribución automática no coincide con sus puntos: ajuste las celdas antes de guardar; las herramientas de esta tabla utilizan una distribución distinta de la asignación automática por ítem.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-valores">Mantener valores individuales</a>.</li><li><a href="#c12-puntos-por-item">Asignar puntos por ítem</a>.</li></ul>
+  </section>
+  <section class="tarea" id="c12-mantener-instrumentos">
+    <h2>Crear, editar y eliminar instrumentos de evaluación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para mantener los instrumentos que se califican con rúbricas y se utilizan en las materias.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instrumentos_evaluacion.ver</span> para consultar, <span class="valor">instrumentos_evaluacion.crear</span> para crear, <span class="valor">instrumentos_evaluacion.editar</span> para editar o <span class="valor">instrumentos_evaluacion.eliminar</span> para eliminar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Materias › Instrumentos de Evaluación</span>.</p>
+    <h3>Pasos</h3>
+    <p>El formulario comparte <span class="campo">Nombre *</span>, <span class="campo">Descripción</span> y <span class="campo">Instrumento activo</span>. El nombre admite hasta 200 caracteres y la descripción hasta 500.</p>
+    <h4>Crear</h4>
+    <ol><li>Pulse <span class="boton">Nuevo instrumento</span> y complete los campos.</li><li>Pulse <span class="boton">Crear instrumento</span>.</li></ol>
+    <h4>Consultar, editar o desactivar</h4>
+    <ol><li>Utilice <span class="campo">Buscar</span> y <span class="campo">Estado</span>, y pulse <span class="boton">Buscar</span>.</li><li>Abra el nombre del instrumento para consultar sus rúbricas, materias y evaluaciones.</li><li>Pulse <span class="boton">Editar</span> y cambie los datos; desmarque <span class="campo">Instrumento activo</span> si desea desactivarlo.</li><li>Pulse <span class="boton">Guardar cambios</span>.</li></ol>
+    <h4>Eliminar</h4>
+    <ol><li>Pulse <span class="boton">Eliminar</span> cuando el instrumento no tenga rúbricas ni materias asignadas.</li><li>Revise la confirmación y pulse <span class="boton">Eliminar definitivamente</span>.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La operación completada regresa al listado. Crear un instrumento no le asigna rúbricas ni materias. Desactivarlo conserva sus evaluaciones; el cambio de nombre se muestra donde se utiliza. El contador de evaluaciones del detalle cuenta las hechas con sus rúbricas, incluidas las utilizadas desde otros instrumentos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El instrumento no aparece con los filtros: pulse <span class="boton">Quitar filtros</span>.</li><li>El instrumento indica <span class="valor">Sin rúbrica</span>: asígnele al menos una para poder evaluar con él.</li><li>No se permite eliminarlo: quite sus asignaciones de rúbricas y materias, o use <span class="boton">Editar y desactivar</span> para conservarlo.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-asignar-rubricas">Asignar rúbricas a instrumentos</a>.</li><li><a href="#c12-asignar-materias">Asignar instrumentos a materias</a>.</li><li><a href="#c13">Evaluaciones y cuaderno calificador</a>.</li></ul>
+    <figure class="captura" data-captura="c12-07"><figcaption>Detalle de un instrumento ficticio con una rúbrica y una materia de ejemplo. Resaltar Gestionar rúbricas, Gestionar materias y la aclaración del contador de evaluaciones.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-asignar-rubricas">
+    <h2>Asignar, editar y quitar rúbricas de un instrumento</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para decidir con qué rúbricas se califica un instrumento y cuánto aporta cada una a la nota de la materia.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>El listado general exige <span class="valor">instrumento_rubrica.ver</span> y el menú lo muestra con ese permiso. Las demás pantallas de esta tarea solo piden sesión iniciada; para crear una asignación debe poder usar la rúbrica elegida. Editar y quitar una asignación no exigen un permiso adicional específico.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Rúbricas › Asignar Rúbricas a Instrumentos</span>. Desde el detalle de un instrumento puede pulsar <span class="boton">Gestionar rúbricas</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar y asignar</h4>
+    <ol>
+      <li>Elija <span class="campo">Materia</span> y pulse <span class="boton">Filtrar</span> si necesita reducir el listado general.</li>
+      <li>Abra el nombre de una rúbrica en el listado general para consultar su asignación: ponderación, instrumento, materias y evaluaciones hechas con esa rúbrica.</li>
+      <li>Pulse <span class="boton">Sus rúbricas</span> desde ese detalle, o abra el nombre del instrumento en el listado general, para ver todas sus rúbricas y su aporte a la nota.</li>
+      <li>Pulse <span class="boton">Asignar rúbrica</span>.</li>
+      <li>Elija <span class="campo">Instrumento *</span> si todavía no está elegido; la pantalla muestra después sus rúbricas disponibles.</li>
+      <li>Elija <span class="campo">Rúbrica *</span> entre las activas disponibles que aún no tiene el instrumento.</li>
+      <li>Escriba <span class="campo">Ponderación *</span>, de 0 a 100, y el <span class="campo">Orden</span> si lo necesita.</li>
+      <li>Marque <span class="campo">Obligatoria</span> si debe calificarse para completar el instrumento y pulse <span class="boton">Asignar rúbrica</span>.</li>
+    </ol>
+    <h4>Editar o quitar</h4>
+    <ol><li>Pulse el icono <span class="boton">Editar ponderación y orden</span> junto a la rúbrica del instrumento.</li><li>Cambie los puntos porcentuales, el orden o la obligatoriedad y pulse <span class="boton">Guardar cambios</span>.</li><li>Pulse <span class="boton">Quitar del instrumento</span> si desea retirar la asignación; revise el efecto anunciado y confirme con el mismo botón en la pantalla siguiente.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La pantalla vuelve a las rúbricas del instrumento con el reparto actualizado. Quitar una asignación conserva la rúbrica y sus evaluaciones. Si quita la última rúbrica, el instrumento queda sin una rúbrica con la cual evaluar.</p>
+    <aside class="nota"><p>Una ponderación de 20 % aporta 20 puntos porcentuales a la nota final de la materia; no significa el 20 % de otra ponderación del instrumento. El instrumento vale la suma de sus rúbricas y ese mismo valor se aplica a todas las materias que lo utilizan.</p></aside>
+    <h3>Errores frecuentes</h3>
+    <ul><li>Una rúbrica no aparece: debe estar activa, disponible para usted y todavía sin asignar al instrumento.</li><li>La rúbrica ya estaba asignada: cambie su ponderación desde la asignación existente.</li><li>El orden no es válido: utilice un número de 1 a 99 o déjelo vacío.</li><li>El total de una materia no llega a 100 % o lo supera: revise el reparto entre todos sus instrumentos; la pantalla muestra cuánto falta o sobra.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-mantener-instrumentos">Mantener instrumentos</a>.</li><li><a href="#c12-asignar-materias">Asignar instrumentos a materias</a>.</li><li><a href="#c13">Evaluaciones y cuaderno calificador</a>.</li></ul>
+    <figure class="captura" data-captura="c12-08"><figcaption>Asignar rúbrica a un instrumento ficticio con otra rúbrica ya asignada. Resaltar Ponderación y el total de una materia de ejemplo para distinguir el peso de la rúbrica del peso completo del instrumento.</figcaption></figure>
+  </section>
+  <section class="tarea" id="c12-asignar-materias">
+    <h2>Asignar, editar y quitar instrumentos de una materia</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar qué instrumento utiliza cada materia, en qué período académico y en qué orden se presenta.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instrumento_materias.ver</span> para el listado, <span class="valor">instrumento_materias.ver_detalles</span> para el detalle, <span class="valor">instrumento_materias.crear</span> para asignar, <span class="valor">instrumento_materias.editar</span> para editar o <span class="valor">instrumento_materias.eliminar</span> para quitar una asignación.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Materias › Asignar Instrumentos a Materias</span>. Desde el detalle del instrumento puede pulsar <span class="boton">Gestionar materias</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar y asignar</h4>
+    <ol>
+      <li>Elija <span class="campo">Instrumento</span>, <span class="campo">Materia</span> o <span class="campo">Período</span> y pulse <span class="boton">Filtrar</span> para revisar las asignaciones.</li>
+      <li>Pulse <span class="boton">Nueva asignación</span>, o <span class="boton">Asignar a una materia</span> si llegó desde un instrumento.</li>
+      <li>Elija <span class="campo">Instrumento *</span> y <span class="campo">Materia *</span>.</li>
+      <li>Revise <span class="campo">Período *</span> y elija el período académico correcto.</li>
+      <li>Complete <span class="campo">Orden</span> si necesita fijar su posición en el cuaderno calificador.</li>
+      <li>Marque <span class="campo">Obligatorio</span> si debe evaluarse para cerrar la nota y pulse <span class="boton">Asignar</span>.</li>
+    </ol>
+    <h4>Editar o quitar</h4>
+    <ol><li>Pulse el icono <span class="boton">Editar orden y uso</span> de la asignación.</li><li>Cambie el período académico, el orden o la obligatoriedad y pulse <span class="boton">Guardar cambios</span>; el instrumento y la materia permanecen fijos.</li><li>Pulse <span class="boton">Quitar de la materia</span> si desea retirar la asignación.</li><li>Revise la materia, el período académico y el cambio en su nota; confirme con <span class="boton">Quitar de la materia</span>.</li></ol>
+    <h3>Qué pasa después</h3>
+    <p>La operación vuelve al listado del instrumento. Un instrumento puede asignarse una sola vez a cada materia: para cambiarle el período académico edite esa asignación. Quitarla conserva el instrumento y las evaluaciones ya hechas con sus rúbricas.</p>
+    <p>La columna <span class="valor">Vale</span> suma las ponderaciones de las rúbricas del instrumento. <span class="valor">Nota de la materia</span> suma todos los instrumentos de esa materia y período académico, aunque el filtro solo muestre uno.</p>
+    <h3>Errores frecuentes</h3>
+    <ul><li>El instrumento ya está en la materia: edite la asignación existente en lugar de crear otra para otro período académico.</li><li>No hay opciones disponibles: revise que existan instrumentos y materias activos y un período académico disponible en la institución activa.</li><li>La materia o el período no corresponden a la institución del instrumento: elija opciones de la misma institución.</li><li>La materia indica que falta o sobra porcentaje: ajuste las ponderaciones de sus rúbricas; esa corrección se realiza en las rúbricas del instrumento.</li></ul>
+    <h3>Tareas relacionadas</h3>
+    <ul><li><a href="#c12-asignar-rubricas">Ajustar las rúbricas y ponderaciones del instrumento</a>.</li><li><a href="#c05">Períodos académicos y materias</a>.</li><li><a href="#c13">Evaluaciones y cuaderno calificador</a>.</li></ul>
+  </section>
+</section>

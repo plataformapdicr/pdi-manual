@@ -1,0 +1,13 @@
+{
+  "name": "pdi-manual",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Manual de usuario de PDI: 19 capítulos en español",
+  "scripts": {
+    "build": "node build.cjs",
+    "check": "node DOCS/manual/armar.cjs --solo-revisar"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

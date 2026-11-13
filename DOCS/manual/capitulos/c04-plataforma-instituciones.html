@@ -1,0 +1,466 @@
+<section class="capitulo" id="c04" data-codigo="C04" data-titulo="Plataforma e instituciones">
+  <h1>Plataforma e instituciones</h1>
+  <p class="resumen">Cómo se da de alta una institución, cómo se configura y cómo se suspende o se da de baja, y los ajustes que valen para toda la plataforma.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#c04-panel-plataforma">Revisar el panel de la plataforma</a></td><td>Rol Super Administrador</td><td><span class="ruta">Instituciones › Panel de la plataforma</span></td></tr>
+        <tr><td><a href="#c04-solicitudes">Aprobar o rechazar solicitudes de alta</a></td><td>Rol Super Administrador</td><td><span class="ruta">Instituciones › Solicitudes de Alta</span></td></tr>
+        <tr><td><a href="#c04-crear-institucion">Crear una institución</a></td><td><span class="valor">instituciones.crear</span></td><td><span class="ruta">Instituciones › Nueva Institución</span></td></tr>
+        <tr><td><a href="#c04-editar-institucion">Consultar y editar una institución</a></td><td><span class="valor">instituciones.ver</span>, <span class="valor">instituciones.editar</span></td><td><span class="ruta">Instituciones › Lista de Instituciones</span></td></tr>
+        <tr><td><a href="#c04-empadronamiento-publico">Abrir el empadronamiento público de una institución</a></td><td>Rol Super Administrador</td><td>Detalle de la institución</td></tr>
+        <tr><td><a href="#c04-suspender">Suspender o reactivar una institución</a></td><td>Rol Super Administrador</td><td>Detalle de la institución</td></tr>
+        <tr><td><a href="#c04-baja-borrado">Dar de baja una institución y borrar sus datos</a></td><td>Rol Super Administrador</td><td>Detalle de la institución</td></tr>
+        <tr><td><a href="#c04-ver-como">Ver el sistema como una institución</a></td><td>Rol Super Administrador</td><td>Panel de control</td></tr>
+        <tr><td><a href="#c04-slider">Administrar el slider de la portada</a></td><td>Rol Super Administrador</td><td><span class="ruta">Configuración › Administración › Gestión de Slider</span></td></tr>
+        <tr><td><a href="#c04-registro">Abrir o cerrar el registro de usuarios</a></td><td>Rol Super Administrador</td><td>Panel de administración › <span class="boton">Configuración</span></td></tr>
+        <tr><td><a href="#c04-correo">Configurar el correo de la plataforma</a></td><td>Rol Super Administrador</td><td>Panel de administración › Configuración › <span class="boton">Configurar correo</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>PDI es una sola plataforma con muchas instituciones. Cada institución tiene sus propios usuarios, su estructura y sus datos, y no ve los de las demás. Casi todo lo de este capítulo lo hace el Super Administrador, que es la persona a cargo de la plataforma.</p>
+
+    <h3>Estados de una institución</h3>
+    <dl>
+      <dt>Activa</dt><dd>Sus usuarios entran y trabajan con normalidad.</dd>
+      <dt>Suspendida</dt><dd>Sus usuarios no pueden entrar. Los datos se conservan y se puede reactivar.</dd>
+      <dt>Dada de baja</dt><dd>Ya no opera. Los datos se conservan durante un plazo de retención y dentro de él aún se puede reactivar.</dd>
+      <dt>Datos borrados</dt><dd>Sus datos se borraron de forma definitiva. Queda solo como registro y no se puede reactivar.</dd>
+    </dl>
+    <p>Las instituciones no se eliminan de golpe: se suspenden, se exportan sus datos, se dan de baja y, terminado el plazo de retención, se borran.</p>
+
+    <h3>Cómo nace una institución</h3>
+    <p>Hay dos caminos. La propia institución pide el alta desde la pantalla de inicio de sesión (<a href="#c02-solicitar-institucion">Solicitar el alta de una institución</a>) y el Super Administrador aprueba la solicitud; o el Super Administrador la crea directamente. En ambos casos nace activa y con sus datos base: período vigente, tipos de grupo y grupo de calificación.</p>
+  </section>
+
+  <section class="tarea" id="c04-panel-plataforma">
+    <h2>Revisar el panel de la plataforma</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver de un vistazo cuántas instituciones hay, cuánto se usa cada una y qué necesita atención.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Instituciones › Panel de la plataforma</span>. También en el Panel de control, bloque Herramientas.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="valor">Panel de la plataforma</span>.</li>
+      <li>En <span class="valor">Resumen</span> lea: instituciones activas, suspendidas y dadas de baja, usuarios activos, estudiantes activos y evaluaciones de los últimos 30 días.</li>
+      <li>En <span class="valor">Uso por institución</span> compare cada una: usuarios, estudiantes, evaluaciones de 30 días y último ingreso. Una institución sin ingresos recientes puede necesitar acompañamiento.</li>
+      <li>En <span class="valor">Solicitudes de alta</span> vea cuántas hay pendientes, aprobadas y rechazadas, y pulse <span class="boton">Ver todas</span> para atenderlas.</li>
+    </ol>
+    <figure class="captura" data-captura="c04-01">
+      <figcaption>Panel de la plataforma con el Resumen, la tabla Uso por institución con tres instituciones de ejemplo y el bloque Solicitudes de alta con una pendiente.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>Es una pantalla de consulta. Los botones <span class="boton">Todas las instituciones</span> y <span class="boton">Solicitudes de alta</span> llevan a las pantallas donde se actúa.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Todavía no hay instituciones registradas.»: cree la primera o apruebe una solicitud.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04-solicitudes">Aprobar o rechazar solicitudes de alta</a></li>
+      <li><a href="#c03-panel-admin">Usar el panel de administración</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-solicitudes">
+    <h2>Aprobar o rechazar solicitudes de alta</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para dar entrada a las instituciones que pidieron usar PDI.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Instituciones › Solicitudes de Alta</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="valor">Solicitudes de alta</span>. Con <span class="campo">Estado</span> y <span class="boton">Filtrar</span> puede ver solo las pendientes.</li>
+      <li>Revise cada fila: <span class="valor">Institución</span>, <span class="valor">Responsable</span>, <span class="valor">Recibida</span> y <span class="valor">Estado</span>.</li>
+      <li>Para aceptarla, pulse <span class="boton">Aprobar</span> y confirme. El aviso dice que se creará la institución, sus datos base y una invitación de administrador para el correo del responsable.</li>
+      <li>Para no aceptarla, escriba si quiere el motivo y pulse <span class="boton">Rechazar</span>; confirme «¿Rechazar esta solicitud?».</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Al aprobar, se crea la institución y el responsable recibe una invitación con el rol Administrador. La pantalla muestra una sola vez el <span class="valor">Enlace de invitación del responsable</span>, con el botón <span class="boton">Copiar</span>: cópielo por si el correo no llega.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El responsable dice que no recibió el correo: envíele el enlace copiado. Si ya salió de la pantalla, créele una invitación nueva (<a href="#c03-invitar">Invitar a una persona a la institución</a>).</li>
+      <li>No hay solicitudes: las instituciones las envían desde la pantalla de inicio de sesión.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c02-solicitar-institucion">Solicitar el alta de una institución</a></li>
+      <li><a href="#c04-crear-institucion">Crear una institución</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-crear-institucion">
+    <h2>Crear una institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para registrar una institución directamente, sin que tenga que pedir el alta.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el permiso <span class="valor">instituciones.crear</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Instituciones › Nueva Institución</span>, o el botón <span class="boton">Nueva institución</span> de la lista.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="valor">Identificación</span> escriba el <span class="campo">Nombre</span> y, si las usa, las <span class="campo">Siglas</span>.</li>
+      <li>En <span class="campo">Tipo</span> elija el tipo de institución.</li>
+      <li>Si lo tiene, escriba el <span class="campo">Código MEP</span>, el código oficial del Ministerio de Educación Pública.</li>
+      <li>En <span class="valor">Ubicación según el MEP</span> escriba la <span class="campo">Dirección regional</span> y el <span class="campo">Circuito escolar</span>.</li>
+      <li>En <span class="valor">Contacto</span> complete <span class="campo">Teléfono</span>, <span class="campo">Correo</span>, <span class="campo">Sitio web</span> y <span class="campo">Dirección física</span>.</li>
+      <li>Pulse <span class="boton">Crear institución</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>La institución nace activa y con sus datos base. Lo siguiente es agregar sus facultades y escuelas (<a href="#c05">capítulo 5</a>), invitar a su administrador (<a href="#c03-invitar">capítulo 3</a>) y, si corresponde, definir cómo matricula (<a href="#c04-editar-institucion">Consultar y editar una institución</a>).</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Falta un dato con asterisco: <span class="campo">Nombre</span> y <span class="campo">Tipo</span> son obligatorios.</li>
+      <li>La institución quedó sin período o sin tipos de grupo: en su detalle, pulse <span class="boton">Inicializar datos base</span>. Crea solo lo que falte y no modifica lo existente.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04-editar-institucion">Consultar y editar una institución</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-editar-institucion">
+    <h2>Consultar y editar una institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para encontrar una institución, ver su ficha y corregir sus datos, incluida la forma en que matricula.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Ver la lista: <span class="valor">instituciones.ver</span>. Ver el detalle: <span class="valor">instituciones.ver_detalles</span>. Editar: <span class="valor">instituciones.editar</span>. La forma de matricular solo la cambia el Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Instituciones › Lista de Instituciones</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="campo">Buscar</span> escriba el nombre, el código MEP o la dirección regional. En <span class="campo">Estado</span> elija <span class="valor">Todas</span>, <span class="valor">Activas</span> o <span class="valor">Suspendidas o dadas de baja</span>. Pulse <span class="boton">Buscar</span>.</li>
+      <li>La tabla muestra <span class="valor">Institución</span>, <span class="valor">Ubicación MEP</span>, <span class="valor">Estado</span>, <span class="valor">Facultades</span>, <span class="valor">Escuelas</span> y <span class="valor">Usuarios</span>. Pulse el nombre para abrir el detalle.</li>
+      <li>Para corregir datos, pulse <span class="boton">Editar datos</span> en el detalle (o <span class="boton">Editar</span> en la fila).</li>
+      <li>Cambie lo necesario. En <span class="valor">Matrícula</span>, el campo <span class="campo">Se matricula</span> ofrece <span class="valor">Una vez al año (escuela o colegio)</span> o <span class="valor">Cada período (universidad o similar)</span>, y <span class="campo">Nivel educativo</span> ofrece <span class="valor">Primaria</span>, <span class="valor">Secundaria</span> o <span class="valor">Superior</span>.</li>
+      <li>Pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c04-02">
+      <figcaption>Detalle de una institución de ejemplo: datos, bloque Estado con el ciclo de vida, la lista de facultades y el bloque Empadronamiento público con el enlace para compartir.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>Los datos quedan actualizados. La forma de matricular define cómo funcionan las pantallas de matrícula de esa institución (<a href="#c09">capítulo 9</a>).</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No puede cambiar <span class="campo">Se matricula</span>: «Solo el administrador de la plataforma puede cambiar estos datos.», o la institución ya tiene matrículas registradas con ese régimen y no se puede cambiar.</li>
+      <li>Busca dónde suspenderla: el estado se gestiona desde el detalle, no desde la edición.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04-suspender">Suspender o reactivar una institución</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a> (facultades y escuelas)</li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-empadronamiento-publico">
+    <h2>Abrir el empadronamiento público de una institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para que las familias de una institución puedan llenar el empadronamiento en línea, sin cuenta, mediante un enlace propio de esa institución.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p>Detalle de la institución, bloque <span class="valor">Empadronamiento público</span>. El interruptor general está en Panel de administración › Configuración.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Confirme que el empadronamiento público está habilitado en la plataforma: en Panel de administración › <span class="boton">Configuración</span>, marque <span class="campo">Habilitar empadronamiento público</span> y pulse <span class="boton">Guardar empadronamiento</span>.</li>
+      <li>Abra el detalle de la institución.</li>
+      <li>En <span class="campo">Código del enlace</span> escriba un código corto (por ejemplo <span class="valor">ctp-cartago</span>) o pulse <span class="boton">Sugerir</span>. Admite entre 3 y 60 caracteres: minúsculas, números y guiones, sin espacios ni tildes.</li>
+      <li>Marque <span class="campo">Recibir empadronamientos por este enlace</span>.</li>
+      <li>Pulse <span class="boton">Guardar enlace</span>.</li>
+      <li>En <span class="valor">Enlace para compartir</span> pulse <span class="boton">Copiar</span> y envíe el enlace a las familias.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Quien abra el enlace llena el formulario de cinco pasos (<a href="#c08">capítulo 8, Empadronamiento</a>). Para dejar de recibir, desmarque la casilla y guarde: cerrado, el enlace deja de funcionar aunque se conozca.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El código no se acepta: use solo minúsculas, números y guiones.</li>
+      <li>Las familias ven que no está disponible: revise la casilla de la institución y el interruptor general de la plataforma.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c08">Capítulo 8, Empadronamiento</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-suspender">
+    <h2>Suspender o reactivar una institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para impedir temporalmente que una institución use la plataforma, sin tocar sus datos, y para devolverle el acceso.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p>Detalle de la institución, bloque <span class="valor">Estado</span>.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra el detalle de la institución.</li>
+      <li>Pulse <span class="boton">Suspender institución</span>.</li>
+      <li>En la ventana, escriba el <span class="campo">Motivo</span> (obligatorio) y pulse <span class="boton">Suspender</span>.</li>
+      <li>Para devolver el acceso, pulse <span class="boton">Reactivar institución</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Sus usuarios no pueden iniciar sesión y las sesiones abiertas se cierran. Al intentar entrar ven el aviso de que la institución está suspendida. Los datos no se tocan. El bloque <span class="valor">Ciclo de vida</span> muestra desde cuándo y el motivo.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No deja suspender sin motivo: el motivo es obligatorio.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04-baja-borrado">Dar de baja una institución y borrar sus datos</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-baja-borrado">
+    <h2>Dar de baja una institución y borrar sus datos</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para cerrar definitivamente una institución que deja de usar PDI. Es un proceso en etapas, pensado para que nada se pierda por error.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p>Detalle de la institución, bloque <span class="valor">Estado</span>.</p>
+
+    <aside class="aviso">
+      <p>El borrado definitivo elimina todos los datos de la institución (estudiantes, rúbricas, evaluaciones, profesores y auditoría) y las cuentas que solo pertenecen a ella. No se puede deshacer. Hágalo solo con la exportación guardada y la decisión confirmada por escrito.</p>
+    </aside>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Suspenda la institución (<a href="#c04-suspender">Suspender o reactivar una institución</a>).</li>
+      <li>Pulse <span class="boton">Exportar datos (ZIP)</span> y guarde el archivo en un lugar seguro. La baja exige una exportación hecha después de la suspensión.</li>
+      <li>Pulse <span class="boton">Dar de baja</span>. Escriba el <span class="campo">Motivo</span> y el nombre de la institución para confirmar, y pulse <span class="boton">Dar de baja</span>.</li>
+      <li>Espere el plazo de retención. La pantalla indica hasta cuándo se conservan los datos; dentro de ese plazo puede usar <span class="boton">Reactivar (dentro del plazo)</span>.</li>
+      <li>Antes de borrar, pulse <span class="boton">Simular el borrado (no borra nada)</span> y revise la tabla de registros que se afectarían.</li>
+      <li>Terminada la retención, pulse <span class="boton">Borrar los datos definitivamente</span>. Escriba el nombre de la institución, marque <span class="campo">Entiendo que el borrado es irreversible</span> y pulse <span class="boton">Borrar definitivamente</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Tras la baja, la institución queda como <span class="valor">Dada de baja</span>. Tras el borrado, queda como <span class="valor">Datos borrados</span>: solo como registro, sin posibilidad de reactivarla. La simulación no cambia nada: muestra «No se borró nada. La simulación se revirtió y los datos se conservan.»</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Falta exportar los datos tras la suspensión para poder darla de baja.»: exporte de nuevo, después de suspender.</li>
+      <li>No aparece el botón de borrar: todavía corre la retención. La pantalla dice desde qué fecha podrán borrarse los datos.</li>
+      <li>El botón de confirmar no se activa: el nombre debe escribirse igual que el de la institución.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04-suspender">Suspender o reactivar una institución</a></li>
+      <li><a href="#c16">Capítulo 16, Auditoría</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-ver-como">
+    <h2>Ver el sistema como una institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para que el Super Administrador vea los datos y las pantallas de una institución concreta, por ejemplo para dar soporte.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de control, selector <span class="campo">Ver sistema como...</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En el Panel de control, abra <span class="campo">Ver sistema como...</span></li>
+      <li>En <span class="campo">Buscar institución</span> escriba el nombre y pulse la institución.</li>
+      <li>Trabaje con normalidad. Una franja en la parte superior recuerda qué institución está viendo, con los botones <span class="boton">Cambiar</span> y <span class="boton">Salir y ver todas</span>.</li>
+      <li>Para terminar, pulse <span class="boton">Salir y ver todas</span>, o en el selector, <span class="boton">Ver todas las instituciones</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Mientras la franja esté visible, las pantallas muestran solo los datos de esa institución. Varias pantallas, como las de matrícula, exigen tener una institución elegida.</p>
+    <aside class="aviso">
+      <p>Lo que cree o cambie mientras ve una institución queda en esa institución. Revise la franja antes de guardar algo.</p>
+    </aside>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Una pantalla dice «Elija una institución»: use este selector y vuelva a la pantalla.</li>
+      <li>«No se encontraron instituciones.»: revise el nombre escrito.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c01-instituciones-y-periodo">Institución activa y período de trabajo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-slider">
+    <h2>Administrar el slider de la portada</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para elegir las imágenes y los mensajes que rotan en la portada pública de PDI.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Administración › Gestión de Slider</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="valor">Slider de la portada</span> pulse <span class="boton">Nuevo slide</span>.</li>
+      <li>Escriba el <span class="campo">Título</span> (una frase corta) y, si quiere, el <span class="campo">Subtítulo</span>.</li>
+      <li>Si el slide lleva botón, escriba el <span class="campo">Texto del botón</span> y el <span class="campo">Enlace</span>: una ruta interna que empiece con una barra, o una dirección web completa. Déjelos vacíos si no lleva botón.</li>
+      <li>En <span class="campo">Imagen</span> elija el archivo: JPG, JPEG, PNG, GIF o WebP, de hasta 5 MB. Se recomienda una imagen horizontal de 1600 por 900 píxeles.</li>
+      <li>En <span class="campo">Orden</span> escriba un número; el menor aparece primero. Use números distintos entre los slides activos.</li>
+      <li>Deje marcado <span class="campo">Mostrar en la portada</span> para publicarlo.</li>
+      <li>Pulse <span class="boton">Crear slide</span>. Para cambiarlo después, ábralo, edite y pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El slide aparece en la portada según su orden. Si desmarca <span class="campo">Mostrar en la portada</span>, se guarda pero no se muestra. Al eliminar un slide, la pantalla ofrece <span class="boton">Ocultar en su lugar</span> o <span class="boton">Eliminar definitivamente</span>.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Hay slides activos con el mismo orden.»: mientras se repitan, no se garantiza en qué orden aparecen. Edite uno y cámbiele el número.</li>
+      <li>La etiqueta <span class="valor">Falta la imagen</span>: el archivo ya no está y la portada lo muestra vacío. Edite el slide y suba la imagen de nuevo.</li>
+      <li>La etiqueta <span class="valor">Enlace no válido</span>: el enlace debe empezar con una barra o ser una dirección web completa.</li>
+      <li>«Todavía no hay slides»: la portada se muestra sin carrusel hasta que cree el primero.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c01-portada">La portada y el inicio de sesión</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-registro">
+    <h2>Abrir o cerrar el registro de usuarios</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para decidir si cualquier persona puede crear su cuenta desde la portada, o si solo entran quienes tienen cuenta o invitación.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.editar_sistema</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Configuración</span>, bloque <span class="valor">Registro de usuarios</span>.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="valor">Configuración del sistema</span>. Arriba verá tres indicadores de estado: <span class="valor">Base de datos</span>, <span class="valor">Disco del servidor</span> y <span class="valor">Memoria de la aplicación</span>.</li>
+      <li>En <span class="campo">Modo de registro</span> elija abierto o cerrado. Abierto permite crear cuentas desde la portada; cerrado mantiene el acceso para las cuentas existentes y las invitaciones.</li>
+      <li>Si lo cierra, escriba el <span class="campo">Mensaje cuando el registro está cerrado</span>: es lo que leerá quien intente registrarse.</li>
+      <li>Pulse <span class="boton">Guardar registro</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El cambio rige de inmediato para toda la plataforma. Estos ajustes son globales: no son por institución.</p>
+    <p>En la misma pantalla, <span class="boton">Consultar información</span>, <span class="boton">Consultar política</span> y <span class="boton">Consultar registros</span> muestran, solo para lectura, la información general del servidor, la política de contraseñas y bloqueo, y una nota sobre los registros técnicos, que se revisan en el servidor.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Alguien no logra registrarse: el registro está cerrado. Invítelo (<a href="#c03-invitar">capítulo 3</a>).</li>
+      <li>La pantalla de seguridad no deja cambiar la longitud mínima de las contraseñas, porque es solo de consulta; esos valores se definen en la instalación.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c02-registrarse">Registrarse</a></li>
+      <li><a href="#c04-correo">Configurar el correo de la plataforma</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c04-correo">
+    <h2>Configurar el correo de la plataforma</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para que PDI pueda enviar correos: invitaciones, recuperación de contraseña y avisos.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.configurar_email</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › Configuración › <span class="boton">Configurar correo</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="valor">Proveedor y estado</span> elija el proveedor: <span class="valor">SMTP</span> o <span class="valor">Resend</span>.</li>
+      <li>Marque <span class="campo">Habilitar envío de correo</span>.</li>
+      <li>Si eligió SMTP, complete los datos de <span class="valor">Servidor SMTP</span> que le dio su proveedor de correo y marque <span class="campo">Habilitar SSL</span> si corresponde. El campo <span class="campo">Nueva contraseña SMTP</span> se deja vacío para conservar la actual.</li>
+      <li>En <span class="valor">Remitente</span> indique desde qué dirección y con qué nombre salen los correos.</li>
+      <li>Pulse <span class="boton">Guardar correo</span>.</li>
+      <li>En <span class="valor">Probar la configuración guardada</span>, escriba un <span class="campo">Destinatario</span> y pulse <span class="boton">Enviar correo de prueba</span>.</li>
+    </ol>
+    <aside class="nota">
+      <p>La contraseña guardada nunca se muestra en la pantalla. La prueba usa los valores ya guardados: guarde antes de probar.</p>
+    </aside>
+
+    <h3>Qué pasa después</h3>
+    <p>Si la prueba llega, los correos de la plataforma funcionan. Si el correo no está configurado, las invitaciones se crean igual pero hay que copiar y enviar el enlace a mano.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El correo de prueba no llega: revise los datos del servidor con su proveedor y la carpeta de correo no deseado del destinatario.</li>
+      <li>Con Resend, el estado dice «clave sin configurar»: la clave se configura en el servidor, no en esta pantalla, y el dominio del remitente debe estar verificado.</li>
+      <li>Cambió algo y la prueba usa lo anterior: faltó pulsar <span class="boton">Guardar correo</span>.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-invitar">Invitar a una persona a la institución</a></li>
+      <li><a href="#c02-recuperar-contrasena">Recuperar la contraseña</a></li>
+    </ul>
+  </section>
+</section>

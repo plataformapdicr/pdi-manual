@@ -1,0 +1,269 @@
+<section class="capitulo" id="c11" data-codigo="C11" data-titulo="Asistencia">
+  <h1>Asistencia</h1>
+  <p class="resumen">Cómo pasar lista, por lección o por día, y cómo consultar ausencias, historial y porcentajes de asistencia.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#c11-por-leccion">Tomar asistencia por lección</a></td><td>El profesor de la materia o el profesor guía</td><td><span class="ruta">Configuración › Estudiantes › Tomar Asistencia por Lección</span></td></tr>
+        <tr><td><a href="#c11-pase-diario">Pasar lista con el pase de lista diario</a></td><td><span class="valor">asistencia.tomar_asistencia</span></td><td><span class="ruta">Configuración › Estudiantes › Asistencia Diaria</span></td></tr>
+        <tr><td><a href="#c11-resumen-dia">Ver y corregir la asistencia de un día</a></td><td><span class="valor">asistencia.ver_resumen</span></td><td>Asistencia Diaria, <span class="boton">Resumen de hoy</span></td></tr>
+        <tr><td><a href="#c11-ausencias">Consultar las ausencias de un grupo</a></td><td>Quien ve el menú de asistencia</td><td><span class="ruta">Configuración › Estudiantes › Reporte de Ausencias</span></td></tr>
+        <tr><td><a href="#c11-estadisticas">Consultar las estadísticas de asistencia</a></td><td>Quien ve el menú de asistencia</td><td><span class="ruta">Configuración › Estudiantes › Estadísticas de Asistencia</span></td></tr>
+        <tr><td><a href="#c11-historial">Ver el historial de un estudiante</a></td><td>Quien ve el menú de asistencia</td><td>Desde Ausencias o Estadísticas, <span class="boton">Historial</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>PDI ofrece dos formas de pasar lista. No se excluyen: use la que corresponda al grupo.</p>
+    <dl>
+      <dt>Asistencia por lección</dt><dd>Sigue el horario del grupo. Usted elige el grupo y el día, y aparecen las lecciones de ese día para marcar cada una. Necesita que el grupo tenga horario (<a href="#c10">capítulo 10, Horarios</a>).</dd>
+      <dt>Pase de lista diario</dt><dd>Se pasa lista por materia y fecha, sin depender del horario. Sirve cuando el grupo no tiene horario cargado o ese día no tiene lecciones.</dd>
+    </dl>
+
+    <h3>Los cuatro estados</h3>
+    <dl>
+      <dt>Presente</dt><dd>Asistió.</dd>
+      <dt>Tarde</dt><dd>Llegó tarde. Cuenta como asistencia en los porcentajes.</dd>
+      <dt>Ausente</dt><dd>Faltó sin justificación.</dd>
+      <dt>Justificada</dt><dd>Faltó con justificación.</dd>
+    </dl>
+    <p>El porcentaje de asistencia cuenta presentes y llegadas tarde sobre los registros marcados. Un estudiante sin marcar no cuenta ni a favor ni en contra.</p>
+    <aside class="nota">
+      <p>La entrada del menú aparece con el permiso de ver asistencia. El pase de lista diario además exige permisos propios para pasar lista, ver el resumen e imprimir.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c11-por-leccion">
+    <h2>Tomar asistencia por lección</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para registrar quién asistió a cada lección del horario.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>La asistencia se toma en los grupos donde usted da una materia o es profesor guía. La pantalla no exige un permiso propio: cualquier usuario con sesión iniciada entra; el menú la muestra a quien tiene el permiso <span class="valor">asistencia.ver</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Tomar Asistencia por Lección</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="campo">Grupo</span> elija el grupo y en <span class="campo">Día</span> la fecha. Pulse <span class="boton">Ver lecciones</span>.</li>
+      <li>Aparecen las lecciones del día con su <span class="valor">Hora</span>, su <span class="valor">Materia</span> y cuántos estudiantes tienen la asistencia marcada. Abra la lección que va a marcar.</li>
+      <li>Marque a cada estudiante: presente, tarde, ausente o justificada.</li>
+      <li>Para ir rápido, pulse <span class="boton">Todos presentes</span>, o <span class="boton">Presentes los que faltan</span> para marcar como presentes solo a quienes siguen sin marcar.</li>
+      <li>En las ausencias, escriba la <span class="campo">Justificación (opcional)</span>. Con <span class="boton">Agregar observación</span> puede anotar algo más.</li>
+      <li>Revise el contador de abajo: presentes, tarde, ausentes, justificadas y sin marcar.</li>
+      <li>Pulse <span class="boton">Guardar asistencia</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c11-01">
+      <figcaption>Pantalla de tomar asistencia de una lección con seis estudiantes de ejemplo: cuatro presentes, uno tarde y uno ausente con su justificación; abajo el contador y el botón Guardar asistencia.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>La lección queda marcada como <span class="valor">Completa</span> cuando todos los estudiantes tienen estado. Puede volver a abrirla con <span class="boton">Ver</span> para corregir. Desde la misma pantalla, <span class="boton">Ausencias del grupo</span> y <span class="boton">Estadísticas</span> llevan a las consultas.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No tiene grupos asignados»: pida a la coordinación que lo asigne a la materia del grupo o como profesor guía.</li>
+      <li>«No hay lecciones» ese día: el horario del grupo no tiene lecciones activas esa fecha. Pulse <span class="boton">Ver horario del grupo</span>, o pase lista sin horario desde el <a href="#c11-pase-diario">pase de lista diario</a>.</li>
+      <li>«El grupo no tiene estudiantes matriculados»: aparecerán cuando la coordinación los matricule (<a href="#c09">capítulo 9</a>).</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-pase-diario">Pasar lista con el pase de lista diario</a></li>
+      <li><a href="#c10">Capítulo 10, Horarios</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c11-pase-diario">
+    <h2>Pasar lista con el pase de lista diario</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para registrar la asistencia de una materia en una fecha, sin depender del horario.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga los permisos <span class="valor">asistencia.ver</span> y <span class="valor">asistencia.tomar_asistencia</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Asistencia Diaria</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="valor">Pase de lista diario</span> busque el grupo con <span class="campo">Buscar grupo</span> (nombre o código) y el <span class="campo">Período</span>.</li>
+      <li>En la fila del grupo, pulse <span class="boton">Pasar lista</span>.</li>
+      <li>Elija la <span class="campo">Materia</span> y la <span class="campo">Fecha</span>, y pulse <span class="boton">Abrir lista</span>. Si ya se pasó lista ese día, se carga para corregirla.</li>
+      <li>Marque a cada estudiante. También aquí están <span class="boton">Todos presentes</span> y <span class="boton">Presentes los que faltan</span>.</li>
+      <li>En las ausencias, escriba la justificación si la hay.</li>
+      <li>Pulse <span class="boton">Guardar pase de lista</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>La asistencia queda registrada por materia y fecha. La lista de grupos muestra cuántos se marcaron hoy y cuándo fue el último registro.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay materias para pasar lista en este grupo»: el pase de lista es por materia y el grupo no tiene ninguna en la que usted pueda registrar. Pida a la coordinación que asigne la materia y su profesor al grupo.</li>
+      <li>«El grupo no tiene estudiantes matriculados».</li>
+      <li>No ve el botón <span class="boton">Pasar lista</span>: le falta el permiso de tomar asistencia.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-resumen-dia">Ver y corregir la asistencia de un día</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c11-resumen-dia">
+    <h2>Ver y corregir la asistencia de un día</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para revisar cómo quedó la asistencia de un grupo en una fecha, corregirla o imprimirla.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Ver: <span class="valor">asistencia.ver_resumen</span>. El botón <span class="boton">Imprimir</span> usa la impresión del navegador y aparece cuando hay registros; no pide un permiso adicional. Corregir: <span class="valor">asistencia.tomar_asistencia</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Asistencia Diaria</span>, botón <span class="boton">Resumen de hoy</span> del grupo.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Resumen de hoy</span> en la fila del grupo.</li>
+      <li>Para otra fecha, cambie <span class="campo">Fecha</span> y pulse <span class="boton">Ver</span>.</li>
+      <li>Si hay varias materias o lecciones ese día, pulse el enlace de la que desea revisar, situado sobre el resumen.</li>
+      <li>Lea las cifras: porcentaje de asistencia, presentes, tarde, ausentes y justificadas, y debajo la lista con el estado y la justificación de cada estudiante.</li>
+      <li>Para cambiar algo, pulse <span class="boton">Corregir</span>; abre la lista de la materia o lección elegida para ese día.</li>
+      <li>Para llevársela en papel, pulse <span class="boton">Imprimir</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El resumen y su impresión corresponden a la materia o lección elegida. La corrección guarda los cambios en esa lista del día. <span class="boton">Ausencias del grupo</span> lleva a la consulta por rango de fechas.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay asistencia registrada ese día»: nadie pasó lista en esa fecha. Elija otra o pulse <span class="boton">Pasar lista</span>.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-ausencias">Consultar las ausencias de un grupo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c11-ausencias">
+    <h2>Consultar las ausencias de un grupo</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para saber quién faltó en un rango de fechas, empezando por quien tiene más ausencias sin justificar. Sirve para dar seguimiento o avisar a las familias.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú la muestra a quien tiene el permiso <span class="valor">asistencia.ver</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Reporte de Ausencias</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="campo">Grupo</span> elija el grupo.</li>
+      <li>Elija el rango con <span class="campo">Desde</span> y <span class="campo">Hasta</span>.</li>
+      <li>En <span class="campo">Justificadas</span> elija <span class="valor">No incluir</span> o <span class="valor">Incluir</span>.</li>
+      <li>Pulse <span class="boton">Ver ausencias</span>.</li>
+      <li>Lea <span class="valor">Por estudiante</span> (ausencias sin justificar y días con ausencia) y, debajo, el <span class="valor">Detalle</span> por fecha, materia, estado y justificación.</li>
+      <li>Para un estudiante en particular, pulse <span class="boton">Historial</span>. Para papel, <span class="boton">Imprimir</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Es una consulta: no cambia nada. Un estudiante que cambió de sección o se retiró sigue apareciendo con las ausencias de cuando estaba en el grupo.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Sin ausencias»: nadie del grupo faltó en ese rango, según la asistencia registrada. Si no se pasó lista, tampoco habrá ausencias.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-historial">Ver el historial de un estudiante</a></li>
+      <li><a href="#c14">Capítulo 14, Conducta</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c11-estadisticas">
+    <h2>Consultar las estadísticas de asistencia</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver el porcentaje de asistencia de un grupo o de un estudiante en un rango de fechas.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú la muestra a quien tiene el permiso <span class="valor">asistencia.ver</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Estadísticas de Asistencia</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija un <span class="campo">Grupo</span>, o un estudiante en el campo de al lado. Uno de los dos.</li>
+      <li>Elija <span class="campo">Desde</span> y <span class="campo">Hasta</span>.</li>
+      <li>Pulse <span class="boton">Calcular</span>.</li>
+      <li>Para un grupo, la tabla trae por estudiante: presente, tarde, ausente, justificada y su porcentaje, con los botones <span class="boton">Historial</span> y <span class="boton">Ausencias</span>.</li>
+      <li>Para un estudiante, verá su porcentaje y, con <span class="boton">Historial completo</span>, cada registro.</li>
+    </ol>
+    <figure class="captura" data-captura="c11-02">
+      <figcaption>Estadísticas de asistencia de un grupo de ejemplo en un mes: porcentaje general arriba y la tabla por estudiante con sus cuatro columnas de estado.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>El porcentaje cuenta presentes y llegadas tarde sobre los registros marcados. Use <span class="boton">Imprimir</span> para llevarlo en papel.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Elija un grupo o un estudiante»: falta elegir uno de los dos.</li>
+      <li>«No hay asistencia marcada en ese rango.»: amplíe las fechas o confirme que se pasó lista.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-ausencias">Consultar las ausencias de un grupo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c11-historial">
+    <h2>Ver el historial de un estudiante</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver cada registro de asistencia de un estudiante, del más reciente al más antiguo.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada que llegue desde las consultas de asistencia.</p>
+
+    <h3>Dónde está</h3>
+    <p>Botón <span class="boton">Historial</span> en Reporte de Ausencias o en Estadísticas de Asistencia. La ficha del estudiante también muestra su asistencia (<a href="#c07">capítulo 7</a>).</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Historial</span> junto al estudiante, o en la pantalla de historial elija el <span class="campo">Estudiante</span>.</li>
+      <li>Si quiere, limite por <span class="campo">Grupo</span> y por fechas con <span class="campo">Desde</span> y <span class="campo">Hasta</span>.</li>
+      <li>Pulse <span class="boton">Ver historial</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Verá su porcentaje de asistencia, los totales por estado y la lista con fecha, materia, grupo, estado y justificación u observación. <span class="boton">Imprimir</span> lo saca en papel, por ejemplo para una reunión con la familia.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay asistencia registrada para este estudiante en ese rango.»: amplíe las fechas.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c11-estadisticas">Consultar las estadísticas de asistencia</a></li>
+    </ul>
+  </section>
+</section>

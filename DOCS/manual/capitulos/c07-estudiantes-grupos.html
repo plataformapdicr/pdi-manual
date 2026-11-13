@@ -1,0 +1,674 @@
+<section class="capitulo" id="c07" data-codigo="C07" data-titulo="Estudiantes y grupos">
+  <h1>Estudiantes y grupos</h1>
+  <p class="resumen">Cómo consultar y mantener los datos de los estudiantes, importar una lista desde Excel y organizar los grupos de estudiantes. Incluye las asignaciones, las materias de cada grupo y las consultas de estadísticas y exportación.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead><tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#c07-buscar-estudiantes">Buscar estudiantes</a></td><td>Permiso estudiantes.ver</td><td><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span></td></tr>
+        <tr><td><a href="#c07-ficha">Consultar la ficha del estudiante</a></td><td>Permiso estudiantes.ver; matrícula exige además matricula.ver</td><td>Lista de estudiantes, nombre del estudiante</td></tr>
+        <tr><td><a href="#c07-crear-estudiante">Crear un estudiante</a></td><td>Permiso estudiantes.crear</td><td><span class="boton">Nuevo Estudiante</span></td></tr>
+        <tr><td><a href="#c07-editar-estudiante">Editar los datos de un estudiante</a></td><td>Permiso estudiantes.editar</td><td>Ficha, <span class="boton">Editar información</span></td></tr>
+        <tr><td><a href="#c07-estado-estudiantes">Activar o desactivar estudiantes</a></td><td>Permiso estudiantes.editar</td><td>Casillas de la lista de estudiantes</td></tr>
+        <tr><td><a href="#c07-eliminar-estudiantes">Eliminar uno o varios estudiantes</a></td><td>Permiso estudiantes.eliminar</td><td>Lista, <span class="boton">Eliminar</span> o selección de filas</td></tr>
+        <tr><td><a href="#c07-importar">Importar estudiantes desde Excel</a></td><td>Permiso estudiantes.importar; plantilla con estudiantes.exportar</td><td><span class="boton">Importar Excel</span></td></tr>
+        <tr><td><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></td><td>Permisos grupos_estudiantes.ver y .ver_detalles</td><td><span class="ruta">Configuración › Estudiantes › Grupos de Estudiantes</span></td></tr>
+        <tr><td><a href="#c07-crear-grupo">Crear un grupo de estudiantes</a></td><td>Permiso grupos_estudiantes.crear</td><td>Lista de grupos, <span class="boton">Nuevo Grupo</span></td></tr>
+        <tr><td><a href="#c07-editar-grupo">Editar un grupo de estudiantes</a></td><td>Permiso grupos_estudiantes.editar</td><td>Detalle del grupo, <span class="boton">Editar</span></td></tr>
+        <tr><td><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></td><td>Permiso grupos_estudiantes.asignar_estudiantes para abrir la pantalla</td><td>Detalle, <span class="boton">Asignar estudiantes</span></td></tr>
+        <tr><td><a href="#c07-quitar-estudiantes">Quitar estudiantes de un grupo</a></td><td>Depende del recorrido; vea la tarea</td><td>Detalle o pantalla de asignaciones</td></tr>
+        <tr><td><a href="#c07-materias">Asociar o quitar materias del grupo</a></td><td>Sesión iniciada; detalle con grupos_estudiantes.ver_detalles</td><td>Detalle, pestaña <span class="boton">Materias</span></td></tr>
+        <tr><td><a href="#c07-eliminar-grupo">Eliminar un grupo de estudiantes</a></td><td>Permiso grupos_estudiantes.eliminar</td><td>Detalle, <span class="boton">Eliminar</span></td></tr>
+        <tr><td><a href="#c07-estadisticas">Consultar las estadísticas de grupos</a></td><td>Permiso grupos_estudiantes.ver_estadisticas</td><td>Lista de grupos, <span class="boton">Estadísticas</span></td></tr>
+        <tr><td><a href="#c07-exportar">Exportar grupos o sus estudiantes</a></td><td>Permiso grupos_estudiantes.exportar para grupos; estudiantes del grupo con sesión</td><td><span class="boton">Exportar Excel</span> o <span class="boton">Exportar estudiantes</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>Revise la institución activa y el período de trabajo. Los permisos permiten abrir las tareas, pero los estudiantes y grupos disponibles también dependen de las asignaciones del profesor o de los grupos que puede consultar el coordinador. Si no encuentra un registro, revise ambos requisitos con la administración.</p>
+    <p>El campo de texto <span class="campo">Grupos</span> del estudiante no lo asigna a un grupo de estudiantes. Las asignaciones se hacen desde el grupo. Del mismo modo, crear al estudiante no formaliza una matrícula: el empadronamiento se explica en <a href="#c08">el capítulo 8, Empadronamiento</a>, y la matrícula en <a href="#c09">el capítulo 9, Matrícula</a>.</p>
+    <p>Un grupo de estudiantes puede representar una sección o reunir estudiantes de una materia. La <span class="campo">Capacidad Máxima</span> limita cuántos estudiantes puede recibir; si no se establece, queda sin límite. Consulte los términos de estructura académica en el <a href="#c19">glosario</a>.</p>
+    <aside class="nota">
+      <p>Los botones visibles pueden llevar a tareas que exigen otro permiso. Si recibe acceso denegado, solicite a la administración que revise el permiso de esa tarea.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c07-buscar-estudiantes">
+    <h2>Buscar estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para localizar estudiantes por sus datos y consultar los registros activos o históricos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el permiso <span class="valor">estudiantes.ver</span>. La lista muestra los estudiantes que el usuario puede consultar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija <span class="campo">Período Académico</span> o <span class="valor">Todos los períodos</span>.</li>
+      <li>Elija <span class="valor">Activos</span>, <span class="valor">Inactivos</span> o <span class="valor">Todos (histórico)</span> en <span class="campo">Estado</span>.</li>
+      <li>Elija <span class="campo">Año</span> si necesita limitarlo.</li>
+      <li>Pulse <span class="boton">Aplicar filtros</span>.</li>
+      <li>Escriba un nombre, apellido, cédula, correo o institución en <span class="campo">Búsqueda rápida</span>.</li>
+      <li>Pulse el nombre del estudiante o el icono <span class="boton">Ver detalles</span> para abrir su ficha.</li>
+    </ol>
+    <figure class="captura" data-captura="c07-01">
+      <figcaption>Gestión de Estudiantes con Estudiante Ejemplo Uno y Estudiante Ejemplo Dos, uno activo y otro inactivo. Resaltar Búsqueda rápida, Período Académico, Estado, Aplicar filtros y las casillas de selección, con identificaciones y correos inventados.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Los filtros cargan la lista. La búsqueda rápida reduce las filas que ya están en ella y muestra cuántas coinciden. Al entrar por primera vez se aplica el período de trabajo cuando está disponible. <span class="boton">Limpiar</span> vuelve a esa consulta inicial; para buscar en el histórico, elija expresamente <span class="valor">Todos los períodos</span> y aplique los filtros.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No encuentra al estudiante: quite el texto de búsqueda y revise período académico, año y estado.</li>
+      <li>El estudiante sigue sin aparecer al consultar todos los períodos: solicite revisar la institución activa y los grupos que puede consultar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-ficha">Consultar la ficha del estudiante</a></li>
+      <li><a href="#c07-estado-estudiantes">Activar o desactivar estudiantes</a></li>
+      <li><a href="#c07-importar">Importar estudiantes desde Excel</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-ficha">
+    <h2>Consultar la ficha del estudiante</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar la información del estudiante y lo que se muestra de sus grupos, horario, asistencia, matrículas y evaluaciones.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.ver</span> y pueda consultar al estudiante. <span class="valor">Matrículas</span> se muestra con <span class="valor">matricula.ver</span> o al Super Administrador.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span>, nombre del estudiante.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra la ficha del estudiante.</li>
+      <li>Compruebe el nombre, <span class="valor">Número de ID</span> y estado de la cabecera.</li>
+      <li>Pulse <span class="boton">Información</span>, <span class="boton">Grupos y horario</span>, <span class="boton">Asistencia</span>, <span class="boton">Matrículas</span> o <span class="boton">Evaluaciones</span> para ir a la sección disponible que desea consultar.</li>
+      <li>Pulse <span class="boton">Volver a estudiantes</span> para regresar.</li>
+    </ol>
+    <table>
+      <caption>Lo que se ve en la ficha</caption>
+      <thead><tr><th>Sección</th><th>Información visible</th></tr></thead>
+      <tbody>
+        <tr><td><span class="valor">Información del estudiante</span></td><td>Correo, institución, texto de grupos, año y período académico.</td></tr>
+        <tr><td><span class="valor">Grupos y horario</span></td><td>Grupos con asignación activa, materias y profesores disponibles, y horario semanal del período académico más reciente de esos grupos. Los choques de horario se señalan. Las tareas de horario están en <a href="#c10">el capítulo 10, Horarios</a>.</td></tr>
+        <tr><td><span class="valor">Asistencia y ausencias</span></td><td>Resumen de asistencia, ausencias sin justificar, justificadas, llegadas tarde y presentes; lista de ausencias y resumen por materia. Las tareas están en <a href="#c11">el capítulo 11, Asistencia</a>.</td></tr>
+        <tr><td><span class="valor">Matrículas</span></td><td>Número, condición de matrícula, curso lectivo o período académico, fecha, nivel o carrera, sección o bloque y estado. Las tareas están en <a href="#c09">el capítulo 9, Matrícula</a>.</td></tr>
+        <tr><td><span class="valor">Historial de evaluaciones</span></td><td>Rúbrica, fecha, persona que evaluó y puntos, de la evaluación más reciente a la más antigua. Las tareas están en <a href="#c13">el capítulo 13, Evaluaciones y cuaderno calificador</a>.</td></tr>
+      </tbody>
+    </table>
+    <figure class="captura" data-captura="c07-02">
+      <figcaption>Ficha de Estudiante Ejemplo Uno con los enlaces Información, Grupos y horario, Asistencia, Matrículas y Evaluaciones. Mostrar un horario y una matrícula inventados; resaltar la navegación y el estado del estudiante.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Los enlaces desplazan la ficha hasta la sección elegida. Esta consulta no modifica la matrícula, el horario ni la asistencia.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No aparece <span class="valor">Matrículas</span>: revise el permiso de consulta de matrícula con la administración.</li>
+      <li>No se muestran grupos u horario: no hay asignaciones activas o los grupos no tienen lecciones activas.</li>
+      <li>No aparece asistencia: no hay registros disponibles para el estudiante en los grupos del período que consulta esa sección.</li>
+      <li>La ficha no abre: vuelva a la lista; el registro puede no estar disponible para su usuario.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-editar-estudiante">Editar los datos de un estudiante</a></li>
+      <li><a href="#c09">Capítulo 9, Matrícula</a></li>
+      <li><a href="#c10">Capítulo 10, Horarios</a></li>
+      <li><a href="#c11">Capítulo 11, Asistencia</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-crear-estudiante">
+    <h2>Crear un estudiante</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para completar el formulario de datos básicos del estudiante. El empadronamiento completo y la matrícula tienen sus propios recorridos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.crear</span>. La búsqueda de cédula requiere además <span class="valor">estudiantes.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span>, botón <span class="boton">Nuevo Estudiante</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Nuevo Estudiante</span>.</li>
+      <li>Escriba <span class="campo">Número de ID</span>.</li>
+      <li>Pulse <span class="boton">Buscar</span> si desea consultar la cédula y completar los nombres.</li>
+      <li>Revise o escriba <span class="campo">Nombre</span> y <span class="campo">Apellido(s)</span>.</li>
+      <li>Escriba <span class="campo">Dirección de correo</span> e <span class="campo">Institución</span>.</li>
+      <li>Complete <span class="campo">Grupos</span> si necesita conservar una referencia escrita.</li>
+      <li>Complete <span class="campo">Año</span> y elija el período académico en la lista que ofrece <span class="valor">Seleccionar período académico</span>.</li>
+      <li>Pulse <span class="boton">Guardar Estudiante</span>.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>Si PDI acepta los datos y completa el guardado, vuelve a la lista con «Estudiante creado exitosamente.». Si encuentra un error, conserva el formulario para corregirlo. Después de guardar, compruebe el resultado en la lista antes de repetir el alta.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«El servicio de búsqueda de cédula no está habilitado»: complete los datos manualmente.</li>
+      <li>«La dirección de correo no es válida»: corrija <span class="campo">Dirección de correo</span>.</li>
+      <li>«El año debe estar entre 2020 y 2035»: revise <span class="campo">Año</span>; si el valor ya está en ese intervalo y el error continúa, comuníquelo a la administración.</li>
+      <li>El aviso indica que ya existe ese número de ID o correo: busque al estudiante existente antes de volver a crearlo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-editar-estudiante">Editar los datos de un estudiante</a></li>
+      <li><a href="#c08">Capítulo 8, Empadronamiento</a></li>
+      <li><a href="#c09">Capítulo 9, Matrícula</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-editar-estudiante">
+    <h2>Editar los datos de un estudiante</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para corregir los datos básicos del estudiante y mantener el tipo de adecuación que figura en su registro.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.editar</span> y pueda modificar al estudiante. Un coordinador puede consultar estudiantes de los grupos que gestiona, pero para modificarlos se limita a sus grupos propios.</p>
+    <h3>Dónde está</h3>
+    <p>Ficha del estudiante, <span class="boton">Editar información</span>. También puede usar el icono <span class="boton">Editar</span> de la lista.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="boton">Editar información</span>.</li>
+      <li>Corrija <span class="campo">Nombre</span>, <span class="campo">Apellido(s)</span>, <span class="campo">Número de ID</span> o <span class="campo">Dirección de correo</span>, según lo que necesite actualizar.</li>
+      <li>Revise <span class="campo">Institución</span>, <span class="campo">Grupos</span> y <span class="campo">Año</span>.</li>
+      <li>Elija el período académico en la lista que ofrece <span class="valor">Seleccionar período académico</span>.</li>
+      <li>Revise <span class="campo">Tipo de Adecuación</span> si necesita cambiarlo.</li>
+      <li>Escriba <span class="campo">Detalles / Observaciones</span> si corresponde.</li>
+      <li>Pulse <span class="boton">Actualizar Cambios</span>.</li>
+      <li>Compruebe los datos y el estado en la lista.</li>
+    </ol>
+    <p>Para activar o desactivar al estudiante, use <a href="#c07-estado-estudiantes">las acciones de selección de la lista</a>. Cambiar el texto <span class="campo">Grupos</span> no cambia sus asignaciones.</p>
+    <figure class="captura" data-captura="c07-03">
+      <figcaption>Edición de Estudiante Ejemplo Uno con datos inventados. Resaltar Nombre, Apellido(s), Dirección de correo, Tipo de Adecuación, Detalles / Observaciones y Actualizar Cambios.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Si el guardado se completa, PDI vuelve a la lista con «Estudiante actualizado exitosamente.». Abra de nuevo la ficha para comprobar la información.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«La dirección de correo no es válida»: revise el correo.</li>
+      <li>El aviso indica que ya existe el número de ID o correo: compruebe que está editando al estudiante correcto.</li>
+      <li>La edición no abre: el registro puede estar fuera de los grupos que puede modificar; solicite la revisión de la administración.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-ficha">Consultar la ficha del estudiante</a></li>
+      <li><a href="#c07-estado-estudiantes">Activar o desactivar estudiantes</a></li>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-estado-estudiantes">
+    <h2>Activar o desactivar estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para cambiar el estado de uno o varios estudiantes conservando su historial de evaluaciones y notas.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.editar</span>. La lista se abre con <span class="valor">estudiantes.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span>, casillas de las filas.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Filtre la lista y busque los estudiantes que desea cambiar.</li>
+      <li>Marque sus casillas. <span class="campo">Seleccionar todos</span> marca las filas visibles.</li>
+      <li>Revise la cantidad de estudiantes seleccionados.</li>
+      <li>Pulse <span class="boton">Desactivar seleccionados</span> o <span class="boton">Activar seleccionados</span>.</li>
+      <li>Revise la confirmación.</li>
+      <li>Pulse <span class="boton">Confirmar</span> o <span class="boton">Cancelar</span>.</li>
+    </ol>
+    <aside class="aviso">
+      <p>Antes de confirmar, revise siempre el contador. La búsqueda rápida desmarca las filas que deja ocultas; vuelva a marcar los estudiantes si cambia la búsqueda.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>La lista vuelve a cargar y muestra cuántos estudiantes cambiaron de estado. La desactivación conserva el historial. Si está filtrando solo activos, los desactivados dejan de aparecer; elija <span class="valor">Inactivos</span> o <span class="valor">Todos (histórico)</span> para encontrarlos y reactivarlos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La barra de acciones no aparece: marque al menos una casilla.</li>
+      <li>«No seleccionó ningún estudiante.»: vuelva a marcar las filas que desea cambiar.</li>
+      <li>El aviso indica que ya estaban en ese estado: no había cambios por realizar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-buscar-estudiantes">Buscar estudiantes</a></li>
+      <li><a href="#c07-eliminar-estudiantes">Eliminar uno o varios estudiantes</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-eliminar-estudiantes">
+    <h2>Eliminar uno o varios estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para borrar registros de estudiantes que deban eliminarse. Si necesita conservar su historial, use la desactivación.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.eliminar</span>. La lista requiere <span class="valor">estudiantes.ver</span>; la eliminación individual también comprueba que pueda modificar al estudiante.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Lista de Estudiantes</span>, icono <span class="boton">Eliminar</span> o casillas de selección.</p>
+    <h3>Pasos</h3>
+    <h4>Un estudiante</h4>
+    <ol>
+      <li>Pulse <span class="boton">Eliminar</span> en la fila del estudiante.</li>
+      <li>Compruebe el nombre y la identificación de la confirmación.</li>
+      <li>Marque <span class="campo">Confirmo que deseo eliminar este estudiante permanentemente</span>.</li>
+      <li>Pulse <span class="boton">Confirmar Eliminación</span>.</li>
+      <li>Confirme también <span class="boton">Sí, eliminar</span> en el aviso adicional.</li>
+    </ol>
+    <h4>Varios estudiantes</h4>
+    <ol>
+      <li>Marque las casillas de los estudiantes en la lista.</li>
+      <li>Revise el contador de estudiantes seleccionados después de aplicar la búsqueda rápida.</li>
+      <li>Pulse <span class="boton">Eliminar</span>, que muestra entre paréntesis la cantidad seleccionada.</li>
+      <li>Revise la confirmación y pulse <span class="boton">Eliminar Estudiantes</span>.</li>
+    </ol>
+    <aside class="aviso">
+      <p>El borrado de estudiantes es permanente. <span class="boton">Cancelar</span> permite salir de la confirmación sin eliminar. Los estudiantes con evaluaciones asociadas se conservan; puede desactivarlos.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>La eliminación individual vuelve a la lista con «Estudiante eliminado exitosamente.». En una selección, PDI informa cuántos eliminó y cuántos conservó por tener evaluaciones asociadas. Revise el resultado antes de repetir la operación.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="boton">Confirmar Eliminación</span> está desactivado: marque la casilla de confirmación.</li>
+      <li>«No se puede eliminar el estudiante porque tiene evaluaciones asociadas.»: use la desactivación para conservar el historial.</li>
+      <li>El aviso indica que ninguno de los seleccionados pudo eliminarse por sus evaluaciones: use <span class="boton">Desactivar seleccionados</span>.</li>
+      <li>«No seleccionó ningún estudiante para eliminar.»: marque las filas y vuelva a revisar el contador.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-estado-estudiantes">Activar o desactivar estudiantes</a></li>
+      <li><a href="#c07-ficha">Consultar la ficha del estudiante</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-importar">
+    <h2>Importar estudiantes desde Excel</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para cargar varios estudiantes desde un archivo y asociar sus registros al período académico indicado.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.importar</span>. <span class="boton">Descargar plantilla de ejemplo</span> exige además <span class="valor">estudiantes.exportar</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de estudiantes, botón <span class="boton">Importar Excel</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Importar Excel</span>.</li>
+      <li>Pulse <span class="boton">Descargar plantilla de ejemplo</span> si necesita preparar el archivo.</li>
+      <li>Reemplace la fila de ejemplo por los estudiantes que desea importar.</li>
+      <li>Conserve en la primera hoja las seis columnas, en este orden: <span class="valor">Nombre</span>, <span class="valor">Apellido(s)</span>, <span class="valor">Número de ID</span>, <span class="valor">Dirección de correo</span>, <span class="valor">Institución</span> y <span class="valor">Grupos</span>. Mantenga los encabezados en la primera fila.</li>
+      <li>Guarde el archivo como .xlsx.</li>
+      <li>Pulse la zona de carga y elija el archivo mediante <span class="campo">Seleccionar archivo Excel</span>.</li>
+      <li>Elija <span class="campo">Período Académico *</span>. El año se toma de ese período académico.</li>
+      <li>Pulse <span class="boton">Importar Estudiantes</span>.</li>
+      <li>Revise la cantidad importada y compruebe los estudiantes en la lista.</li>
+    </ol>
+    <p>Las primeras cinco columnas deben tener datos en cada fila. La columna <span class="valor">Grupos</span> puede quedar sin texto, pero debe existir; no crea asignaciones de estudiantes a grupos.</p>
+    <figure class="captura" data-captura="c07-04">
+      <figcaption>Importar Estudiantes desde Excel con un archivo llamado estudiantes-ejemplo.xlsx y un período académico de ejemplo. Resaltar Descargar plantilla de ejemplo, la zona de carga, Período Académico e Importar Estudiantes; usar únicamente estudiantes inventados.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Si la importación termina, vuelve a la lista con «Importación completada. [cantidad] estudiantes importados.». Los números de ID que ya existen se omiten y pueden aparecer advertencias. Compare la cantidad importada con el archivo y revise el resultado.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="boton">Importar Estudiantes</span> está desactivado: elija un archivo.</li>
+      <li>El aviso solicita un período académico: elíjalo antes de importar.</li>
+      <li>El aviso exige al menos seis columnas: conserve también <span class="valor">Grupos</span>, aunque sus filas estén vacías.</li>
+      <li>La cantidad importada es menor que la esperada: revise identificaciones ya existentes, datos obligatorios y correos del archivo; compruebe la lista antes de repetir.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-buscar-estudiantes">Buscar estudiantes</a></li>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c08">Capítulo 8, Empadronamiento</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-buscar-grupos">
+    <h2>Buscar grupos y consultar su detalle</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para localizar grupos de estudiantes y revisar su cupo, estado, estudiantes y materias asociadas.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>La lista exige <span class="valor">grupos_estudiantes.ver</span>; el detalle exige <span class="valor">grupos_estudiantes.ver_detalles</span>. Los grupos disponibles dependen de los que el usuario puede consultar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estudiantes › Grupos de Estudiantes</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise <span class="campo">Período Académico</span>.</li>
+      <li>Elija <span class="campo">Estado</span> si necesita limitar la consulta.</li>
+      <li>Escriba <span class="campo">Código</span> o <span class="campo">Nombre</span> para buscar un grupo.</li>
+      <li>Marque <span class="campo">Solo grupos con capacidad disponible</span> si necesita ver grupos con cupo.</li>
+      <li>Pulse <span class="boton">Buscar</span>.</li>
+      <li>Pulse el icono <span class="boton">Ver detalles</span> del grupo.</li>
+      <li>Abra <span class="boton">Estudiantes</span> o <span class="boton">Materias</span> para consultar las listas. Cada pestaña muestra su cantidad.</li>
+    </ol>
+    <p>Puede alternar <span class="boton">Vista de tarjetas</span> y <span class="boton">Vista de tabla</span>. Use los números de página para recorrer los resultados.</p>
+    <figure class="captura" data-captura="c07-05">
+      <figcaption>Grupos de Estudiantes con dos grupos de ejemplo, uno con cupo y otro completo. Resaltar Código, Nombre, Solo grupos con capacidad disponible, Buscar, las dos vistas y Ver detalles.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El detalle muestra código, nombre, período académico, tipo, estado, cupo y listas de estudiantes y materias. Los estudiantes de la lista tienen una asignación activa; puede verse si la asignación es principal o secundaria.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No se encontraron grupos</span>: cambie los filtros o pulse <span class="boton">Limpiar filtros</span> si aparece.</li>
+      <li>El grupo no aparece: revise el período de trabajo, la institución activa y las asignaciones de su usuario.</li>
+      <li>El detalle no abre aunque ve el grupo: solicite revisar el permiso de detalle.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-crear-grupo">Crear un grupo de estudiantes</a></li>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c07-exportar">Exportar grupos o sus estudiantes</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-crear-grupo">
+    <h2>Crear un grupo de estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para definir un grupo de estudiantes con su tipo, período académico, cupo y materias.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">grupos_estudiantes.crear</span>. La consulta del detalle al terminar exige <span class="valor">grupos_estudiantes.ver_detalles</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de grupos, botón <span class="boton">Nuevo Grupo</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Nuevo Grupo</span>.</li>
+      <li>Escriba <span class="campo">Código del Grupo</span>.</li>
+      <li>Escriba <span class="campo">Nombre del Grupo</span>.</li>
+      <li>Elija <span class="campo">Tipo de Grupo</span>.</li>
+      <li>Complete <span class="campo">Nivel Académico</span> si corresponde.</li>
+      <li>Elija <span class="campo">Período Académico</span>.</li>
+      <li>Indique <span class="campo">Capacidad Máxima</span> si desea fijar un cupo; vacía, queda sin límite.</li>
+      <li>Revise <span class="campo">Institución</span>, si la pantalla ofrece una elección.</li>
+      <li>Complete <span class="campo">Descripción</span> y <span class="campo">Observaciones</span> si necesita dejar información adicional.</li>
+      <li>Marque las materias de <span class="campo">Materias Asociadas (Opcional)</span> que correspondan.</li>
+      <li>Pulse <span class="boton">Crear Grupo</span>.</li>
+    </ol>
+    <p>Si desea una propuesta de nombre, complete primero código, tipo y nivel, y pulse <span class="boton">Auto-generar Nombre</span>. Revise la propuesta antes de guardar.</p>
+    <figure class="captura" data-captura="c07-06">
+      <figcaption>Crear Nuevo Grupo con código EJ-01, nombre Grupo de Ejemplo y un período académico inventado. Resaltar Tipo de Grupo, Capacidad Máxima, las materias opcionales y Crear Grupo.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El grupo se crea activo y aparece «Grupo creado exitosamente». PDI abre su detalle. Revise las materias y asigne los estudiantes que correspondan.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El aviso solicita un tipo de grupo y un período académico disponibles: pida a la administración que los configure o habilite.</li>
+      <li>«Ya existe un grupo con este código en el período académico seleccionado»: cambie el código o revise el grupo existente.</li>
+      <li>No puede guardar sin código, nombre, tipo o período académico: complete los campos señalados.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c07-materias">Asociar o quitar materias del grupo</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-editar-grupo">
+    <h2>Editar un grupo de estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para corregir el código, nombre, tipo, nivel, cupo y notas del grupo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">grupos_estudiantes.editar</span> y pueda modificar el grupo. El coordinador se limita a sus grupos propios para los cambios.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle del grupo, botón <span class="boton">Editar</span>, o icono <span class="boton">Editar</span> de la lista.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Editar</span>.</li>
+      <li>Corrija <span class="campo">Código del Grupo</span> y <span class="campo">Nombre del Grupo</span>, si corresponde.</li>
+      <li>Revise <span class="campo">Tipo de Grupo</span> y <span class="campo">Nivel Académico</span>.</li>
+      <li>Modifique <span class="campo">Capacidad Máxima</span> si necesita cambiar el cupo.</li>
+      <li>Actualice <span class="campo">Descripción</span> y <span class="campo">Observaciones</span>, si corresponde.</li>
+      <li>Pulse <span class="boton">Guardar Cambios</span>.</li>
+      <li>Compruebe el resultado en el detalle.</li>
+    </ol>
+    <p>Use <span class="boton">Restablecer</span> si quiere recuperar los valores con los que abrió el formulario; confirme también <span class="boton">Restablecer</span> en el aviso. Para cambiar las materias, use la gestión del detalle indicada en la tarea relacionada.</p>
+    <h3>Qué pasa después</h3>
+    <p>PDI vuelve al detalle con «Grupo actualizado exitosamente». El nuevo cupo no puede ser menor que la cantidad de estudiantes ya asignados.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El aviso indica que la capacidad no puede ser menor que los estudiantes asignados: aumente el cupo o revise primero las asignaciones.</li>
+      <li>El código ya existe en el período académico: use un código diferente.</li>
+      <li>«Grupo no encontrado»: vuelva a la lista y solicite revisar si puede modificar ese grupo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-materias">Asociar o quitar materias del grupo</a></li>
+      <li><a href="#c07-quitar-estudiantes">Quitar estudiantes de un grupo</a></li>
+      <li><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-asignar-estudiantes">
+    <h2>Asignar estudiantes a un grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para incorporar estudiantes a un grupo, individualmente o mediante una selección.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Abrir la pantalla exige <span class="valor">grupos_estudiantes.asignar_estudiantes</span>. Las acciones de asignación dentro de ella solo piden sesión iniciada y que pueda modificar el grupo; el menú muestra <span class="ruta">Grupos de Estudiantes</span> con <span class="valor">grupos_estudiantes.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle del grupo, <span class="boton">Asignar estudiantes</span>. También está el icono del mismo nombre en la lista.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Asignar estudiantes</span>.</li>
+      <li>Revise <span class="valor">Espacios libres</span> y <span class="valor">Capacidad máxima</span>.</li>
+      <li>Escriba en <span class="campo">Buscar por nombre, identificación o correo</span>, dentro de <span class="valor">Estudiantes disponibles</span>.</li>
+      <li>Pulse el icono <span class="boton">Asignar estudiante</span> de una fila para asignar solo a esa persona.</li>
+    </ol>
+    <h4>Asignar varios</h4>
+    <ol>
+      <li>Marque las casillas de los estudiantes disponibles, o pulse <span class="boton">Seleccionar visibles</span>.</li>
+      <li>Revise el contador; pulse <span class="boton">Deseleccionar</span> si necesita vaciar la selección.</li>
+      <li>Pulse <span class="boton">Asignar seleccionados</span>, que muestra la cantidad marcada.</li>
+      <li>Revise los nombres en la confirmación.</li>
+      <li>Pulse <span class="boton">Asignar</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c07-07">
+      <figcaption>Asignar Estudiantes con Estudiante Ejemplo Uno disponible y Estudiante Ejemplo Dos asignado, usando identificaciones inventadas. Resaltar los dos buscadores, Espacios libres, Seleccionar visibles, Asignar seleccionados y Desasignar seleccionados.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El estudiante pasa de <span class="valor">Estudiantes disponibles</span> a <span class="valor">Estudiantes asignados</span> y se actualiza el cupo libre. Se muestra el resultado de la asignación. Las listas se vuelven a cargar después de cada operación.</p>
+    <p>La lista de disponibles corresponde al período académico del grupo y excluye a quienes ya tienen una asignación activa en él. La búsqueda oculta y desmarca las filas que no coinciden.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«La selección supera los espacios disponibles. Reduzca la selección o modifique la capacidad del grupo.»: marque menos estudiantes o revise el cupo.</li>
+      <li>El grupo alcanzó su capacidad máxima: libere cupo o modifique su capacidad antes de asignar más estudiantes.</li>
+      <li>No encuentra al estudiante: revise el período académico de su registro y si ya está asignado al grupo.</li>
+      <li>«No hay coincidencias. Cambie o limpie la búsqueda.»: cambie el texto del buscador de ese panel.</li>
+      <li>«No se pudo cargar la lista.»: pulse <span class="boton">Reintentar carga</span> si aparece.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-quitar-estudiantes">Quitar estudiantes de un grupo</a></li>
+      <li><a href="#c07-editar-grupo">Editar un grupo de estudiantes</a></li>
+      <li><a href="#c09">Capítulo 9, Matrícula</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-quitar-estudiantes">
+    <h2>Quitar estudiantes de un grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para retirar la asignación de un estudiante a un grupo conservando el registro del estudiante.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Desde el detalle, quitar uno exige <span class="valor">grupos_estudiantes.desasignar_estudiantes</span> y abrir el detalle exige <span class="valor">grupos_estudiantes.ver_detalles</span>. Quitar varios desde el detalle solo pide sesión iniciada y que pueda modificar el grupo; el menú de grupos se muestra con <span class="valor">grupos_estudiantes.ver</span>. Desde la pantalla de asignaciones, la retirada individual o múltiple solo pide sesión y acceso para modificar el grupo, pero abrir esa pantalla exige <span class="valor">grupos_estudiantes.asignar_estudiantes</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle del grupo, pestaña <span class="boton">Estudiantes</span>, o pantalla <span class="valor">Asignar Estudiantes</span>, panel <span class="valor">Estudiantes asignados</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Desde la pantalla de asignaciones</h4>
+    <ol>
+      <li>Busque al estudiante en <span class="valor">Estudiantes asignados</span>.</li>
+      <li>Pulse el icono <span class="boton">Desasignar estudiante</span>, o marque varias filas y pulse <span class="boton">Desasignar seleccionados</span>.</li>
+      <li>Revise los nombres de la confirmación.</li>
+      <li>Escriba <span class="campo">Motivo (opcional)</span> si la confirmación lo ofrece y desea indicarlo.</li>
+      <li>Pulse <span class="boton">Desasignar</span>.</li>
+    </ol>
+    <h4>Desde el detalle</h4>
+    <ol>
+      <li>Abra la pestaña <span class="boton">Estudiantes</span>.</li>
+      <li>Pulse <span class="boton">Desasignar estudiante</span> en una fila, o marque varias filas y pulse <span class="boton">Desasignar seleccionados</span>, que muestra la cantidad marcada.</li>
+      <li>Revise la confirmación y complete <span class="campo">Motivo (opcional)</span> si lo desea.</li>
+      <li>Pulse <span class="boton">Desasignar</span>.</li>
+    </ol>
+    <aside class="nota">
+      <p>Para cambiar la sección de una matrícula formalizada, siga <a href="#c09">el capítulo 9, Matrícula</a>. Quitar una asignación de grupo no realiza por sí mismo ese cambio de matrícula.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>La asignación queda inactiva con fecha de retiro y el estudiante deja de aparecer en la lista activa del grupo. Se libera su cupo. Al quitar varios, el aviso puede informar resultados parciales; revise cuáles siguen asignados.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«El estudiante no está asignado a este grupo»: actualice la lista; la asignación pudo cambiar o no estar disponible para su usuario.</li>
+      <li>No se habilita la retirada de varios: marque al menos una fila del panel correspondiente.</li>
+      <li>El aviso informa errores en parte de la selección: compruebe los estudiantes que siguen asignados antes de repetir.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c07-eliminar-grupo">Eliminar un grupo de estudiantes</a></li>
+      <li><a href="#c09">Capítulo 9, Matrícula</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-materias">
+    <h2>Asociar o quitar materias del grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar qué materias están asociadas a un grupo de estudiantes y retirar las que ya no correspondan.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada puede ejecutar estas acciones si puede modificar el grupo; el menú solo muestra <span class="ruta">Grupos de Estudiantes</span> con <span class="valor">grupos_estudiantes.ver</span>. Para abrir el detalle se exige <span class="valor">grupos_estudiantes.ver_detalles</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle del grupo, pestaña <span class="boton">Materias</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Revisar la lista de materias</h4>
+    <ol>
+      <li>Abra <span class="boton">Materias</span>.</li>
+      <li>Pulse <span class="boton">Gestionar</span>, o <span class="boton">Asociar Materias</span> si todavía no tiene ninguna.</li>
+      <li>Espere a que aparezca la lista de <span class="valor">Materias Disponibles</span>.</li>
+      <li>Marque las materias que deben quedar asociadas y desmarque las que desea retirar.</li>
+      <li>Complete <span class="campo">Observaciones (Opcional)</span> si necesita una nota para las nuevas asociaciones.</li>
+      <li>Pulse <span class="boton">Guardar Cambios</span>.</li>
+    </ol>
+    <h4>Quitar una materia</h4>
+    <ol>
+      <li>Localice la materia en la pestaña <span class="boton">Materias</span>.</li>
+      <li>Pulse el icono <span class="boton">Desasociar materia</span>.</li>
+      <li>Revise la confirmación.</li>
+      <li>Pulse <span class="boton">Desasignar</span> para confirmar.</li>
+    </ol>
+    <figure class="captura" data-captura="c07-08">
+      <figcaption>Gestionar Materias del Grupo para Grupo de Ejemplo, con dos materias marcadas y una sin marcar. Resaltar las casillas, Observaciones (Opcional) y Guardar Cambios.</figcaption>
+    </figure>
+    <aside class="aviso">
+      <p>Al guardar se conserva la selección completa: las materias que deje sin marcar se retiran del grupo. Esta asociación no asigna por sí sola un profesor a la materia.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>El detalle se actualiza y muestra «Las materias del grupo se han actualizado correctamente.». Al quitar una materia individual aparece «Materia desasociada correctamente del grupo.». Las asociaciones retiradas quedan inactivas.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay materias disponibles para asociar.»: solicite revisar las materias activas de la institución.</li>
+      <li>No se carga la lista: pulse <span class="boton">Reintentar carga</span> si aparece.</li>
+      <li>«No se pudieron guardar las materias. Intente nuevamente.»: revise la selección y vuelva a guardar.</li>
+      <li>«La materia no está asociada a este grupo.»: actualice el detalle antes de intentar retirarla otra vez.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+      <li><a href="#c06">Capítulo 6, Profesores</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-eliminar-grupo">
+    <h2>Eliminar un grupo de estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para retirar un grupo del uso activo. La operación deja al grupo inactivo y desactiva sus asociaciones con materias.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">grupos_estudiantes.eliminar</span> y pueda modificar el grupo.</p>
+    <h3>Dónde está</h3>
+    <p>Detalle del grupo, <span class="boton">Eliminar</span>. En la lista se identifica como <span class="boton">Eliminar grupo</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise la pestaña <span class="boton">Estudiantes</span> del grupo.</li>
+      <li>Quite las asignaciones activas de estudiantes antes de continuar.</li>
+      <li>Pulse <span class="boton">Eliminar</span>.</li>
+      <li>Compruebe el código y nombre del grupo.</li>
+      <li>Escriba al menos diez caracteres en <span class="campo">Motivo de la eliminación *</span>.</li>
+      <li>Pulse <span class="boton">Confirmar Eliminación</span>.</li>
+      <li>Confirme también <span class="boton">Sí, eliminar</span> en el aviso adicional.</li>
+      <li>Revise la confirmación y pulse <span class="boton">Sí, eliminar</span>.</li>
+    </ol>
+    <aside class="aviso">
+      <p>No se retiran automáticamente los estudiantes: la operación se rechaza si queda alguno asignado. Antes de quitar asignaciones de una sección, revise si corresponde hacer un cambio o cierre de matrícula desde <a href="#c09">el capítulo 9, Matrícula</a>.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>PDI vuelve a la lista con «Grupo eliminado exitosamente». El grupo queda <span class="valor">Inactivo</span> y sus asociaciones activas con materias quedan inactivas. Si necesita consultarlo, busque por ese estado.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="boton">Confirmar Eliminación</span> está desactivado: complete un motivo de al menos diez caracteres.</li>
+      <li>«No se puede eliminar un grupo que tiene estudiantes asignados. Desasigne primero todos los estudiantes.»: revise las asignaciones antes de volver a intentar.</li>
+      <li>«Grupo no encontrado»: vuelva a la lista y compruebe si el grupo está disponible para su usuario.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-quitar-estudiantes">Quitar estudiantes de un grupo</a></li>
+      <li><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></li>
+      <li><a href="#c09">Capítulo 9, Matrícula</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-estadisticas">
+    <h2>Consultar las estadísticas de grupos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para consultar los resúmenes y distribuciones que presenta la pantalla de estadísticas.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">grupos_estudiantes.ver_estadisticas</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de grupos, botón <span class="boton">Estadísticas</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise el período de trabajo antes de abrir la consulta.</li>
+      <li>Pulse <span class="boton">Estadísticas</span>.</li>
+      <li>Revise los resúmenes de la cabecera y <span class="valor">Distribución por Tipo</span> y <span class="valor">Distribución por Estado</span>.</li>
+      <li>Consulte <span class="valor">Grupos con Más Estudiantes</span> y <span class="valor">Grupos Completos</span>.</li>
+      <li>Pulse <span class="boton">Volver a Grupos</span> para regresar a la lista.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>La pantalla presenta resúmenes y distribuciones. Al abrirse desde la lista usa el período de trabajo disponible; los demás filtros de la lista no se trasladan a esta consulta.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No hay datos para mostrar</span>: no hay información disponible para esa distribución.</li>
+      <li>«Error al cargar las estadísticas»: vuelva a la lista e inténtelo de nuevo.</li>
+      <li>Los valores no coinciden con una lista filtrada: esta pantalla no toma los filtros de código, nombre o estado de la lista.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></li>
+      <li><a href="#c07-exportar">Exportar grupos o sus estudiantes</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c07-exportar">
+    <h2>Exportar grupos o sus estudiantes</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para descargar un archivo Excel con los grupos consultados o con los estudiantes asignados a un grupo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Exportar la lista de grupos exige <span class="valor">grupos_estudiantes.exportar</span>. Cualquier usuario con sesión iniciada puede pedir la exportación de estudiantes de un grupo que pueda consultar; el menú solo muestra <span class="ruta">Grupos de Estudiantes</span> con <span class="valor">grupos_estudiantes.ver</span>. Abrir el detalle requiere <span class="valor">grupos_estudiantes.ver_detalles</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de grupos, <span class="boton">Exportar Excel</span>. Para los estudiantes de un grupo, use <span class="boton">Exportar estudiantes</span> en su fila o en el detalle.</p>
+    <h3>Pasos</h3>
+    <h4>Lista de grupos</h4>
+    <ol>
+      <li>Revise el período académico y los demás filtros de la lista.</li>
+      <li>Pulse <span class="boton">Buscar</span> para aplicar la consulta.</li>
+      <li>Pulse <span class="boton">Exportar Excel</span>.</li>
+      <li>Guarde el archivo .xlsx.</li>
+    </ol>
+    <h4>Estudiantes de un grupo</h4>
+    <ol>
+      <li>Localice el grupo que desea exportar.</li>
+      <li>Pulse <span class="boton">Exportar estudiantes</span>.</li>
+      <li>Guarde el archivo .xlsx.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>La exportación de grupos incluye código, nombre, tipo, nivel, cupo, cantidad de estudiantes, estado, período académico y fecha de creación. La exportación de estudiantes incluye identificación, nombre, correo, fecha de asignación, si la asignación es principal y estado. Se incluyen las asignaciones activas del grupo.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Error al exportar datos»: vuelva a la lista o al detalle e inténtelo de nuevo.</li>
+      <li>No puede descargar la lista de grupos: solicite revisar el permiso de exportación.</li>
+      <li>El archivo de estudiantes está vacío: compruebe si el grupo tiene asignaciones activas.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-buscar-grupos">Buscar grupos y consultar su detalle</a></li>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c07-estadisticas">Consultar las estadísticas de grupos</a></li>
+    </ul>
+  </section>
+</section>
