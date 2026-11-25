@@ -1,0 +1,535 @@
+<section class="capitulo" id="c15" data-codigo="C15" data-titulo="Reportes y exportaciones">
+  <h1>Reportes y exportaciones</h1>
+  <p class="resumen">Cómo consultar los resultados de las evaluaciones, revisar el trabajo de las escuelas o departamentos y detectar datos que faltan. También explica cómo preparar, revisar y descargar las notas para llevarlas a otro sistema.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#c15-centro-reportes">Elegir un reporte</a></td><td>Cualquier usuario con sesión iniciada; el menú depende del rol o de <span class="valor">reportes.ver_basicos</span></td><td><span class="ruta">Reportes › Centro de reportes</span></td></tr>
+        <tr><td><a href="#c15-arbol">Consultar y descargar el reporte en árbol</a></td><td>Cualquier usuario con sesión iniciada</td><td><span class="ruta">Reportes › Reporte en árbol</span></td></tr>
+        <tr><td><a href="#c15-resumen">Consultar el resumen de evaluaciones</a></td><td>Cualquier usuario con sesión iniciada</td><td><span class="ruta">Reportes › Dashboard general</span></td></tr>
+        <tr><td><a href="#c15-puntajes">Consultar y descargar los puntajes de las evaluaciones</a></td><td>Cualquier usuario con sesión iniciada</td><td><span class="ruta">Reportes › Reportes de evaluaciones</span></td></tr>
+        <tr><td><a href="#c15-coordinacion">Consultar el reporte de coordinación</a></td><td>Super Administrador, Administrador o Coordinador</td><td><span class="ruta">Reportes › Reporte de coordinación</span></td></tr>
+        <tr><td><a href="#c15-avance">Revisar qué falta por evaluar</a></td><td>Super Administrador, Administrador o Coordinador</td><td><span class="ruta">Reportes › Avance de evaluación</span></td></tr>
+        <tr><td><a href="#c15-carga">Revisar la carga de los profesores</a></td><td>Super Administrador, Administrador o Coordinador</td><td><span class="ruta">Reportes › Carga docente</span></td></tr>
+        <tr><td><a href="#c15-alertas">Consultar los estudiantes en alerta</a></td><td>Super Administrador, Administrador o Coordinador</td><td><span class="ruta">Reportes › Estudiantes en alerta</span></td></tr>
+        <tr><td><a href="#c15-comparativo">Comparar dos períodos académicos</a></td><td>Super Administrador, Administrador o Coordinador</td><td><span class="ruta">Reportes › Comparativo entre períodos</span></td></tr>
+        <tr><td><a href="#c15-calidad">Revisar la calidad de los datos</a></td><td>Super Administrador o Administrador</td><td><span class="ruta">Reportes › Calidad de los datos</span></td></tr>
+        <tr><td><a href="#c15-preparar-exportacion">Preparar una exportación de notas</a></td><td>Quien tenga <span class="valor">exportaciones.ver</span> y <span class="valor">exportaciones.crear</span></td><td><span class="ruta">Evaluación › Exportar calificaciones</span></td></tr>
+        <tr><td><a href="#c15-revisar-descargar">Revisar y descargar las notas</a></td><td>Quien tenga <span class="valor">exportaciones.crear</span></td><td>Asistente de exportación</td></tr>
+        <tr><td><a href="#c15-configuraciones-guardadas">Reutilizar o eliminar una configuración guardada</a></td><td>Quien tenga <span class="valor">exportaciones.ver</span> y <span class="valor">exportaciones.crear</span></td><td><span class="ruta">Evaluación › Exportar calificaciones</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>Compruebe la <strong>institución activa</strong> y los filtros antes de interpretar un reporte. Las pantallas no muestran siempre el mismo conjunto de datos: unas dependen de las materias que usted puede consultar y otras, de las escuelas o departamentos que coordina.</p>
+    <p>En los reportes de gestión, el encabezado muestra el nombre de la institución, el período académico y <span class="valor">Escuelas que usted coordina</span> o <span class="valor">Toda la institución</span>. Si aparece el campo <span class="campo">Institución</span>, compruebe también esa elección. El período académico de estos reportes se elige en su propio campo <span class="campo">Período</span>.</p>
+    <h3>Puntos y porcentajes</h3>
+    <p>Los reportes de evaluaciones, el resumen y el árbol muestran promedios de puntos; los borradores no entran en esos promedios. Para comparar estudiantes, elija una sola rúbrica: dos rúbricas pueden tener puntajes máximos diferentes.</p>
+    <p>Las alertas y el comparativo expresan el promedio como porcentaje del máximo de cada rúbrica. La exportación de notas permite convertir los puntos a un máximo elegido en <span class="campo">Sobre</span>.</p>
+    <h3>Qué descarga necesita</h3>
+    <table>
+      <caption>Diferencias entre las descargas</caption>
+      <thead>
+        <tr><th>Necesidad</th><th>Dónde resolverla</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Revisar materias, instrumentos de evaluación y rúbricas con sus cantidades y promedios</td><td><a href="#c15-arbol">Reporte en árbol</a>, en Excel o CSV</td></tr>
+        <tr><td>Obtener el detalle de puntajes por estudiante y rúbrica</td><td><a href="#c15-puntajes">Reportes de evaluaciones</a>, en CSV</td></tr>
+        <tr><td>Llevar notas a Moodle o preparar columnas de notas en CSV o Excel</td><td><a href="#c15-preparar-exportacion">Asistente de exportación</a></td></tr>
+      </tbody>
+    </table>
+    <aside class="nota">
+      <p>El cuaderno calificador y el reporte SEA también aparecen en el menú Reportes. Sus instrucciones están en <a href="#c13">capítulo 13, Evaluaciones y cuaderno calificador</a>. Los reportes de conducta se explican en <a href="#c14">capítulo 14, Conducta</a>.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c15-centro-reportes">
+    <h2>Elegir un reporte</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para encontrar el reporte que necesita desde una pantalla que reúne los enlaces de evaluaciones, gestión, coordinación y conducta.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra. El menú Reportes se muestra a los roles Super Administrador, Administrador y Coordinador, o a quien tenga <span class="valor">reportes.ver_basicos</span>. Dentro del centro, los enlaces de gestión dependen del rol y los de calidad de los datos se muestran solo a Super Administrador y Administrador.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Centro de reportes</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="boton">Centro de reportes</span> en el menú <span class="ruta">Reportes</span>.</li>
+      <li>Lea las descripciones de los enlaces en <span class="valor">Evaluaciones</span> o <span class="valor">Gestión y coordinación</span>, según lo que necesite revisar.</li>
+      <li>Pulse el nombre del reporte elegido.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>Se abre el reporte correspondiente. <span class="boton">Resumen de evaluaciones</span> lleva a la misma pantalla que <span class="boton">Dashboard general</span> del menú. Los enlaces de <span class="valor">Conducta</span> se muestran a Super Administrador, Administrador, Coordinador y Profesor.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No aparece <span class="valor">Gestión y coordinación</span>: su usuario no tiene uno de los roles a los que se muestra ese apartado.</li>
+      <li>No aparece <span class="boton">Calidad de los datos</span>: ese reporte está reservado a Super Administrador y Administrador.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-arbol">Consultar y descargar el reporte en árbol</a></li>
+      <li><a href="#c15-puntajes">Consultar y descargar los puntajes de las evaluaciones</a></li>
+      <li><a href="#c13">Capítulo 13, Evaluaciones y cuaderno calificador</a></li>
+      <li><a href="#c14">Capítulo 14, Conducta</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-arbol">
+    <h2>Consultar y descargar el reporte en árbol</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar cómo se relacionan las materias, los períodos académicos, los instrumentos de evaluación y las rúbricas, con las evaluaciones registradas en cada parte.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra. El menú Reportes se muestra a Super Administrador, Administrador y Coordinador, o a quien tenga <span class="valor">reportes.ver_basicos</span>. El contenido depende de las materias y evaluaciones que usted puede consultar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Reporte en árbol</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija la <span class="campo">Materia</span>, o deje <span class="valor">Todas las materias</span>.</li>
+      <li>Elija el <span class="campo">Período</span>, o deje <span class="valor">Todos los períodos</span>.</li>
+      <li>Marque <span class="campo">Incluir inactivos</span> si necesita períodos académicos e instrumentos de evaluación desactivados; los filtros se aplican al cambiarlos.</li>
+      <li>Pulse <span class="boton">Ver</span> si necesita aplicar de nuevo los filtros.</li>
+      <li>Pulse el nombre de una materia, período académico o instrumento de evaluación para abrir o cerrar esa parte del árbol.</li>
+      <li>Pulse <span class="boton">Expandir todo</span> para ver todas las partes, o <span class="boton">Contraer todo</span> para cerrarlas.</li>
+      <li>Revise las columnas <span class="valor">Peso</span>, <span class="valor">Estado</span>, <span class="valor">Terminadas</span>, <span class="valor">Borradores</span> y <span class="valor">Promedio</span> de cada rúbrica.</li>
+      <li>Pulse <span class="boton">Excel</span>, <span class="boton">CSV</span> o <span class="boton">Imprimir</span>, según lo que necesite.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-01">
+      <figcaption>Reporte en árbol con Materia de Ejemplo y un período de ejemplo elegidos, abierto hasta las rúbricas de un instrumento. Resalte Incluir inactivos, Terminadas, Borradores, Promedio y los botones Excel y CSV.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La descarga conserva los filtros de materia, período académico e inactivos. El archivo contiene la estructura y los resultados resumidos por rúbrica. Al imprimir, se abren todas las partes del árbol para incluir su detalle.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Nada que mostrar con estos filtros</span>: pulse <span class="boton">Quitar filtros</span> o marque <span class="campo">Incluir inactivos</span>.</li>
+      <li><span class="valor">Todavía no hay materias con instrumentos</span>: revise la asignación de instrumentos de evaluación a las materias en <a href="#c05">capítulo 5, Estructura académica</a>.</li>
+      <li>«No se pudo generar el archivo de Excel.» o «No se pudo generar el archivo CSV.»: vuelva a intentar la descarga desde el árbol.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-resumen">Consultar el resumen de evaluaciones</a></li>
+      <li><a href="#c15-preparar-exportacion">Preparar una exportación de notas</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-resumen">
+    <h2>Consultar el resumen de evaluaciones</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar cuántas evaluaciones están registradas, cuántas están terminadas o en borrador y cuál es el promedio de las terminadas.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra. El menú Reportes se muestra a Super Administrador, Administrador y Coordinador, o a quien tenga <span class="valor">reportes.ver_basicos</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Dashboard general</span>. En el centro de reportes, el enlace se llama <span class="boton">Resumen de evaluaciones</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="boton">Dashboard general</span>.</li>
+      <li>Revise <span class="valor">Estructura</span>, con las cantidades de materias, períodos académicos, instrumentos de evaluación, rúbricas y estudiantes.</li>
+      <li>Revise <span class="valor">Evaluaciones</span>, con <span class="valor">Registradas</span>, <span class="valor">Terminadas</span>, <span class="valor">En borrador</span> y <span class="valor">Promedio</span>.</li>
+      <li>Pulse <span class="boton">Ver el detalle en árbol</span> si necesita revisar una materia o un período académico.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>El resumen muestra las materias que usted puede consultar con instrumentos de evaluación asignados en períodos académicos activos. No tiene filtros propios. Cuando hay datos, <span class="boton">Descargar en Excel</span> descarga el reporte en árbol sin filtros de materia o período académico.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Sin materias con instrumentos</span>: no hay materias disponibles para usted con instrumentos de evaluación en un período académico activo. Revise esas asignaciones.</li>
+      <li>El promedio aparece como <span class="valor">—</span>: no hay evaluaciones terminadas que aporten un promedio.</li>
+      <li>«No se pudo calcular el resumen. Intente de nuevo.»: vuelva a abrir la pantalla.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-arbol">Consultar y descargar el reporte en árbol</a></li>
+      <li><a href="#c15-avance">Revisar qué falta por evaluar</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-puntajes">
+    <h2>Consultar y descargar los puntajes de las evaluaciones</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para consultar los puntajes por estudiante y rúbrica, ver su distribución y descargar el detalle mostrado.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra. El menú Reportes se muestra a Super Administrador, Administrador y Coordinador, o a quien tenga <span class="valor">reportes.ver_basicos</span>. Solo se incluyen evaluaciones que usted puede consultar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Reportes de evaluaciones</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija el <span class="campo">Período</span> o deje <span class="valor">Todos</span>.</li>
+      <li>Elija la <span class="campo">Rúbrica</span> o deje <span class="valor">Todas</span>; al cambiar un filtro se actualiza el reporte.</li>
+      <li>Pulse <span class="boton">Ver reporte</span> si necesita aplicar de nuevo los filtros.</li>
+      <li>Revise el promedio, los puntajes más alto y más bajo y <span class="valor">Distribución de puntajes</span>.</li>
+      <li>Revise <span class="valor">Detalle</span>, ordenado de mayor a menor puntaje.</li>
+      <li>Pulse el nombre de un estudiante para abrir la evaluación correspondiente si necesita más información.</li>
+      <li>Pulse <span class="boton">Descargar CSV</span> para obtener el detalle, o <span class="boton">Imprimir</span> para abrir las opciones de impresión.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-02">
+      <figcaption>Reportes de evaluaciones con una rúbrica de ejemplo elegida, el promedio y la distribución de puntajes, y el detalle de estudiantes de ejemplo. Resalte Descargar CSV y Borradores (no cuentan) si hay evaluaciones sin terminar.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El archivo <span class="valor">reporte-evaluaciones.csv</span> contiene el estudiante, su identificación, la rúbrica, la fecha, los puntos y las observaciones de las filas del detalle. Los borradores se indican aparte y no entran en el detalle ni en los promedios.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No hay evaluaciones terminadas</span>: revise los filtros o complete las evaluaciones que siguen en borrador; las descargas aparecen cuando hay resultados terminados.</li>
+      <li>La pantalla avisa que mezcla rúbricas con puntajes máximos distintos: elija una sola <span class="campo">Rúbrica</span> antes de comparar estudiantes.</li>
+      <li>No encuentra una evaluación: pruebe <span class="boton">Quitar filtros</span>; los resultados también dependen de lo que usted puede consultar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-preparar-exportacion">Preparar una exportación de notas</a></li>
+      <li><a href="#c13">Capítulo 13, Evaluaciones y cuaderno calificador</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-coordinacion">
+    <h2>Consultar el reporte de coordinación</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar, por facultad y escuela o departamento, los profesores, las materias y los resultados que muestra el reporte para un período académico.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Los roles Super Administrador, Administrador y Coordinador. El acceso exige uno de esos roles.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Reporte de coordinación</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución y la indicación <span class="valor">Escuelas que usted coordina</span> o <span class="valor">Toda la institución</span> en el encabezado.</li>
+      <li>Elija el <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise <span class="valor">Resumen del período</span>.</li>
+      <li>Revise <span class="valor">Profesores</span> y <span class="valor">Materias del período</span> dentro de cada escuela o departamento.</li>
+      <li>Pulse <span class="boton">Imprimir</span> si necesita una copia.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-03">
+      <figcaption>Reporte de coordinación de una institución de ejemplo con una facultad y una escuela de ejemplo, el período elegido y Resumen del período. Muestre Profesores y Materias del período, con las columnas Borradores y Promedio.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El reporte muestra los profesores con su jornada y si están vinculados a un usuario. Las materias se cuentan para la escuela o departamento al que pertenecen; sus grupos de estudiantes son los asignados a profesores en el período académico. El promedio se muestra en puntos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No hay escuelas para mostrar</span>: revise si la institución tiene escuelas o departamentos activos o si su usuario tiene alguno asignado para coordinar.</li>
+      <li><span class="valor">Sin vincular</span> junto a un profesor: revise su vínculo con un usuario en <a href="#c06">capítulo 6, Profesores</a>.</li>
+      <li>Una escuela o departamento no tiene materias: asigne la escuela en cada materia desde su formulario de edición.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-avance">Revisar qué falta por evaluar</a></li>
+      <li><a href="#c15-carga">Revisar la carga de los profesores</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-avance">
+    <h2>Revisar qué falta por evaluar</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para identificar qué estudiantes no tienen evaluación en un instrumento de evaluación y cuántas evaluaciones siguen en borrador.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Los roles Super Administrador, Administrador y Coordinador. El acceso exige uno de esos roles, no un permiso de reportes.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Avance de evaluación</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución y las escuelas o departamentos indicados en el encabezado.</li>
+      <li>Elija el <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise <span class="valor">Completadas</span>, <span class="valor">En borrador</span> y <span class="valor">Sin evaluar</span> en <span class="valor">Resumen del período</span>.</li>
+      <li>Revise <span class="valor">Borradores por evaluador</span> si aparece.</li>
+      <li>Abra el texto <span class="boton">Ver</span> seguido de la cantidad <span class="valor">sin evaluar</span> junto al instrumento de evaluación que necesita revisar.</li>
+      <li>Pulse <span class="boton">Imprimir</span> si necesita imprimir el reporte.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-04">
+      <figcaption>Avance de evaluación de una escuela de ejemplo con el resumen y una materia con su grupo de estudiantes. Resalte En borrador, Sin evaluar y la lista abierta de estudiantes de ejemplo pendientes de evaluación.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La lista abierta muestra los estudiantes sin evaluar. El avance espera una evaluación por estudiante matriculado e instrumento de la materia: cuenta como completada si hay una evaluación terminada con cualquiera de las rúbricas de ese instrumento. Una evaluación en borrador se cuenta aparte.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Sin instrumento en el período</span>: asigne un instrumento de evaluación a la materia en ese período académico antes de medir su avance.</li>
+      <li><span class="valor">Sin grupos asignados a profesores en este período.</span>: revise las asignaciones de profesores a los grupos de estudiantes y materias.</li>
+      <li><span class="valor">No hay escuelas para mostrar</span>: revise las escuelas o departamentos activos y las asignaciones de coordinación.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-calidad">Revisar la calidad de los datos</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+      <li><a href="#c13">Capítulo 13, Evaluaciones y cuaderno calificador</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-carga">
+    <h2>Revisar la carga de los profesores</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para consultar las materias, los grupos de estudiantes, las lecciones semanales y las evaluaciones de cada profesor, junto con su jornada por escuela o departamento.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Los roles Super Administrador, Administrador y Coordinador. El acceso exige uno de esos roles, no un permiso de reportes.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Carga docente</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución y las escuelas o departamentos indicados en el encabezado.</li>
+      <li>Elija el <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise <span class="valor">Con grupos</span>, <span class="valor">Sin grupos</span> y <span class="valor">Lecciones por semana</span> en el resumen.</li>
+      <li>Revise las columnas <span class="valor">Escuelas y jornada</span>, <span class="valor">Materias</span>, <span class="valor">Grupos</span>, <span class="valor">Estudiantes</span>, <span class="valor">Lecciones/sem.</span>, <span class="valor">Horas/sem.</span> y <span class="valor">Evaluaciones</span> de cada profesor.</li>
+      <li>Pulse <span class="boton">Imprimir</span> si necesita una copia.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>La tabla permite comparar la carga registrada de los profesores. También indica las evaluaciones en borrador y los grupos de estudiantes en los que el profesor es profesor guía. Consultar el reporte no modifica las asignaciones ni el horario.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Sin cuenta vinculada</span> y cero evaluaciones: el reporte cuenta las evaluaciones por el usuario vinculado al profesor; sin ese vínculo puede mostrar cero aunque haya evaluado.</li>
+      <li><span class="valor">Sin grupos en el período</span>: revise las asignaciones del profesor en el período académico consultado.</li>
+      <li><span class="valor">No hay profesores para mostrar</span>: ningún profesor pertenece a esas escuelas o departamentos ni tiene grupos de sus materias en el período académico.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-coordinacion">Consultar el reporte de coordinación</a></li>
+      <li><a href="#c06">Capítulo 6, Profesores</a></li>
+      <li><a href="#c10">Capítulo 10, Horarios</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-alertas">
+    <h2>Consultar los estudiantes en alerta</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para identificar estudiantes con notas bajas, ausencias injustificadas frecuentes o nota de conducta en riesgo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Los roles Super Administrador, Administrador y Coordinador. El acceso exige uno de esos roles, no un permiso de reportes.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Estudiantes en alerta</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución y las escuelas o departamentos indicados en el encabezado.</li>
+      <li>Elija el <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise <span class="valor">Estudiantes revisados</span>, <span class="valor">En alerta</span>, <span class="valor">Por notas</span>, <span class="valor">Por asistencia</span> y <span class="valor">Por conducta</span>.</li>
+      <li>Revise las etiquetas <span class="valor">Notas</span>, <span class="valor">Asistencia</span> y <span class="valor">Conducta</span> de cada estudiante.</li>
+      <li>Pulse el nombre del estudiante para abrir su ficha si necesita revisar su información.</li>
+      <li>Pulse <span class="boton">Imprimir</span> si necesita una copia del reporte.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-05">
+      <figcaption>Estudiantes en alerta con estudiantes de ejemplo y las condiciones de alerta visibles bajo Resumen del período. Resalte un estudiante con dos etiquetas de alerta y las columnas Promedio, Ausencias y Conducta.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Los estudiantes con más alertas aparecen primero. La alerta de notas corresponde a un promedio menor al 70 % del máximo de cada rúbrica en evaluaciones completadas. La de asistencia corresponde a un 15 % o más de ausencias injustificadas, con al menos cuatro registros. La de conducta corresponde a una nota de conducta en <span class="valor">Riesgo</span> o <span class="valor">Aplazado</span>.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Ningún estudiante en alerta</span>: con los datos registrados y el período académico consultado, ningún estudiante cumple las condiciones de alerta.</li>
+      <li>No aparece un estudiante que esperaba revisar: compruebe el período académico y sus grupos de estudiantes; el reporte parte de los estudiantes de las materias y escuelas o departamentos incluidos.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-avance">Revisar qué falta por evaluar</a></li>
+      <li><a href="#c11">Capítulo 11, Asistencia</a></li>
+      <li><a href="#c14">Capítulo 14, Conducta</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-comparativo">
+    <h2>Comparar dos períodos académicos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para comparar las cantidades de grupos de estudiantes, estudiantes y evaluaciones, el promedio y la asistencia que muestra cada escuela o departamento para dos períodos académicos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Los roles Super Administrador, Administrador y Coordinador. El acceso exige uno de esos roles, no un permiso de reportes.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Comparativo entre períodos</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución y las escuelas o departamentos indicados en el encabezado.</li>
+      <li>Elija el período académico que desea revisar en <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span> para actualizar la lista de períodos académicos disponibles para comparar.</li>
+      <li>Elija el otro período académico en <span class="campo">Comparar con</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise las dos filas de cada escuela o departamento y las diferencias que aparecen en la fila del período académico elegido en <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Imprimir</span> si necesita una copia.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-06">
+      <figcaption>Comparativo entre períodos con dos períodos académicos de ejemplo elegidos y una escuela de ejemplo. Muestre las dos filas y las diferencias de Grupos, Estudiantes, Evaluaciones, Promedio y Asistencia.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El reporte muestra los valores de ambos períodos académicos y su diferencia, o <span class="valor">sin cambio</span>. El promedio se expresa como porcentaje del máximo de la rúbrica. La asistencia cuenta presentes, tardanzas y ausencias justificadas sobre el total de registros. Las materias se agrupan por su escuela o departamento actual.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No hay otro período para comparar</span>: elija otro en <span class="campo">Comparar con</span> si hay opciones; si solo existe uno, la comparación requiere crear un segundo período académico.</li>
+      <li>Una escuela o departamento figura sin grupos de estudiantes en ninguno de los dos períodos académicos: revise las asignaciones o compare otros períodos.</li>
+      <li>El promedio o la asistencia aparece como <span class="valor">—</span>: no hay datos para calcular ese valor.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-coordinacion">Consultar el reporte de coordinación</a></li>
+      <li><a href="#c15-calidad">Revisar la calidad de los datos</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-calidad">
+    <h2>Revisar la calidad de los datos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para detectar datos que faltan y que pueden dejar reportes vacíos o impedir que un profesor o coordinador consulte lo que le corresponde.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Solo los roles Super Administrador y Administrador. Tener el rol Coordinador no permite abrir este reporte.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Reportes › Calidad de los datos</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Compruebe la institución del encabezado.</li>
+      <li>Elija el <span class="campo">Período</span>.</li>
+      <li>Pulse <span class="boton">Ver reporte</span>.</li>
+      <li>Revise cuántas revisiones tienen hallazgos y lea la explicación de cada una.</li>
+      <li>Revise los ejemplos mostrados en los apartados con hallazgos.</li>
+      <li>Pulse el nombre de una materia en <span class="valor">Materias sin escuela</span> si necesita abrir su edición y asignarle una escuela o departamento.</li>
+      <li>Vuelva al reporte después de corregir los datos para comprobar el resultado.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>El reporte organiza las revisiones con hallazgos antes de las que muestran <span class="valor">Sin hallazgos</span>. Incluye materias sin escuela o departamento, profesores sin usuario vinculado, grupos de estudiantes sin profesor o sin estudiantes, estudiantes sin grupo de estudiantes, materias sin instrumento de evaluación y problemas de coordinación. También revisa evaluaciones sin evaluador y borradores de más de 14 días.</p>
+    <p>Si no encuentra problemas en esas revisiones, muestra <span class="valor">Todo en orden</span>. Cada revisión presenta hasta 12 ejemplos; si hay más, indica cuántos se muestran del total. Algunas revisiones corresponden a toda la institución y otras, a los grupos de estudiantes del período académico elegido.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La cantidad de hallazgos es mayor que la lista de ejemplos: se muestran hasta 12 ejemplos, no todos los elementos.</li>
+      <li>Un hallazgo sigue apareciendo después de una corrección: vuelva a abrir el reporte y compruebe la institución y el período académico que está revisando.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+      <li><a href="#c06">Capítulo 6, Profesores</a></li>
+      <li><a href="#c07">Capítulo 7, Estudiantes y grupos</a></li>
+      <li><a href="#c13">Capítulo 13, Evaluaciones y cuaderno calificador</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-preparar-exportacion">
+    <h2>Preparar una exportación de notas</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para elegir el formato de salida, los estudiantes y la forma de relacionar las rúbricas de PDI con las columnas del archivo que necesita.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">exportaciones.ver</span> para abrir el listado y <span class="valor">exportaciones.crear</span> para usar el asistente. En la instalación estándar estos permisos se asignan a los roles Administrador, Coordinador y Profesor. Las notas disponibles dependen de las evaluaciones que usted puede consultar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Evaluación › Exportar calificaciones</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Exportar a Moodle</span>, <span class="boton">Exportar a CSV genérico</span> o <span class="boton">Exportar a Excel genérico</span> según el archivo que necesite.</li>
+      <li>Revise el <span class="campo">Formato</span> en <span class="valor">Datos de origen</span>.</li>
+      <li>Elija <span class="valor">Cédula / número de ID</span> o <span class="valor">Correo electrónico</span> en <span class="campo">Identificar estudiante por</span>; debe coincidir con el dato que utiliza el sistema destino.</li>
+      <li>Elija <span class="valor">Punto · 85.5</span> o <span class="valor">Coma · 85,5</span> en <span class="campo">Separador decimal</span>.</li>
+    </ol>
+    <h4>Si eligió Moodle</h4>
+    <ol>
+      <li>Obtenga el archivo desde <span class="ruta">Calificaciones › Exportar</span> de Moodle, como indica la ayuda de PDI.</li>
+      <li>Elija ese archivo en <span class="campo">Archivo del calificador de Moodle</span>; se admite ODS, XLSX o CSV, hasta 5 MB.</li>
+      <li>Pulse <span class="boton">Relacionar actividades</span>.</li>
+    </ol>
+    <h4>Si eligió CSV o Excel genérico</h4>
+    <ol>
+      <li>Elija el <span class="campo">Grupo</span> o deje <span class="valor">Todos los estudiantes con evaluación</span>.</li>
+      <li>Pulse <span class="boton">Relacionar actividades</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-07">
+      <figcaption>Asistente Exportar calificaciones en Datos de origen con Moodle elegido. Resalte Identificar estudiante por, Separador decimal, Archivo del calificador de Moodle y Relacionar actividades, con un archivo de ejemplo sin datos reales.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Se abre <span class="valor">Relacione las actividades</span>. Para Moodle, PDI prepara las columnas a partir del archivo de origen. Para los formatos genéricos, presenta filas donde usted puede escribir los nombres de las columnas y elegir sus rúbricas. El archivo de origen se lee para preparar la exportación y no se guarda.</p>
+    <aside class="nota">
+      <p>Este asistente no ofrece un filtro por período académico. Para cada estudiante y rúbrica toma la evaluación completada o finalizada más reciente registrada que tenga puntos. Revise siempre las notas antes de descargarlas.</p>
+    </aside>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Suba el archivo exportado del sistema destino.»: elija el archivo de Moodle antes de continuar.</li>
+      <li>«El archivo supera el tamaño máximo de 5 MB.»: prepare un archivo dentro de ese límite.</li>
+      <li>«Formato no admitido. Use .ods, .xlsx o .csv.»: vuelva a exportar el archivo en uno de esos formatos.</li>
+      <li>El archivo no tiene la columna de identificación o no trae estudiantes: compruebe <span class="campo">Identificar estudiante por</span> y el encabezado del archivo. Para cédula se admite <span class="valor">Número de ID</span> o <span class="valor">ID number</span>; para correo, <span class="valor">Dirección de correo</span> o <span class="valor">Email address</span>.</li>
+      <li>«No se encontraron columnas de actividades en el archivo.»: revise que el archivo incluya las columnas de notas que desea relacionar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-revisar-descargar">Revisar y descargar las notas</a></li>
+      <li><a href="#c15-configuraciones-guardadas">Reutilizar o eliminar una configuración guardada</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-revisar-descargar">
+    <h2>Revisar y descargar las notas</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para elegir qué rúbrica aporta la nota a cada columna, comprobar la conversión de puntos y descargar el archivo después de revisarlo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">exportaciones.crear</span> y haya preparado los datos de origen en el asistente.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Evaluación › Exportar calificaciones</span>, asistente, después de <span class="boton">Relacionar actividades</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise cada fila de <span class="valor">Actividad en Moodle</span> o escriba el <span class="campo">Nombre de columna</span> en los formatos genéricos.</li>
+      <li>Elija la <span class="campo">Rúbrica</span> que aporta la nota, o deje <span class="valor">— No exportar —</span> en las columnas que no necesita.</li>
+      <li>Escriba el máximo de la nota del destino en <span class="campo">Sobre</span>, por ejemplo <span class="valor">100</span> o <span class="valor">10</span>.</li>
+      <li>Revise si mantiene marcada <span class="campo">Guardar el emparejamiento como plantilla</span> dentro de <span class="boton">Reutilizar esta configuración</span>.</li>
+      <li>Escriba el <span class="campo">Nombre de la plantilla</span> si va a guardar la configuración.</li>
+      <li>Pulse <span class="boton">Generar vista previa</span>.</li>
+      <li>Revise <span class="valor">Revise las calificaciones</span> y abra <span class="boton">Ver estudiantes sin nota o que se omiten</span> si aparece.</li>
+      <li>Pulse <span class="boton">Descargar archivo</span>, <span class="boton">Descargar CSV para Moodle</span> o <span class="boton">Descargar ZIP para Moodle</span>, según el botón que aparezca.</li>
+    </ol>
+    <figure class="captura" data-captura="c15-08">
+      <figcaption>Asistente con dos columnas relacionadas con rúbricas de ejemplo, Sobre 100 y la vista previa generada con estudiantes de ejemplo. Resalte los recuentos con nota y sin completar, las celdas sin nota y los botones de descarga habilitados.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La nota se calcula como puntos obtenidos divididos entre el máximo de la rúbrica, multiplicados por <span class="campo">Sobre</span>. Por ejemplo, 16 puntos de un máximo de 20 dan 80 si usted eligió 100. Las celdas con <span class="valor">—</span> no tienen una nota disponible.</p>
+    <p>La descarga se habilita después de generar una vista previa con al menos un estudiante con nota. Si cambia una rúbrica, un nombre de columna o <span class="campo">Sobre</span>, debe pulsar de nuevo <span class="boton">Generar vista previa</span>.</p>
+    <p>Para Moodle, <span class="boton">Revisar en Excel</span> descarga un XLSX de revisión que conserva las cédulas como texto. Si faltan notas en algunas columnas, PDI puede preparar un ZIP con un CSV por columna; cada CSV incluye solo a quienes tienen nota en esa columna. El apartado <span class="boton">Cómo importar en Moodle</span> muestra las indicaciones para utilizar los archivos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Empareje al menos una columna con una rúbrica.»: elija una <span class="campo">Rúbrica</span> en alguna fila.</li>
+      <li>«El valor «Sobre» de cada columna exportada debe ser mayor que 0.»: escriba un máximo válido, como 10 o 100.</li>
+      <li>«Dos columnas tienen el mismo nombre en el archivo destino.»: escriba nombres diferentes para las columnas.</li>
+      <li><span class="valor">No registrados o fuera de su alcance</span>: compruebe que la cédula o el correo coincida en ambos sistemas y que usted pueda consultar al estudiante.</li>
+      <li><span class="valor">Evaluaciones sin completar</span> o <span class="valor">Sin evaluación</span>: complete las evaluaciones necesarias antes de volver a generar la vista previa.</li>
+      <li>«Ningún estudiante tiene nota en las rúbricas elegidas; no hay nada que descargar.»: revise las rúbricas y los identificadores elegidos.</li>
+      <li>«Se perdieron los datos del archivo. Vuelva a subirlo.»: pulse <span class="boton">Cambiar datos de origen</span> y elija de nuevo el archivo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-preparar-exportacion">Preparar una exportación de notas</a></li>
+      <li><a href="#c15-configuraciones-guardadas">Reutilizar o eliminar una configuración guardada</a></li>
+      <li><a href="#c13">Capítulo 13, Evaluaciones y cuaderno calificador</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c15-configuraciones-guardadas">
+    <h2>Reutilizar o eliminar una configuración guardada</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para volver a usar la relación entre columnas y rúbricas sin tener que prepararla desde cero, o quitar una configuración propia que ya no necesita.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">exportaciones.ver</span> para ver las configuraciones disponibles y <span class="valor">exportaciones.crear</span> para utilizarlas. Solo puede modificar o eliminar las que usted haya creado.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Evaluación › Exportar calificaciones</span>, apartado <span class="valor">Plantillas guardadas</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Guardar y reutilizar</h4>
+    <ol>
+      <li>Marque <span class="campo">Guardar el emparejamiento como plantilla</span> en el asistente de una exportación.</li>
+      <li>Escriba el <span class="campo">Nombre de la plantilla</span>.</li>
+      <li>Pulse <span class="boton">Generar vista previa</span> para guardar la configuración.</li>
+      <li>Abra <span class="ruta">Evaluación › Exportar calificaciones</span> cuando necesite utilizarla otra vez.</li>
+      <li>Pulse <span class="boton">Usar plantilla</span> junto al nombre de la configuración.</li>
+      <li>Revise los datos de origen y las rúbricas antes de generar una nueva vista previa.</li>
+    </ol>
+    <h4>Eliminar</h4>
+    <ol>
+      <li>Localice una configuración creada por usted en <span class="valor">Plantillas guardadas</span>.</li>
+      <li>Pulse <span class="boton">Eliminar</span>.</li>
+      <li>Confirme <span class="valor">«¿Eliminar esta plantilla? Las calificaciones se conservan.»</span> si desea quitarla.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>Al guardar, aparece <span class="valor">Plantilla guardada.</span>. Se conserva la relación entre columnas y rúbricas, el formato, la identificación y el separador decimal; no se guarda el archivo de origen. Si la usa con Moodle, debe elegir de nuevo el archivo de origen.</p>
+    <p>Al eliminar, aparece <span class="valor">«Plantilla eliminada.»</span> y deja de mostrarse en la lista. Las notas y las evaluaciones se conservan.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Aún no hay plantillas disponibles</span>: guarde una configuración al generar la vista previa.</li>
+      <li><span class="valor">«Escriba un nombre para guardar la plantilla.»</span>: complete <span class="campo">Nombre de la plantilla</span>.</li>
+      <li>No aparece <span class="boton">Eliminar</span> en una configuración disponible: solo se ofrece en las creadas por usted y con permiso para crear exportaciones.</li>
+      <li><span class="valor">«La vista previa está lista, pero no se pudo guardar la plantilla.»</span>: la revisión de notas sigue disponible; compruebe que intenta guardar una configuración propia.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c15-preparar-exportacion">Preparar una exportación de notas</a></li>
+      <li><a href="#c15-revisar-descargar">Revisar y descargar las notas</a></li>
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,566 @@
+<section class="capitulo" id="c03" data-codigo="C03" data-titulo="Roles, permisos y usuarios">
+  <h1>Roles, permisos y usuarios</h1>
+  <p class="resumen">Cómo dar acceso a las personas: crear sus cuentas, invitarlas, asignarles un rol y decidir qué puede hacer cada rol.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#c03-buscar-usuarios">Buscar y revisar usuarios</a></td><td>Rol Super Administrador o Administrador</td><td><span class="ruta">Administración › Personas › Usuarios</span></td></tr>
+        <tr><td><a href="#c03-crear-usuario">Crear un usuario</a></td><td>Rol Super Administrador o Administrador</td><td><span class="ruta">Administración › Personas › Usuarios</span></td></tr>
+        <tr><td><a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a></td><td>Rol Super Administrador o Administrador</td><td><span class="ruta">Administración › Personas › Usuarios</span></td></tr>
+        <tr><td><a href="#c03-bloquear-eliminar">Bloquear, desbloquear o eliminar un usuario</a></td><td>Rol Super Administrador o Administrador</td><td><span class="ruta">Administración › Personas › Usuarios</span></td></tr>
+        <tr><td><a href="#c03-invitar">Invitar a una persona a la institución</a></td><td><span class="valor">invitaciones.crear</span></td><td><span class="ruta">Administración › Personas › Invitaciones de usuarios</span></td></tr>
+        <tr><td><a href="#c03-panel-admin">Usar el panel de administración</a></td><td>Rol Super Administrador</td><td><span class="ruta">Administración › Personas › Panel de administración</span></td></tr>
+        <tr><td><a href="#c03-usuarios-admin">Administrar usuarios desde el panel de administración</a></td><td>Rol Super Administrador</td><td>Panel de administración › <span class="boton">Usuarios</span></td></tr>
+        <tr><td><a href="#c03-crear-rol">Crear o editar un rol</a></td><td>Rol Super Administrador</td><td>Panel de administración › <span class="boton">Roles</span></td></tr>
+        <tr><td><a href="#c03-eliminar-rol">Eliminar un rol</a></td><td>Rol Super Administrador</td><td>Panel de administración › <span class="boton">Roles</span></td></tr>
+        <tr><td><a href="#c03-permisos-rol">Cambiar los permisos de un rol</a></td><td>Rol Super Administrador</td><td>Panel de administración › <span class="boton">Permisos</span></td></tr>
+        <tr><td><a href="#c03-matriz">Consultar o exportar la matriz de permisos</a></td><td>Rol Super Administrador</td><td>Panel de administración › Permisos › <span class="boton">Matriz por rol</span></td></tr>
+        <tr><td><a href="#c03-sincronizar">Sincronizar permisos</a></td><td>Rol Super Administrador</td><td>Panel de administración › Permisos › <span class="boton">Sincronizar</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+
+    <h3>Usuario, rol y permiso</h3>
+    <dl>
+      <dt>Usuario</dt><dd>Una persona con cuenta para entrar a PDI. Se identifica con su correo electrónico.</dd>
+      <dt>Rol</dt><dd>Un conjunto de permisos con un nombre. Cada usuario tiene uno o más roles, y recibe los permisos de todos ellos.</dd>
+      <dt>Permiso</dt><dd>Una acción concreta que el sistema permite, por ejemplo «Crear matrícula». Los permisos se dan a los roles, no a las personas.</dd>
+    </dl>
+
+    <h3>Los seis roles de PDI</h3>
+    <table>
+      <caption>Roles definidos en el sistema</caption>
+      <thead>
+        <tr><th>Rol</th><th>Para qué es</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Super Administrador</td><td>Acceso completo a la plataforma, a todas las instituciones y a la configuración global.</td></tr>
+        <tr><td>Administrador</td><td>Gestión de usuarios, rúbricas y evaluaciones de su institución.</td></tr>
+        <tr><td>Coordinador</td><td>Gestión de rúbricas y evaluaciones de su facultad o escuela.</td></tr>
+        <tr><td>Profesor</td><td>Crear rúbricas y realizar evaluaciones.</td></tr>
+        <tr><td>Evaluador</td><td>Realizar evaluaciones con las rúbricas que ya existen.</td></tr>
+        <tr><td>Observador</td><td>Solo consultar reportes y estadísticas.</td></tr>
+      </tbody>
+    </table>
+    <p>El Super Administrador siempre tiene todos los permisos. Para los demás roles, lo que puede hacer cada uno lo decide usted en <a href="#c03-permisos-rol">Cambiar los permisos de un rol</a>.</p>
+
+    <h3>Dos lugares para administrar usuarios</h3>
+    <ul>
+      <li><strong>Administración › Personas › Usuarios:</strong> lo usan el Super Administrador y el Administrador. Trabaja con ventanas emergentes sobre la misma lista.</li>
+      <li><strong>Panel de administración › Usuarios:</strong> solo el Super Administrador. Tiene más detalle (permisos directos, instituciones de la persona, restablecer contraseña).</li>
+    </ul>
+
+    <h3>Una cuenta, varias instituciones</h3>
+    <p>Una persona puede pertenecer a más de una institución, con un rol distinto en cada una. Trabaja en una a la vez y cambia de institución desde el menú de su cuenta (<a href="#c02">capítulo 2, Primeros pasos</a>).</p>
+
+    <aside class="aviso">
+      <p>Algunos permisos de la lista están definidos pero ninguna pantalla los usa todavía, de modo que marcarlos no cambia nada. Si un permiso parece no hacer efecto, es probable que sea uno de ellos.</p>
+    </aside>
+    <aside class="nota">
+      <p>Algunas pantallas de PDI no revisan permisos y solo el menú las oculta a quien no corresponde (por ejemplo Profesores, Rúbricas, Evaluaciones, Conducta y Reportes). Quitar un permiso a un rol no siempre impide entrar a esas pantallas si la persona conoce la dirección.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c03-buscar-usuarios">
+    <h2>Buscar y revisar usuarios</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver quién tiene cuenta, con qué roles, en qué institución y si puede entrar.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el rol Super Administrador o Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Usuarios</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra la pantalla <span class="valor">Gestión de Usuarios</span>.</li>
+      <li>En <span class="campo">Buscar usuarios</span> escriba un nombre, un correo o una institución.</li>
+      <li>Si quiere acotar, elija un <span class="campo">Rol</span>, un <span class="campo">Estado</span> (<span class="valor">Activos</span> o <span class="valor">Inactivos</span>) o una <span class="campo">Institución</span>.</li>
+      <li>Pulse <span class="boton">Filtrar</span>. Para volver a ver todos, pulse <span class="boton">Limpiar</span>.</li>
+      <li>La tabla muestra <span class="valor">Usuario</span>, <span class="valor">Correo electrónico</span>, <span class="valor">Institución</span>, <span class="valor">Roles</span>, <span class="valor">Estado</span> y <span class="valor">Último acceso</span>. Para ver el detalle de una persona, pulse el botón <span class="boton">Ver detalles</span> de su fila.</li>
+      <li>Para llevarse la lista, pulse <span class="boton">Exportar vista</span>. Exporta lo que está en pantalla con los filtros aplicados.</li>
+    </ol>
+    <figure class="captura" data-captura="c03-01">
+      <figcaption>Pantalla Gestión de Usuarios con la fila de filtros arriba y la tabla con tres usuarios de ejemplo; en la última columna, los botones de ver detalles, editar, bloquear y eliminar.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>La ventana <span class="valor">Información del usuario</span> muestra correo, institución, departamento, teléfono, estado y los roles asignados. Es solo de consulta: no cambia nada de la cuenta.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No aparece la persona que busca: revise la institución elegida en el filtro y que el estado no esté en <span class="valor">Activos</span> si la cuenta está inactiva.</li>
+      <li>El botón <span class="boton">Exportar vista</span> está desactivado: no hay usuarios en la lista.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-crear-usuario">Crear un usuario</a></li>
+      <li><a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-crear-usuario">
+    <h2>Crear un usuario</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para dar de alta a una persona y dejarla con su rol en una institución. Cuando es una persona nueva y todavía no tiene cuenta, la <a href="#c03-invitar">invitación</a> suele ser más cómoda: ella misma crea su contraseña.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el rol Super Administrador o Administrador. Solo puede asignar roles que usted mismo puede asignar.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Usuarios</span>, botón <span class="boton">Crear Usuario</span>.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Crear Usuario</span>. Se abre la ventana <span class="valor">Crear Nuevo Usuario</span>. Los campos con asterisco son obligatorios.</li>
+      <li>En <span class="valor">Datos de la cuenta</span> escriba <span class="campo">Nombre</span>, <span class="campo">Apellidos</span> y <span class="campo">Correo electrónico</span>.</li>
+      <li>En <span class="valor">Institución y contacto</span> elija la <span class="campo">Institución</span>. Solo un Super Administrador puede quedar sin institución.</li>
+      <li>Si lo desea, complete <span class="campo">Departamento</span> y <span class="campo">Teléfono</span>; ambos son opcionales.</li>
+      <li>En <span class="campo">Roles de acceso</span> marque uno o más roles.</li>
+      <li>Pulse <span class="boton">Crear Usuario</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c03-02">
+      <figcaption>Ventana Crear Nuevo Usuario con los datos de un usuario de ejemplo, la institución elegida y un rol marcado.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>El sistema crea la cuenta y envía un correo a la persona con instrucciones para establecer su contraseña. La persona entra con su correo electrónico.</p>
+    <aside class="aviso">
+      <p>Si el correo no se puede enviar, el sistema muestra una contraseña temporal en el mensaje. Entréguela a la persona por un medio seguro y no la copie en documentos ni en mensajes abiertos.</p>
+    </aside>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Ya existe un usuario con ese email.»: ya hay una cuenta con ese correo. Para darle acceso a otra institución, use <a href="#c03-usuarios-admin">Administrar usuarios desde el panel de administración</a> (instituciones de la persona) o una invitación.</li>
+      <li>«Seleccione la institución del usuario.» o «La institución seleccionada no existe o no está activa.»: elija una institución activa.</li>
+      <li>«No tiene permiso para asignar uno de los roles seleccionados.»: ese rol es de un nivel mayor que el suyo.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-invitar">Invitar a una persona a la institución</a></li>
+      <li><a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-editar-usuario">
+    <h2>Editar un usuario y cambiar sus roles</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para corregir los datos de una cuenta o cambiar lo que la persona puede hacer.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el rol Super Administrador o Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Usuarios</span>, botón <span class="boton">Editar usuario</span> de la fila.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Busque a la persona (<a href="#c03-buscar-usuarios">Buscar y revisar usuarios</a>).</li>
+      <li>Pulse el botón <span class="boton">Editar usuario</span> de su fila. Se abre la ventana <span class="valor">Editar usuario</span>.</li>
+      <li>Corrija <span class="campo">Nombre</span>, <span class="campo">Apellidos</span>, <span class="campo">Correo electrónico</span>, <span class="campo">Departamento</span> o <span class="campo">Teléfono</span>.</li>
+      <li>En <span class="campo">Roles de acceso</span> marque o desmarque roles. Debe quedar al menos uno.</li>
+      <li>Si la persona es coordinadora, en <span class="valor">Escuelas que coordina</span> marque las escuelas. Podrá consultar los grupos, estudiantes y evaluaciones de las materias de esas escuelas, sin modificarlos.</li>
+      <li>Pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Si cambió los roles, la sesión abierta de la persona se cierra y los roles nuevos rigen cuando vuelva a entrar. Si cambió el correo, la persona debe entrar con el correo nuevo; no se le envía una contraseña nueva.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Debe seleccionar al menos un rol.»: marque un rol.</li>
+      <li>«No puede quitarse a sí mismo el rol de administrador.»: otra persona con permiso debe hacerlo.</li>
+      <li>«La plataforma debe conservar al menos un Super Administrador.»: no se puede quitar el último.</li>
+      <li>«Ya existe un usuario con ese email.»: otro usuario ya usa ese correo.</li>
+      <li>Después de guardar, un aviso indica que las escuelas no se cambiaron: el motivo viene en el mismo mensaje.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-usuarios-admin">Administrar usuarios desde el panel de administración</a></li>
+      <li><a href="#c03-bloquear-eliminar">Bloquear, desbloquear o eliminar un usuario</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-bloquear-eliminar">
+    <h2>Bloquear, desbloquear o eliminar un usuario</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para impedir temporalmente que una persona entre (bloquear), devolverle el acceso (desbloquear), o borrar su cuenta (eliminar).</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el rol Super Administrador o Administrador.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Usuarios</span>, botones de la fila.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Busque a la persona.</li>
+      <li>En su fila, pulse <span class="boton">Bloquear</span>, <span class="boton">Desbloquear</span> o <span class="boton">Eliminar</span>. Aparece uno u otro de los dos primeros según el estado de la cuenta.</li>
+      <li>Confirme en la ventana. Para bloquear dice «¿Quieres bloquear el acceso de» y el nombre; para eliminar, «¿Quieres eliminar la cuenta de» y el nombre, con el aviso «Esta acción no se puede deshacer.»</li>
+      <li>Pulse el botón de la ventana: <span class="boton">Bloquear</span>, <span class="boton">Desbloquear</span> o <span class="boton">Eliminar usuario</span>.</li>
+    </ol>
+    <aside class="aviso">
+      <p>Eliminar borra la cuenta y no se puede deshacer. Si solo quiere que la persona no entre por un tiempo, bloquéela.</p>
+    </aside>
+
+    <h3>Qué pasa después</h3>
+    <p>El sistema muestra «Usuario bloqueado exitosamente.», «Usuario desbloqueado exitosamente.» o «Usuario eliminado exitosamente.» El bloqueo impide iniciar sesión durante un año, salvo que se desbloquee antes.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Esta cuenta también pertenece a otras instituciones y no puede bloquearse desde aquí. Desactive su membresía en su institución.»: la cuenta está en más de una institución. Use <a href="#c03-usuarios-admin">Administrar usuarios desde el panel de administración</a> y desactive su membresía en esta institución. Lo mismo vale para eliminar.</li>
+      <li>«No puedes eliminar tu propia cuenta.»: no puede eliminarse a usted mismo.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-invitar">
+    <h2>Invitar a una persona a la institución</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para que una persona cree su propia cuenta, o se una con la que ya tiene, mediante un enlace. El enlace vence en siete días y solo se puede usar una vez.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el permiso <span class="valor">invitaciones.crear</span>; para ver la lista, <span class="valor">invitaciones.ver</span>; para revocar, <span class="valor">invitaciones.revocar</span>. Solo puede invitar con roles de igual o menor nivel que el suyo.</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Invitaciones de usuarios</span></p>
+
+    <h3>Pasos</h3>
+    <h4>Pasos para invitar</h4>
+    <ol>
+      <li>Abra <span class="valor">Invitaciones de usuarios</span> y cree una invitación.</li>
+      <li>En <span class="campo">Correo electrónico</span> escriba el correo de la persona.</li>
+      <li>En <span class="campo">Rol</span> elija el rol que tendrá. La lista solo trae los roles de su nivel o menores.</li>
+      <li>En <span class="campo">Institución</span> elija la institución.</li>
+      <li>Pulse <span class="boton">Enviar invitación</span>.</li>
+    </ol>
+
+    <h4>Pasos para revocar una invitación</h4>
+    <ol>
+      <li>En la lista <span class="valor">Invitaciones en esta lista</span>, ubique la invitación (puede filtrar por <span class="campo">Estado</span> y pulsar <span class="boton">Filtrar invitaciones</span>).</li>
+      <li>Pulse <span class="boton">Revocar</span> y confirme «¿Revocar esta invitación? El enlace dejará de funcionar.»</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El sistema dice «Invitación enviada a» el correo y muestra una vez el <span class="valor">Enlace de la invitación</span>, con el botón <span class="boton">Copiar enlace</span>. La persona abre el enlace, crea su cuenta o entra con la que ya tiene, y queda con el rol y la institución indicados. La lista muestra el estado de cada invitación, su fecha de creación y su vencimiento.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Invitación creada para [correo], pero no se pudo enviar el correo. Copie el enlace y envíelo manualmente.»: copie el enlace con <span class="boton">Copiar enlace</span> antes de salir de la pantalla; solo se muestra esta vez.</li>
+      <li>«No se pudo revocar la invitación (no existe o ya no está pendiente).»: solo se revocan las pendientes.</li>
+      <li>La persona dice que el enlace no funciona: venció a los siete días, ya se usó o se revocó. Cree otra invitación.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-crear-usuario">Crear un usuario</a></li>
+      <li><a href="#c02">Capítulo 2, Primeros pasos</a> (aceptar una invitación)</li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-panel-admin">
+    <h2>Usar el panel de administración</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver de un vistazo cómo está la plataforma y moverse a las pantallas de administración. Los cambios de esta área afectan a todas las instituciones.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el rol Super Administrador. El menú también muestra la entrada a los Administradores, pero la pantalla exige el rol Super Administrador (ver las notas al final del manual).</p>
+
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Personas › Panel de administración</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra el panel <span class="valor">Administración</span>.</li>
+      <li>Lea los datos de arriba: <span class="valor">Usuarios activos</span>, <span class="valor">Roles</span>, <span class="valor">Permisos definidos</span> e <span class="valor">Inicios de sesión hoy</span>.</li>
+      <li>En <span class="valor">Avisos</span> revise lo que necesita atención: usuarios inactivos, roles vacíos u operaciones fallidas del día. Si no hay nada, dice «Sin avisos».</li>
+      <li>En <span class="valor">Actividad reciente</span>, pulse <span class="boton">Ver auditoría</span> para ir al historial.</li>
+      <li>En <span class="valor">Ir a</span> elija <span class="boton">Usuarios</span>, <span class="boton">Roles</span>, <span class="boton">Permisos de un rol</span>, <span class="boton">Configuración</span> o <span class="boton">Auditoría</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>La barra superior del área tiene los mismos accesos (Inicio, Usuarios, Roles, Permisos, Configuración, Auditoría, Estado del sistema) y el enlace <span class="boton">Ir a la aplicación</span> para volver a PDI.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Un Administrador pulsa <span class="valor">Panel de Administración</span> y recibe acceso denegado: la pantalla es solo del Super Administrador. Para administrar usuarios use <span class="ruta">Administración › Personas › Usuarios</span>.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c04">Capítulo 4, Plataforma e instituciones</a> (configuración del sistema)</li>
+      <li><a href="#c16">Capítulo 16, Auditoría</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-usuarios-admin">
+    <h2>Administrar usuarios desde el panel de administración</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para lo que la lista del menú no permite: restablecer una contraseña, ver los permisos de una persona, o agregar o desactivar sus instituciones.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con los permisos de usuarios (<span class="valor">usuarios.ver</span>, <span class="valor">usuarios.crear</span>, <span class="valor">usuarios.editar</span>, <span class="valor">usuarios.eliminar</span>).</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Usuarios</span></p>
+
+    <h3>Pasos</h3>
+    <h4>Pasos para restablecer una contraseña</h4>
+    <ol>
+      <li>Busque a la persona con <span class="campo">Nombre o correo electrónico</span>, <span class="campo">Rol</span> y <span class="campo">Estado de la cuenta</span>, y pulse <span class="boton">Buscar</span>.</li>
+      <li>Pulse el botón de editar de su fila y luego <span class="boton">Resetear Contraseña</span>.</li>
+      <li>Escriba la <span class="campo">Nueva Contraseña</span> y repítala en <span class="campo">Confirmar Nueva Contraseña</span>. Debe tener al menos 6 caracteres, una mayúscula, una minúscula y un número. El botón con el ojo muestra u oculta lo que escribe.</li>
+      <li>Pulse <span class="boton">Resetear Contraseña</span>.</li>
+    </ol>
+    <p>La contraseña cambia de inmediato. El sistema dice «Password actualizada exitosamente para» el correo. Hágale llegar la contraseña a la persona por un medio seguro y pídale que la cambie al entrar.</p>
+
+    <h4>Pasos para agregar una institución a una persona</h4>
+    <ol>
+      <li>Abra el usuario en <span class="boton">Editar</span> y baje a <span class="valor">Instituciones del usuario</span>.</li>
+      <li>En <span class="valor">Agregar institución</span> elija la institución y el <span class="campo">Rol</span> que tendrá en ella.</li>
+      <li>Pulse <span class="boton">Agregar</span>.</li>
+    </ol>
+    <p>Para sacar a la persona de una institución, pulse el botón <span class="boton">Quitar institución</span> de su fila en la misma tabla; la membresía pasa a inactiva. El usuario trabaja en una institución a la vez y cambia desde el menú de su cuenta.</p>
+
+    <h4>Pasos para ver o desactivar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Ver detalles</span> para consultar roles, permisos por roles y permisos directos, último acceso y estado.</li>
+      <li>Para impedir que entre, pulse <span class="boton">Desactivar Usuario</span> y confirme «¿Deseas desactivar a» la persona. No puede entrar hasta que se reactive; no se borra nada.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>Los cambios de contraseña e instituciones rigen de inmediato. La desactivación se aplica al guardar el formulario.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«La nueva contraseña y la confirmación no coinciden.»: escríbalas de nuevo.</li>
+      <li>«Institución o rol no válidos.» o «Un SuperAdmin es de la plataforma y no se asigna a instituciones.»: elija un rol que no sea de plataforma.</li>
+      <li>«No puede eliminar su propia cuenta.»: no puede desactivarse a usted mismo.</li>
+      <li>«Ya existe un usuario con este email.» o «Ya existe otro usuario con este número de identificación.»: los datos ya pertenecen a otra cuenta.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a></li>
+      <li><a href="#c03-bloquear-eliminar">Bloquear, desbloquear o eliminar un usuario</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-crear-rol">
+    <h2>Crear o editar un rol</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para armar un rol propio de la institución, por ejemplo «Secretaría», con solo los permisos que necesita.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.gestionar_roles</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Roles</span></p>
+
+    <h3>Pasos</h3>
+    <h4>Pasos para crear un rol</h4>
+    <ol>
+      <li>En <span class="valor">Gestión de Roles</span> pulse <span class="boton">Nuevo Rol</span>.</li>
+      <li>En <span class="campo">Nombre del Rol</span> escriba un nombre único y descriptivo (por ejemplo <span class="valor">Secretaría</span>).</li>
+      <li>En <span class="campo">Descripción</span> escriba para qué sirve.</li>
+      <li>En <span class="valor">Permisos del Rol</span>, abra cada módulo y marque lo que el rol puede hacer. Use <span class="boton">Seleccionar Todos</span> o <span class="boton">Deseleccionar Todos</span> para marcar un módulo completo.</li>
+      <li>Pulse <span class="boton">Crear Rol</span>.</li>
+    </ol>
+
+    <h4>Pasos para editar un rol</h4>
+    <ol>
+      <li>En la lista, pulse el botón <span class="boton">Editar rol</span> de la fila.</li>
+      <li>Cambie la <span class="campo">Descripción</span> y los permisos. Los roles del sistema muestran «Rol del Sistema»: su nombre no se puede cambiar y algunos cambios pueden estar restringidos.</li>
+      <li>Pulse <span class="boton">Guardar Cambios</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c03-03">
+      <figcaption>Pantalla Crear Nuevo Rol con el nombre y la descripción escritos y el módulo Matrícula abierto con tres permisos marcados.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>Los cambios en los permisos de un rol quedan guardados para todos sus usuarios. El menú puede tardar hasta cinco minutos en reflejarlos. Los módulos de administración (usuarios, auditoría, configuración y panel) no aparecen en la lista de permisos porque solo funcionan para el Super Administrador.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No puede cambiar el nombre de un rol del sistema: los roles del sistema se pueden editar, pero no renombrar ni eliminar.</li>
+      <li>Un permiso marcado no hace nada: puede ser uno de los permisos que ninguna pantalla usa todavía (ver "Antes de empezar").</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-permisos-rol">Cambiar los permisos de un rol</a></li>
+      <li><a href="#c03-eliminar-rol">Eliminar un rol</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-eliminar-rol">
+    <h2>Eliminar un rol</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para quitar un rol propio que ya no se usa.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.gestionar_roles</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Roles</span>, botón <span class="boton">Eliminar rol</span> de la fila.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Revise cuántos usuarios tiene el rol en la columna <span class="valor">Usuarios</span>. Si tiene, pulse el número para ver quiénes son.</li>
+      <li>Quite ese rol a todas las personas que lo tengan, incluidas las cuentas inactivas. Asígneles otro rol si corresponde (<a href="#c03-editar-usuario">Editar un usuario y cambiar sus roles</a>).</li>
+      <li>Pulse <span class="boton">Eliminar rol</span> en la fila y lea la pantalla <span class="valor">Confirmar Eliminación</span>.</li>
+      <li>Pulse <span class="boton">Eliminar Rol</span> y confirme.</li>
+    </ol>
+    <aside class="aviso">
+      <p>Eliminar un rol borra sus permisos de forma definitiva y no se puede deshacer.</p>
+    </aside>
+
+    <h3>Qué pasa después</h3>
+    <p>El rol desaparece de la lista y de las cuentas que lo tenían.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Rol Protegido»: los roles del sistema no se pueden eliminar.</li>
+      <li>«Rol en Uso»: el rol tiene usuarios asignados, incluidas las cuentas inactivas. Quite ese rol de todas esas cuentas antes de eliminarlo.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-crear-rol">Crear o editar un rol</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-permisos-rol">
+    <h2>Cambiar los permisos de un rol</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para decidir qué puede hacer cada rol. Es la forma más rápida de ajustar el acceso de todo un grupo de personas.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.gestionar_permisos</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Permisos de un rol</span> (o <span class="boton">Permisos</span> y luego <span class="boton">Permisos de un rol</span>).</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>En <span class="valor">¿A qué rol le cambia los permisos?</span> elija el rol.</li>
+      <li>En la pantalla <span class="valor">Permisos del rol</span>, use <span class="campo">Buscar</span> (nombre, código o descripción) y <span class="campo">Mostrar</span> (<span class="valor">Todos</span>, <span class="valor">Solo marcados</span>, <span class="valor">Solo sin marcar</span>, <span class="valor">Solo los que cambié</span>) para encontrar lo que busca.</li>
+      <li>Marque lo que el rol puede hacer. Use <span class="boton">Abrir todos</span> y <span class="boton">Cerrar todos</span> para los módulos, y <span class="boton">Marcar todo</span> dentro de un módulo.</li>
+      <li>Revise el contador de permisos marcados. Si se equivocó, pulse <span class="boton">Deshacer cambios</span>.</li>
+      <li>Pulse <span class="boton">Guardar permisos</span>. Si quita permisos, el sistema pide confirmar cuántos va a quitar.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El cambio se aplica a todos los usuarios del rol en su siguiente pantalla. Del Super Administrador esta lista es solo de consulta: siempre tiene todos los permisos.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La lista de permisos está vacía: los permisos se definen en el sistema; pulse <span class="boton">Sincronizar</span> (<a href="#c03-sincronizar">Sincronizar permisos</a>).</li>
+      <li>Un permiso nuevo aparece sin asignar a ningún rol: la sincronización no lo agrega a los demás roles; hágalo aquí.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-matriz">Consultar o exportar la matriz de permisos</a></li>
+      <li><a href="#c03-crear-rol">Crear o editar un rol</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-matriz">
+    <h2>Consultar o exportar la matriz de permisos</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ver, en una sola tabla, qué rol tiene cada permiso. Sirve para revisar el acceso y para entregar un respaldo.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.gestionar_permisos</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Permisos</span> › <span class="boton">Matriz por rol</span></p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="valor">Matriz de permisos por rol</span>.</li>
+      <li>Filtre por <span class="campo">Módulo</span>, por <span class="campo">Que tenga el rol</span> o escriba en <span class="campo">Buscar</span> el nombre o el código del permiso.</li>
+      <li>Para descargar la matriz completa, pulse <span class="boton">Excel</span> o <span class="boton">CSV</span>. Para imprimirla, pulse <span class="boton">Imprimir</span>; se abre en otra pestaña.</li>
+    </ol>
+    <figure class="captura" data-captura="c03-04">
+      <figcaption>Matriz de permisos por rol con una columna por rol, filas de permisos de ejemplo y las marcas de quién los tiene, con los botones Excel, CSV e Imprimir arriba.</figcaption>
+    </figure>
+
+    <h3>Qué pasa después</h3>
+    <p>La tabla muestra qué rol tiene cada permiso, y cuántos permisos, roles y asignaciones hay en total. Los filtros reducen la tabla visible. Excel, CSV e impresión incluyen la matriz completa, aunque haya aplicado filtros en la pantalla.</p>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Ningún permiso coincide»: pruebe con otro módulo, otro rol u otra palabra.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-permisos-rol">Cambiar los permisos de un rol</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c03-sincronizar">
+    <h2>Sincronizar permisos</h2>
+
+    <h3>Para qué sirve</h3>
+    <p>Para ajustar los permisos guardados en los roles a los que existen hoy en el sistema. Úsela después de una actualización que agregue o quite permisos, o si un rol muestra permisos que ya no existen.</p>
+
+    <h3>Quién puede hacerla</h3>
+    <p>Rol Super Administrador, con el permiso <span class="valor">configuracion.gestionar_permisos</span>.</p>
+
+    <h3>Dónde está</h3>
+    <p>Panel de administración › <span class="boton">Permisos</span> › <span class="boton">Sincronizar</span>. También desde <span class="boton">Sincronizar permisos</span> en la lista de roles.</p>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra <span class="valor">Sincronizar permisos</span> y lea lo que hace.</li>
+      <li>Pulse <span class="boton">Sincronizar ahora</span>.</li>
+    </ol>
+
+    <h3>Qué pasa después</h3>
+    <p>El sistema revisa cada rol y quita los permisos que ya no existen. Los permisos vigentes de cada rol no se tocan. Al Super Administrador le da todos los permisos, incluidos los nuevos. Queda registrado en la auditoría.</p>
+    <aside class="nota">
+      <p>La sincronización no agrega permisos nuevos a los demás roles. Eso se hace en <a href="#c03-permisos-rol">Cambiar los permisos de un rol</a>.</p>
+    </aside>
+
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Un permiso nuevo no aparece en un rol: es lo esperado; asígnelo a mano.</li>
+    </ul>
+
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c03-permisos-rol">Cambiar los permisos de un rol</a></li>
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,330 @@
+<section class="capitulo" id="c10" data-codigo="C10" data-titulo="Horarios">
+  <h1>Horarios</h1>
+  <p class="resumen">Cómo organizar las lecciones de un grupo de estudiantes, revisar coincidencias de horas y consultar o imprimir su horario semanal. Incluye la consulta del horario en la ficha de un estudiante.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead><tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#c10-consultar">Buscar horarios y consultar una lección</a></td><td>Cualquier usuario con sesión iniciada</td><td><span class="ruta">Configuración › Estructura académica › Horarios de clases</span></td></tr>
+        <tr><td><a href="#c10-agregar">Agregar un horario</a></td><td>Cualquier usuario con sesión iniciada</td><td>Lista, <span class="boton">Agregar horario</span></td></tr>
+        <tr><td><a href="#c10-conflictos">Revisar los conflictos de horario</a></td><td>Cualquier usuario con sesión iniciada</td><td>Formulario de alta o edición</td></tr>
+        <tr><td><a href="#c10-editar">Editar un horario</a></td><td>Cualquier usuario con sesión iniciada</td><td>Detalle, <span class="boton">Editar horario</span></td></tr>
+        <tr><td><a href="#c10-estado">Activar o desactivar una lección</a></td><td>Cualquier usuario con sesión iniciada</td><td>Lista o detalle del horario</td></tr>
+        <tr><td><a href="#c10-eliminar">Eliminar un horario</a></td><td>Cualquier usuario con sesión iniciada</td><td>Lista, <span class="boton">Eliminar</span></td></tr>
+        <tr><td><a href="#c10-semana">Consultar e imprimir la semana de un grupo</a></td><td>Cualquier usuario con sesión iniciada</td><td>Lista, <span class="boton">Vista semanal</span></td></tr>
+        <tr><td><a href="#c10-horario-estudiante">Consultar el horario de un estudiante</a></td><td>Quien tenga estudiantes.ver y pueda consultar al estudiante</td><td>Ficha, <span class="boton">Grupos y horario</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>Revise la institución activa. Necesita grupos de estudiantes y materias disponibles antes de crear sus horarios. Los grupos y sus períodos académicos se explican en <a href="#c07">el capítulo 7, Estudiantes y grupos</a>.</p>
+    <p>Una lección tiene grupo, materia, día de la semana, número y horas de inicio y fin. El campo <span class="campo">Número de bloque *</span> indica la posición de la lección en el día, de 1 a 12. Aquí no se refiere a los bloques de un plan de estudios.</p>
+    <p>Una lección activa se incluye en el horario semanal del grupo. El horario sirve para organizar la asistencia por lección; el pase de lista diario se hace por materia y fecha sin depender de este horario. Las tareas de asistencia están en <a href="#c11">el capítulo 11, Asistencia</a>. Consulte los términos del <a href="#c19">glosario</a>.</p>
+    <aside class="nota">
+      <p>Horarios exige haber iniciado sesión. La entrada <span class="ruta">Horarios de clases</span> del menú se muestra con el permiso <span class="valor">asistencia.ver</span>; las pantallas de horarios no exigen un permiso propio.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c10-consultar">
+    <h2>Buscar horarios y consultar una lección</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para encontrar una lección por grupo, materia, día y estado, y revisar sus horas y observaciones.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Horarios de clases</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija <span class="campo">Grupo</span> o deje <span class="valor">Todos los grupos</span>.</li>
+      <li>Elija <span class="campo">Materia</span> si desea limitar la consulta.</li>
+      <li>Elija <span class="campo">Día de la semana</span> si necesita un día concreto.</li>
+      <li>Elija <span class="valor">Solo activos</span> o <span class="valor">Todos los estados</span> en <span class="campo">Estado</span>.</li>
+      <li>Pulse <span class="boton">Aplicar filtros</span>.</li>
+      <li>Pulse el nombre del grupo en la fila o el icono <span class="boton">Ver detalles</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-01">
+      <figcaption>Horarios de clases con Grupo de Ejemplo y dos materias inventadas, una lección activa y otra inactiva. Resaltar los cuatro filtros, Aplicar filtros, Vista semanal y los iconos Ver detalles, Editar, Activar o Desactivar y Eliminar.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La lista combina los filtros elegidos y muestra grupo, materia, día, horas, duración, número de lección, observaciones y estado. La consulta inicial muestra solo activos. <span class="boton">Limpiar filtros</span> vuelve a esa consulta inicial.</p>
+    <p>El detalle muestra las horas, duración, número de lección, estado, observaciones y fechas del registro. Desde allí puede abrir <span class="boton">Ver semana del grupo</span> o <span class="boton">Tomar asistencia</span>. Para regresar, pulse <span class="boton">Volver a horarios</span>.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">No hay horarios con estos filtros</span>: cambie grupo, materia o día, o pulse <span class="boton">Limpiar filtros</span>.</li>
+      <li><span class="valor">No hay horarios activos</span>: elija <span class="valor">Todos los estados</span> para comprobar si hay lecciones inactivas.</li>
+      <li>El detalle no abre: vuelva a la lista y compruebe que la lección siga disponible.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-agregar">Agregar un horario</a></li>
+      <li><a href="#c10-semana">Consultar e imprimir la semana de un grupo</a></li>
+      <li><a href="#c11">Capítulo 11, Asistencia</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-agregar">
+    <h2>Agregar un horario</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para programar una lección de una materia en un grupo de estudiantes, con día y horas definidos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de horarios, botón <span class="boton">Agregar horario</span>. También está en <span class="valor">Horario semanal</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Agregar horario</span>.</li>
+      <li>Elija <span class="campo">Grupo *</span>.</li>
+      <li>Elija <span class="campo">Materia *</span>.</li>
+      <li>Elija <span class="campo">Día de la semana *</span>.</li>
+      <li>Escriba <span class="campo">Número de bloque *</span>, entre 1 y 12.</li>
+      <li>Indique <span class="campo">Hora de inicio *</span>.</li>
+      <li>Indique <span class="campo">Hora de fin *</span>, posterior a la hora de inicio.</li>
+      <li>Escriba <span class="campo">Observaciones (opcional)</span> si necesita una nota, de hasta 500 caracteres.</li>
+      <li>Revise la duración y los avisos de coincidencias que aparezcan.</li>
+      <li>Pulse <span class="boton">Guardar horario</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-02">
+      <figcaption>Agregar horario para Grupo de Ejemplo con una materia inventada, lunes, número 1 y horas 08:00 a 08:40. Resaltar los campos obligatorios, la duración y Guardar horario.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Si el guardado se completa, PDI vuelve a la lista filtrada por el grupo. La nueva lección se crea activa. Compruebe su fila o abra la vista semanal.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>El formulario indica que necesita grupos y materias disponibles: créelos primero en sus respectivos módulos.</li>
+      <li>«La hora de fin debe ser mayor que la hora de inicio.»: corrija una de las horas.</li>
+      <li>«El número de bloque debe estar entre 1 y 12»: corrija la numeración.</li>
+      <li>«Ya existe una lección con ese grupo, materia, día y bloque»: busque también en <span class="valor">Todos los estados</span>; puede existir una lección inactiva con esos mismos datos. Revísela antes de crear otra.</li>
+      <li>Aparecen coincidencias con otras lecciones: cambie las horas siguiendo la tarea de conflictos.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-conflictos">Revisar los conflictos de horario</a></li>
+      <li><a href="#c10-editar">Editar un horario</a></li>
+      <li><a href="#c07">Capítulo 7, Estudiantes y grupos</a></li>
+      <li><a href="#c05">Capítulo 5, Estructura académica</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-conflictos">
+    <h2>Revisar los conflictos de horario</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para comprobar si las horas que está escribiendo coinciden con otra lección activa del mismo grupo y día.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Formularios <span class="valor">Agregar horario</span> y <span class="valor">Editar horario</span>. La revisión se hace automáticamente al completar o cambiar los datos; no hay un botón separado para consultar conflictos.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Elija <span class="campo">Grupo *</span> y <span class="campo">Día de la semana *</span>.</li>
+      <li>Complete <span class="campo">Hora de inicio *</span> y <span class="campo">Hora de fin *</span> con un intervalo válido.</li>
+      <li>Espere a que termine <span class="valor">Comprobando conflictos de horario…</span>.</li>
+      <li>Revise la lista del aviso si aparecen coincidencias. Cada línea identifica grupo, materia, día, horas y número de lección.</li>
+      <li>Cambie las horas o el día para evitar la coincidencia.</li>
+      <li>Espere a que se repita la comprobación con los nuevos valores.</li>
+      <li>Pulse <span class="boton">Guardar horario</span> o <span class="boton">Guardar cambios</span>, según la pantalla.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-03">
+      <figcaption>Formulario de Grupo de Ejemplo con una lección propuesta de 08:20 a 09:00 y otra existente de 08:00 a 08:40 el mismo día. Resaltar el aviso de coincidencia y la línea con materia, horas y número de la lección existente.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Si la consulta no informa coincidencias, el aviso desaparece. Al guardar se comprueban de nuevo los datos y las coincidencias; si las hay, el formulario vuelve sin guardar el cambio.</p>
+    <p>En edición, la comprobación excluye la propia lección. Dos lecciones pueden ser consecutivas: una de 08:00 a 08:40 y otra que empieza a las 08:40 no coinciden en sus horas. Aun así, cada combinación de grupo, materia, día y número debe ser distinta.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Este horario coincide con otras lecciones. Revise las horas antes de guardar.»: revise las lecciones de la lista y cambie el intervalo o el día.</li>
+      <li>El aviso indica que no se pudieron comprobar los conflictos: revise la conexión o vuelva a cambiar las horas. PDI también comprueba el horario al guardar.</li>
+      <li>No comienza la consulta: complete grupo, día y ambas horas; la hora de fin debe ser posterior a la de inicio.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-agregar">Agregar un horario</a></li>
+      <li><a href="#c10-editar">Editar un horario</a></li>
+      <li><a href="#c10-semana">Consultar e imprimir la semana de un grupo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-editar">
+    <h2>Editar un horario</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para corregir el grupo, materia, día, número, horas u observaciones de una lección.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de horarios, icono <span class="boton">Editar</span>. Desde el detalle, pulse <span class="boton">Editar horario</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Busque la lección que necesita corregir.</li>
+      <li>Pulse <span class="boton">Editar</span> o <span class="boton">Editar horario</span>.</li>
+      <li>Revise <span class="campo">Grupo *</span>, <span class="campo">Materia *</span>, <span class="campo">Día de la semana *</span> y <span class="campo">Número de bloque *</span>.</li>
+      <li>Corrija <span class="campo">Hora de inicio *</span> y <span class="campo">Hora de fin *</span>, si corresponde.</li>
+      <li>Actualice <span class="campo">Observaciones (opcional)</span> si lo necesita.</li>
+      <li>Revise los avisos de coincidencias.</li>
+      <li>Pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+    <p>Para cambiar el estado de la lección, use los botones de <a href="#c10-estado">Activar o desactivar una lección</a>. <span class="boton">Cancelar</span> vuelve a la lista sin guardar lo que acaba de escribir.</p>
+    <h3>Qué pasa después</h3>
+    <p>Si el cambio se guarda, vuelve a la lista filtrada por el grupo de la lección. Abra su detalle o la vista semanal para comprobar el resultado.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La hora de fin no es posterior a la de inicio: corrija las horas.</li>
+      <li>Ya existe la combinación de grupo, materia, día y número: revise la lección existente, incluidas las inactivas.</li>
+      <li>Aparecen coincidencias: corrija el horario y espere a que se repita la comprobación antes de guardar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-conflictos">Revisar los conflictos de horario</a></li>
+      <li><a href="#c10-estado">Activar o desactivar una lección</a></li>
+      <li><a href="#c10-semana">Consultar e imprimir la semana de un grupo</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-estado">
+    <h2>Activar o desactivar una lección</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para incluir una lección en el horario semanal del grupo o dejar de incluirla, conservando el registro.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de horarios, iconos <span class="boton">Desactivar</span> o <span class="boton">Activar</span>. En el detalle se llaman <span class="boton">Desactivar horario</span> y <span class="boton">Activar horario</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Busque la lección en la lista.</li>
+      <li>Elija <span class="valor">Todos los estados</span> en <span class="campo">Estado</span> y pulse <span class="boton">Aplicar filtros</span> si necesita encontrar una lección inactiva.</li>
+      <li>Pulse <span class="boton">Desactivar</span> o <span class="boton">Activar</span>, según el estado actual.</li>
+      <li>Revise la confirmación.</li>
+      <li>Pulse <span class="boton">Desactivar</span> o <span class="boton">Activar</span> en el aviso, o <span class="boton">Cancelar</span> para salir.</li>
+      <li>Compruebe el estado y revise la semana del grupo.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-04">
+      <figcaption>Detalle del horario de Grupo de Ejemplo, con una materia inventada y estado Inactivo. Resaltar Activar horario y Ver semana del grupo, junto con las horas y el número de la lección.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La pantalla vuelve a cargar y muestra el nuevo estado. Una lección inactiva deja de aparecer en el horario semanal. Si la lista está en <span class="valor">Solo activos</span>, su fila también desaparece de esa consulta. La lección sigue disponible en <span class="valor">Todos los estados</span>.</p>
+    <p>Después de activar una lección, compruebe sus horas junto a las demás lecciones del grupo en la vista semanal.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Horario no encontrado</span>: actualice la lista y compruebe que la lección siga disponible.</li>
+      <li>El aviso indica que no se pudo cambiar el estado: revise la conexión y vuelva a intentarlo.</li>
+      <li>No encuentra una lección que desactivó: cambie <span class="campo">Estado</span> a <span class="valor">Todos los estados</span> y aplique los filtros.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-consultar">Buscar horarios y consultar una lección</a></li>
+      <li><a href="#c10-semana">Consultar e imprimir la semana de un grupo</a></li>
+      <li><a href="#c10-editar">Editar un horario</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-eliminar">
+    <h2>Eliminar un horario</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para retirar una lección del horario activo mediante la opción de eliminación de la lista.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de horarios, icono <span class="boton">Eliminar</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Busque la lección en la lista.</li>
+      <li>Pulse <span class="boton">Eliminar</span> en su fila.</li>
+      <li>Compruebe el grupo, día y horas que muestra la confirmación.</li>
+      <li>Pulse <span class="boton">Eliminar horario</span> para continuar, o <span class="boton">Cancelar</span> para volver.</li>
+    </ol>
+    <aside class="nota">
+      <p>Esta opción deja la lección inactiva y conserva el registro y sus asistencias. Para volver a incluirla, búsquela en <span class="valor">Todos los estados</span> y use <a href="#c10-estado">Activar</a>.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>PDI vuelve a la lista. La lección deja de aparecer en el horario semanal y en las consultas de <span class="valor">Solo activos</span>.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No ve la lección después de eliminarla: consulte <span class="valor">Todos los estados</span>; su estado pasa a <span class="valor">Inactivo</span>.</li>
+      <li>La operación no parece completarse: vuelva a consultar la lista y compruebe el estado antes de repetirla.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-estado">Activar o desactivar una lección</a></li>
+      <li><a href="#c10-consultar">Buscar horarios y consultar una lección</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-semana">
+    <h2>Consultar e imprimir la semana de un grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para ver las lecciones activas del grupo organizadas por día y hora, abrir su detalle o imprimir la semana.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Cualquier usuario con sesión iniciada entra; el menú solo muestra <span class="ruta">Horarios de clases</span> a quien tenga <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p>Lista de horarios, <span class="boton">Vista semanal</span>. Desde el detalle de una lección, pulse <span class="boton">Ver semana del grupo</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Vista semanal</span>.</li>
+      <li>Elija <span class="campo">Grupo</span>.</li>
+      <li>Pulse <span class="boton">Consultar semana</span>.</li>
+      <li>Revise las lecciones por día y hora de inicio.</li>
+      <li>Pulse una lección para abrir su detalle, si necesita más información.</li>
+      <li>Pulse <span class="boton">Imprimir horario</span> si desea imprimir la semana consultada.</li>
+      <li>Complete la impresión en la ventana del navegador.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-05">
+      <figcaption>Horario semanal de Grupo de Ejemplo con materias inventadas de lunes a viernes y una lección de sábado. Resaltar Grupo, Consultar semana, las horas de inicio, el contenido de una lección e Imprimir horario.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La tabla muestra las lecciones activas, con número, materia, horas y observaciones. Los días sábado y domingo se añaden cuando el grupo tiene lecciones esos días. En una pantalla pequeña, puede desplazar la tabla horizontalmente.</p>
+    <p>Si abrió la vista desde una lista filtrada por grupo o desde el detalle, ese grupo ya va indicado. Los filtros de materia, día y estado de la lista no limitan esta semana: aquí se muestran las lecciones activas del grupo. <span class="boton">Ver listado</span> vuelve a la lista de horarios.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Consulte la semana de un grupo</span>: elija el grupo y pulse <span class="boton">Consultar semana</span>.</li>
+      <li><span class="valor">Este grupo no tiene lecciones activas</span>: agregue una lección o revise las inactivas desde la lista.</li>
+      <li>No aparece <span class="boton">Imprimir horario</span>: el botón se ofrece cuando hay lecciones en la consulta.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c10-agregar">Agregar un horario</a></li>
+      <li><a href="#c10-estado">Activar o desactivar una lección</a></li>
+      <li><a href="#c10-horario-estudiante">Consultar el horario de un estudiante</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c10-horario-estudiante">
+    <h2>Consultar el horario de un estudiante</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar juntos los horarios de los grupos a los que está asignado un estudiante y reconocer coincidencias entre ellos.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">estudiantes.ver</span> y pueda consultar al estudiante. Abrir el detalle de una lección desde esta ficha solo exige sesión iniciada; la entrada de horarios del menú se muestra con <span class="valor">asistencia.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Estudiantes › Lista de estudiantes</span>, ficha del estudiante, enlace <span class="boton">Grupos y horario</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra la ficha del estudiante desde la lista de estudiantes.</li>
+      <li>Pulse <span class="boton">Grupos y horario</span>.</li>
+      <li>Revise los grupos, materias y profesores que se muestran.</li>
+      <li>Compruebe el período académico indicado junto a <span class="valor">Horario semanal</span>.</li>
+      <li>Revise las lecciones por día y hora, y las marcas <span class="valor">Choque de horario</span> si aparecen.</li>
+      <li>Pulse una lección si necesita abrir su detalle.</li>
+    </ol>
+    <figure class="captura" data-captura="c10-06">
+      <figcaption>Grupos y horario de Estudiante Ejemplo Uno, asignado a dos grupos de ejemplo del mismo período académico. Mostrar dos lecciones inventadas que coinciden y resaltar Choque de horario y el período del horario semanal.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La ficha muestra los grupos con asignaciones activas. El horario combina las lecciones activas de los grupos del período académico más reciente entre esas asignaciones. Si hay varios períodos académicos, el encabezado aclara cuál se usa para la semana.</p>
+    <p>Las lecciones que coinciden el mismo día entre los grupos del estudiante se señalan en rojo y con <span class="valor">Choque de horario</span>. En pantallas pequeñas, la semana se presenta como una lista por día. La consulta no cambia los horarios ni las asignaciones.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No aparecen grupos: revise las asignaciones del estudiante desde los grupos de estudiantes.</li>
+      <li>Los grupos no tienen lecciones activas: revise la lista de horarios y su estado.</li>
+      <li>Aparece <span class="valor">Choque de horario</span>: compruebe las horas y las asignaciones; la comprobación del alta de horarios se hace dentro de cada grupo y puede no advertir una coincidencia entre grupos distintos del estudiante.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c07-ficha">Consultar la ficha del estudiante</a></li>
+      <li><a href="#c07-asignar-estudiantes">Asignar estudiantes a un grupo</a></li>
+      <li><a href="#c10-editar">Editar un horario</a></li>
+      <li><a href="#c10-conflictos">Revisar los conflictos de horario</a></li>
+    </ul>
+  </section>
+</section>

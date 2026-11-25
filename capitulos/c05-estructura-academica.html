@@ -1,0 +1,635 @@
+<section class="capitulo" id="c05" data-codigo="C05" data-titulo="Estructura académica">
+  <h1>Estructura académica</h1>
+  <p class="resumen">Cómo preparar los períodos académicos, las facultades, las escuelas o departamentos, las materias y los tipos de grupo. También explica cómo asignar coordinadores, registrar los profesores de una escuela y organizar los instrumentos de evaluación de cada materia.</p>
+
+  <section class="a-simple-vista">
+    <h2>A simple vista</h2>
+    <table>
+      <caption>Tareas de este capítulo</caption>
+      <thead>
+        <tr><th>Tarea</th><th>Quién</th><th>Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#c05-consultar-periodos">Consultar los períodos académicos</a></td><td>Quien tenga el permiso <span class="valor">periodos.ver</span></td><td><span class="ruta">Configuración › Año lectivo › Períodos académicos</span></td></tr>
+        <tr><td><a href="#c05-crear-editar-periodo">Crear o editar un período académico</a></td><td><span class="valor">periodos.crear</span> o <span class="valor">periodos.editar</span></td><td>Listado de períodos académicos</td></tr>
+        <tr><td><a href="#c05-desactivar-eliminar-periodo">Desactivar, reactivar o eliminar un período académico</a></td><td><span class="valor">periodos.editar</span> o <span class="valor">periodos.eliminar</span></td><td>Listado de períodos académicos</td></tr>
+        <tr><td><a href="#c05-facultades">Consultar, crear o editar una facultad</a></td><td><span class="valor">instituciones.ver</span>, <span class="valor">instituciones.crear</span> o <span class="valor">instituciones.editar</span></td><td><span class="ruta">Administración › Instituciones › Facultades</span></td></tr>
+        <tr><td><a href="#c05-escuelas">Consultar, crear o editar una escuela o departamento</a></td><td><span class="valor">instituciones.ver</span>, <span class="valor">instituciones.crear</span> o <span class="valor">instituciones.editar</span></td><td><span class="ruta">Administración › Instituciones › Escuelas y departamentos</span></td></tr>
+        <tr><td><a href="#c05-estado-eliminacion-unidades">Desactivar, reactivar o eliminar una facultad o escuela</a></td><td><span class="valor">instituciones.editar</span> o <span class="valor">instituciones.eliminar</span></td><td>Listado de facultades o de escuelas</td></tr>
+        <tr><td><a href="#c05-coordinadores">Asignar o quitar coordinadores</a></td><td><span class="valor">coordinacion.asignar</span></td><td>Detalle de la facultad o de la escuela</td></tr>
+        <tr><td><a href="#c05-profesores-escuela">Registrar los profesores de una escuela</a></td><td><span class="valor">coordinacion.asignar</span></td><td>Detalle de la escuela</td></tr>
+        <tr><td><a href="#c05-reporte-escuelas">Obtener el reporte de escuelas o departamentos</a></td><td><span class="valor">instituciones.ver</span></td><td>Listado de escuelas</td></tr>
+        <tr><td><a href="#c05-materias">Consultar, crear o editar una materia</a></td><td><span class="valor">materias.ver</span>, <span class="valor">materias.ver_detalles</span>, <span class="valor">materias.crear</span> o <span class="valor">materias.editar</span></td><td><span class="ruta">Configuración › Estructura académica › Materias</span></td></tr>
+        <tr><td><a href="#c05-requisitos">Definir los requisitos de una materia</a></td><td><span class="valor">materias.editar</span></td><td>Detalle de la materia</td></tr>
+        <tr><td><a href="#c05-instrumentos">Consultar, asignar o quitar instrumentos de una materia</a></td><td><span class="valor">materias.ver_instrumentos</span>, <span class="valor">materias.asignar_instrumentos</span> o <span class="valor">materias.quitar_instrumentos</span></td><td>Listado o detalle de materias</td></tr>
+        <tr><td><a href="#c05-desactivar-eliminar-materia">Desactivar, reactivar o eliminar una materia</a></td><td><span class="valor">materias.editar</span> o <span class="valor">materias.eliminar</span></td><td>Listado de materias</td></tr>
+        <tr><td><a href="#c05-tipos-grupo">Consultar, crear o editar un tipo de grupo</a></td><td><span class="valor">tipos_grupo.ver</span>, <span class="valor">tipos_grupo.ver_detalles</span>, <span class="valor">tipos_grupo.crear</span> o <span class="valor">tipos_grupo.editar</span></td><td><span class="ruta">Configuración › Estructura académica › Tipos de grupo</span></td></tr>
+        <tr><td><a href="#c05-estado-eliminacion-tipo">Cambiar el estado o eliminar un tipo de grupo</a></td><td><span class="valor">tipos_grupo.cambiar_estado</span>, <span class="valor">tipos_grupo.editar</span> o <span class="valor">tipos_grupo.eliminar</span></td><td>Listado de tipos de grupo</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conceptos">
+    <h2>Antes de empezar</h2>
+    <p>Inicie sesión y compruebe la <strong>institución activa</strong> antes de crear o cambiar datos. Los permisos de este capítulo indican qué acciones puede hacer usted; tener un rol no garantiza que tenga todos esos permisos.</p>
+    <dl>
+      <dt>Período académico</dt><dd>Tramo con fechas propias al que pertenecen los grupos de estudiantes. Marcarlo como activo permite ofrecerlo al elegir el período de trabajo y al crear grupos.</dd>
+      <dt>Período de trabajo</dt><dd>Período académico que usted elige para consultar y registrar datos. Crear un período académico no sustituye esa elección.</dd>
+      <dt>Facultad y escuela o departamento</dt><dd>La facultad agrupa escuelas o departamentos de una institución. Cada materia pertenece a una escuela o departamento.</dd>
+      <dt>Tipo de grupo</dt><dd>Categoría que se asigna a un grupo de estudiantes. Crear un tipo no crea una sección ni agrega estudiantes.</dd>
+    </dl>
+    <p>Prepare primero la facultad y la escuela o departamento; después podrá elegir la escuela de cada materia. Para asignar instrumentos a una materia debe existir al menos un período académico.</p>
+    <aside class="nota">
+      <p>Las fechas de matrícula se explican en <a href="#c09-abrir-matricula-periodo">Abrir la matrícula de un período</a>. Las carreras y los planes de estudios se explican en <a href="#c09-carreras-planes">Crear carreras y planes de estudio</a>.</p>
+    </aside>
+  </section>
+
+  <section class="tarea" id="c05-consultar-periodos">
+    <h2>Consultar los períodos académicos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar las fechas, la disponibilidad y la cantidad de grupos de estudiantes que dependen de cada período académico.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el permiso <span class="valor">periodos.ver</span>, tanto para el listado como para el detalle.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Año lectivo › Períodos académicos</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Escriba un nombre, código, año o el texto de <span class="campo">Ciclo</span> en <span class="campo">Buscar</span>.</li>
+      <li>Pulse <span class="boton">Buscar</span>.</li>
+      <li>Elija una opción en <span class="campo">Tipo</span> si necesita limitar la lista; al elegirla se actualizan los resultados.</li>
+      <li>Revise las columnas <span class="valor">Fechas</span>, <span class="valor">Estado</span>, <span class="valor">Grupos</span> y <span class="valor">Estudiantes</span>.</li>
+      <li>Pulse el nombre del período académico para abrir su detalle.</li>
+      <li>Revise <span class="valor">Fechas</span>, <span class="valor">Identificación</span> y <span class="valor">Qué depende de este período</span>.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-01">
+      <figcaption>Listado Períodos académicos con dos períodos de ejemplo, los filtros Buscar y Tipo y las columnas de fechas, estado, grupos y estudiantes. Resalte la diferencia entre Activo o Inactivo y las etiquetas Próximo, En curso o Terminado.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>El detalle muestra las fechas y el avance del período académico. <span class="valor">Activo</span> o <span class="valor">Inactivo</span> indica su disponibilidad; <span class="valor">Próximo</span>, <span class="valor">En curso</span> o <span class="valor">Terminado</span> depende de las fechas. Consultar el detalle no cambia el período de trabajo.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">Ningún período coincide con la búsqueda</span>: pruebe otro texto o pulse <span class="boton">Quitar filtros</span>.</li>
+      <li>Faltan filas por revisar: cambie <span class="campo">Por página</span> o use los números de página al pie de la tabla.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-crear-editar-periodo">Crear o editar un período académico</a></li>
+      <li><a href="#c05-desactivar-eliminar-periodo">Desactivar, reactivar o eliminar un período académico</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-crear-editar-periodo">
+    <h2>Crear o editar un período académico</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para preparar un período académico con su identificación y sus fechas, o corregir los datos de uno que ya existe.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">periodos.crear</span> para crear o <span class="valor">periodos.editar</span> para editar. El listado requiere <span class="valor">periodos.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Año lectivo › Períodos académicos</span>, botón <span class="boton">Nuevo período</span> o icono <span class="boton">Editar</span> de la fila.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Pulse <span class="boton">Nuevo período</span> para crear, o <span class="boton">Editar</span> junto al período académico que desea cambiar.</li>
+      <li>Elija el <span class="campo">Tipo</span>: <span class="valor">Semestre</span>, <span class="valor">Cuatrimestre</span>, <span class="valor">Trimestre</span>, <span class="valor">Anual</span> o <span class="valor">Personalizado</span>.</li>
+      <li>Escriba el <span class="campo">Año</span>, entre 2020 y 2100.</li>
+      <li>Elija el <span class="campo">Número en el año</span>, del 1 al 4.</li>
+      <li>Revise <span class="campo">Ciclo</span>, por ejemplo <span class="valor">I</span> o <span class="valor">II</span>.</li>
+      <li>Revise el <span class="campo">Nombre</span> y el <span class="campo">Código</span>; al crear se sugieren a partir del tipo, el año y el número, y usted puede cambiarlos.</li>
+      <li>Escriba las fechas de <span class="campo">Inicio</span> y <span class="campo">Fin</span> en <span class="valor">Fechas</span>; el fin debe ser posterior al inicio.</li>
+      <li>Complete <span class="valor">Matrícula</span> si corresponde, siguiendo <a href="#c09-abrir-matricula-periodo">Abrir la matrícula de un período</a>.</li>
+      <li>Revise la casilla <span class="campo">Período activo</span> según quiera ofrecerlo para trabajar y crear grupos de estudiantes.</li>
+      <li>Pulse <span class="boton">Crear período</span> si es nuevo, o <span class="boton">Guardar cambios</span> si lo está editando.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-02">
+      <figcaption>Formulario Nuevo período académico con Tipo Semestre, Año 2027 y Número en el año 1. Muestre la identificación sugerida, las fechas de ejemplo y la casilla Período activo; resalte el botón Crear período.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>PDI vuelve al listado y muestra «Período académico creado exitosamente» o «Período académico actualizado exitosamente». Al editar, los grupos de estudiantes y los estudiantes conservan el período académico: cambiar las fechas no los mueve.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Ya existe un período con este código»: use otro <span class="campo">Código</span> o edite el período académico existente.</li>
+      <li>«Ya existe un período para este año y ciclo»: revise <span class="campo">Año</span> y <span class="campo">Ciclo</span> antes de crear otro.</li>
+      <li>«La fecha de fin debe ser posterior a la de inicio.»: corrija <span class="campo">Fin</span>.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c09-abrir-matricula-periodo">Abrir la matrícula de un período</a></li>
+      <li><a href="#c05-consultar-periodos">Consultar los períodos académicos</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-desactivar-eliminar-periodo">
+    <h2>Desactivar, reactivar o eliminar un período académico</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para dejar de ofrecer un período académico conservando su historial, volver a ofrecerlo o eliminar uno que no tenga grupos de estudiantes ni estudiantes.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">periodos.editar</span> para desactivar o reactivar, o <span class="valor">periodos.eliminar</span> para eliminar. El listado requiere <span class="valor">periodos.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Año lectivo › Períodos académicos</span>, iconos <span class="boton">Editar</span> y <span class="boton">Eliminar</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Desactivar o reactivar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Editar</span> en la fila del período académico.</li>
+      <li>Desmarque <span class="campo">Período activo</span> para desactivarlo, o márquela para reactivarlo.</li>
+      <li>Pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+    <h4>Eliminar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Eliminar</span> en la fila del período académico.</li>
+      <li>Revise la identificación y el aviso de eliminación.</li>
+      <li>Pulse <span class="boton">Eliminar definitivamente</span> solo si desea borrarlo; para salir sin borrar, pulse <span class="boton">Cancelar</span>.</li>
+    </ol>
+    <aside class="aviso">
+      <p>La eliminación no se puede deshacer. La pantalla avisa si también se eliminarán ofertas de materias asociadas al período académico.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>Al desactivar, el período académico queda <span class="valor">Inactivo</span> y conserva su historial. Al reactivar queda <span class="valor">Activo</span>. Al eliminar, desaparece del listado y se muestra «Período académico eliminado exitosamente».</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La papelera está deshabilitada y avisa «No se puede eliminar: tiene grupos o estudiantes»: edite el período académico y desmarque <span class="campo">Período activo</span>.</li>
+      <li>La pantalla de eliminación indica que tiene grupos de estudiantes o estudiantes: use <span class="boton">Editar y desactivar</span> si tiene permiso para editar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-consultar-periodos">Consultar los períodos académicos</a></li>
+      <li><a href="#c05-crear-editar-periodo">Crear o editar un período académico</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-facultades">
+    <h2>Consultar, crear o editar una facultad</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para organizar las escuelas o departamentos de una institución bajo una facultad y mantener sus datos de contacto.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instituciones.ver</span> para consultar el listado y el detalle, <span class="valor">instituciones.crear</span> para crear o <span class="valor">instituciones.editar</span> para editar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Facultades</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar</h4>
+    <ol>
+      <li>Escriba un nombre, código o el nombre del decano o decana en <span class="campo">Buscar</span>.</li>
+      <li>Pulse <span class="boton">Buscar</span>.</li>
+      <li>Elija <span class="valor">Activas</span> o <span class="valor">Inactivas</span> en <span class="campo">Estado</span> si necesita limitar la lista.</li>
+      <li>Pulse el nombre de la facultad para ver sus escuelas o departamentos y sus datos de contacto.</li>
+    </ol>
+    <h4>Crear o editar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Nueva facultad</span> en el listado, o <span class="boton">Editar</span> en una facultad existente.</li>
+      <li>Compruebe la <span class="valor">Institución</span> que muestra el formulario; si aparece una lista al crear, elija la institución.</li>
+      <li>Escriba el <span class="campo">Nombre</span>, por ejemplo <span class="valor">Facultad de Ejemplo</span>.</li>
+      <li>Complete el <span class="campo">Código</span> si lo utiliza.</li>
+      <li>Complete <span class="campo">Decano o decana</span>, <span class="campo">Correo</span> y <span class="campo">Teléfono</span> si dispone de esos datos.</li>
+      <li>Revise la casilla <span class="campo">Activa</span>.</li>
+      <li>Pulse <span class="boton">Crear facultad</span> o <span class="boton">Guardar cambios</span>, según corresponda.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-03">
+      <figcaption>Detalle de Facultad de Ejemplo con dos escuelas de ejemplo, sus cantidades de materias y profesores, y el enlace Agregar escuela. Muestre el estado de la facultad y los datos de contacto sin información real.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Se abre el detalle con «Facultad creada.» o «Facultad actualizada.». Desde <span class="boton">Agregar escuela</span> puede crear una escuela o departamento con la facultad ya elegida. La institución de una facultad existente no se cambia.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>Ya existe una facultad con ese nombre en la institución: revise el listado y edite la existente o use un nombre distinto.</li>
+      <li><span class="valor">Ninguna facultad coincide con el filtro</span>: pulse <span class="boton">Quitar filtros</span> o cambie el texto o el estado.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-escuelas">Consultar, crear o editar una escuela o departamento</a></li>
+      <li><a href="#c05-coordinadores">Asignar o quitar coordinadores</a></li>
+      <li><a href="#c05-estado-eliminacion-unidades">Desactivar, reactivar o eliminar una facultad o escuela</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-escuelas">
+    <h2>Consultar, crear o editar una escuela o departamento</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para organizar las materias, los profesores y los coordinadores de una escuela o departamento dentro de su facultad.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instituciones.ver</span> para consultar el listado y el detalle, <span class="valor">instituciones.crear</span> para crear o <span class="valor">instituciones.editar</span> para editar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Escuelas y departamentos</span>. También puede usar <span class="boton">Agregar escuela</span> desde el detalle de una facultad.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar</h4>
+    <ol>
+      <li>Escriba un nombre, código o el nombre que figura en <span class="campo">Director o directora</span> en <span class="campo">Buscar</span>.</li>
+      <li>Pulse <span class="boton">Buscar</span>.</li>
+      <li>Elija la <span class="campo">Facultad</span> o el <span class="campo">Estado</span> si necesita limitar los resultados.</li>
+      <li>Pulse el nombre de la escuela o departamento para revisar <span class="valor">Datos de la escuela</span> y <span class="valor">Coordinación</span>.</li>
+    </ol>
+    <h4>Crear o editar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Nueva escuela</span> en el listado, o <span class="boton">Editar</span> en una escuela o departamento existente.</li>
+      <li>Elija la <span class="campo">Facultad</span>.</li>
+      <li>Escriba el <span class="campo">Nombre</span>, por ejemplo <span class="valor">Escuela de Ejemplo</span>.</li>
+      <li>Complete el <span class="campo">Código</span> si lo utiliza.</li>
+      <li>Complete <span class="campo">Director o directora</span>, <span class="campo">Correo</span> y <span class="campo">Teléfono</span> si dispone de esos datos.</li>
+      <li>Revise la casilla <span class="campo">Activa</span>.</li>
+      <li>Pulse <span class="boton">Crear escuela</span> o <span class="boton">Guardar cambios</span>, según corresponda.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>Al crear, PDI vuelve al listado con «Escuela/Departamento creado exitosamente.». Al editar, abre el detalle con «Escuela actualizada.». Los coordinadores y los profesores se administran desde el detalle; las materias se asocian desde el formulario de cada materia.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay facultades activas.»: cree una facultad o active la que corresponda antes de crear la escuela o departamento.</li>
+      <li>Ya existe una escuela o departamento con el mismo nombre en esa facultad: revise el listado y edite la existente o cambie el nombre.</li>
+      <li>«La facultad debe ser de la misma institución que la escuela.»: al editar, elija una facultad de la misma institución.</li>
+      <li>El listado indica <span class="valor">Sin coordinador</span>: abra ese enlace y asigne un coordinador si tiene el permiso necesario.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-facultades">Consultar, crear o editar una facultad</a></li>
+      <li><a href="#c05-coordinadores">Asignar o quitar coordinadores</a></li>
+      <li><a href="#c05-materias">Consultar, crear o editar una materia</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-estado-eliminacion-unidades">
+    <h2>Desactivar, reactivar o eliminar una facultad o escuela</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para dejar de ofrecer una facultad o escuela o departamento sin perder su historial, o eliminarla si ya no tiene datos que impidan hacerlo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instituciones.editar</span> para cambiar el estado o <span class="valor">instituciones.eliminar</span> para eliminar. Los listados requieren <span class="valor">instituciones.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Facultades</span> o <span class="ruta">Administración › Instituciones › Escuelas y departamentos</span>, en los iconos de cada fila.</p>
+    <h3>Pasos</h3>
+    <h4>Desactivar o reactivar</h4>
+    <ol>
+      <li>Localice la facultad o escuela o departamento en su listado.</li>
+      <li>Pulse el icono <span class="boton">Desactivar</span> si está activa, o <span class="boton">Activar</span> si está inactiva.</li>
+      <li>Revise el nuevo <span class="valor">Estado</span> en el listado; si tenía un filtro por estado, cambie ese filtro para encontrarla.</li>
+    </ol>
+    <h4>Eliminar</h4>
+    <ol>
+      <li>Pulse el icono <span class="boton">Eliminar</span> de la fila.</li>
+      <li>Revise el nombre y el aviso de la pantalla de eliminación.</li>
+      <li>Pulse <span class="boton">Eliminar definitivamente</span> si desea borrarla, o <span class="boton">Cancelar</span> para conservarla.</li>
+    </ol>
+    <aside class="aviso">
+      <p>La eliminación no se puede deshacer. Una facultad con escuelas o departamentos no se elimina. Una escuela o departamento con materias, profesores o coordinadores tampoco se elimina; desactívela para conservar su historial.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>La facultad o escuela o departamento cambia entre <span class="valor">Activa</span> e <span class="valor">Inactiva</span>. También puede cambiar ese estado desde <span class="boton">Editar</span>, con la casilla <span class="campo">Activa</span> y <span class="boton">Guardar cambios</span>. Si se elimina, desaparece del listado.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La papelera de una facultad está deshabilitada: tiene escuelas o departamentos. Use <span class="boton">Desactivar</span>.</li>
+      <li>La papelera de una escuela o departamento está deshabilitada: tiene materias, profesores o coordinadores. Use <span class="boton">Desactivar</span>.</li>
+      <li>La eliminación avisa que está en uso: conserve el elemento y desactívelo; el sistema no pudo eliminarlo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-facultades">Consultar, crear o editar una facultad</a></li>
+      <li><a href="#c05-escuelas">Consultar, crear o editar una escuela o departamento</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-coordinadores">
+    <h2>Asignar o quitar coordinadores</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar qué usuarios coordinan una escuela o departamento. En instituciones de nivel Superior también puede asignar coordinadores a una facultad para la aprobación del empadronamiento de sus carreras.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga el permiso <span class="valor">coordinacion.asignar</span>. En la instalación estándar lo reciben los roles Super Administrador y Administrador. Para abrir los listados y detalles necesita <span class="valor">instituciones.ver</span>. El usuario que se asigna debe tener el rol Coordinador y pertenecer a la misma institución.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Escuelas y departamentos</span>, detalle, <span class="valor">Coordinación</span>. Para una facultad de una institución de nivel Superior: <span class="ruta">Administración › Instituciones › Facultades</span>, detalle, <span class="valor">Coordinación de la facultad</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Asignar</h4>
+    <ol>
+      <li>Abra el detalle de la escuela o departamento, o de la facultad.</li>
+      <li>Elija el usuario en <span class="campo">Agregar coordinador</span>.</li>
+      <li>Pulse <span class="boton">Agregar</span> en la escuela o departamento, o <span class="boton">Asignar</span> en la facultad.</li>
+    </ol>
+    <h4>Quitar</h4>
+    <ol>
+      <li>Localice al coordinador en la lista del detalle.</li>
+      <li>Pulse el icono para quitar al coordinador en la escuela o departamento, o <span class="boton">Quitar</span> en la facultad.</li>
+      <li>Confirme que desea quitarlo de esa escuela o departamento, o de esa facultad.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>El usuario aparece o deja de aparecer en la lista de coordinadores. En una escuela o departamento se muestra «Coordinador asignado a la escuela.» o «Coordinador retirado de la escuela.». En una facultad se muestra «Coordinador asignado a la facultad.» o «Coordinador retirado de la facultad.».</p>
+    <p>Los coordinadores de una escuela o departamento consultan los grupos de estudiantes, los estudiantes y las evaluaciones de sus materias. Tener profesores registrados en la escuela no sustituye la asignación de la escuela a cada materia.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay más cuentas con el rol Coordinador.»: revise los usuarios y sus roles en <a href="#c03">capítulo 3, Roles, permisos y usuarios</a>.</li>
+      <li>«La cuenta no existe en su institución o no tiene el rol Coordinador.»: compruebe el rol y la pertenencia del usuario a la institución.</li>
+      <li>La escuela o departamento avisa que todavía no tiene materias: asigne la escuela en cada materia; hasta entonces sus coordinadores no verán ningún grupo de estudiantes.</li>
+      <li>No aparece <span class="valor">Coordinación de la facultad</span>: ese apartado solo se muestra en instituciones de nivel Superior y con permiso para asignar coordinación.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-profesores-escuela">Registrar los profesores de una escuela</a></li>
+      <li><a href="#c05-materias">Consultar, crear o editar una materia</a></li>
+      <li><a href="#c09-carreras-planes">Crear carreras y planes de estudio</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-profesores-escuela">
+    <h2>Registrar los profesores de una escuela</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar en qué escuelas o departamentos trabaja un profesor, anotar su porcentaje de jornada y elegir cuál se muestra como principal en su ficha.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">coordinacion.asignar</span>. Para abrir el detalle de la escuela o departamento necesita <span class="valor">instituciones.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Escuelas y departamentos</span>, detalle, <span class="valor">Coordinación › Profesores</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Agregar un profesor</h4>
+    <ol>
+      <li>Elija al profesor en <span class="campo">Agregar profesor</span>.</li>
+      <li>Escriba el <span class="campo">Porcentaje de jornada (opcional)</span>, entre 0 y 100, o déjelo vacío.</li>
+      <li>Pulse <span class="boton">Agregar</span> junto al profesor elegido.</li>
+    </ol>
+    <h4>Actualizar o quitar</h4>
+    <ol>
+      <li>Cambie <span class="campo">Jornada (%)</span> en la fila del profesor si necesita corregirla.</li>
+      <li>Marque <span class="campo">Hacer principal</span> si desea que esta escuela o departamento sea la que aparece en la ficha del profesor.</li>
+      <li>Pulse el icono <span class="boton">Guardar</span> de esa fila.</li>
+      <li>Pulse <span class="boton">Quitar</span> y confirme si necesita retirar al profesor de esta escuela o departamento.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-04">
+      <figcaption>Detalle de Escuela de Ejemplo con Coordinación: un coordinador de ejemplo y dos profesores de ejemplo, uno Principal. Resalte Jornada (%), Hacer principal, Guardar y los formularios Agregar coordinador y Agregar profesor.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>PDI muestra «Profesor agregado a la escuela.», «Datos del profesor en la escuela actualizados.» o «Profesor retirado de la escuela.». La jornada es informativa. Si el profesor no tiene otra escuela o departamento principal, la primera que agrega pasa a ser la principal.</p>
+    <p>Si retira al profesor de su escuela o departamento principal, otra de las que conserva pasa a ser la principal; si no queda ninguna, su ficha queda sin escuela. La elección de principal no cambia lo que consultan los coordinadores: eso depende de la escuela de cada materia.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«El porcentaje de jornada debe estar entre 0 y 100.»: corrija el número o deje el campo vacío.</li>
+      <li><span class="valor">Sin cuenta vinculada</span>: el profesor todavía no está vinculado a un usuario. Sus grupos de estudiantes son visibles para la coordinación, pero sus evaluaciones y rúbricas quedan sin identificar; revise su ficha en <a href="#c06">capítulo 6, Profesores</a>.</li>
+      <li>«Todos los profesores de la institución ya trabajan en esta escuela.»: no hay otro profesor disponible para agregar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-coordinadores">Asignar o quitar coordinadores</a></li>
+      <li><a href="#c06">Capítulo 6, Profesores</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-reporte-escuelas">
+    <h2>Obtener el reporte de escuelas o departamentos</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para revisar o imprimir las escuelas o departamentos, agrupados por institución y facultad, con los filtros del listado.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">instituciones.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Administración › Instituciones › Escuelas y departamentos</span>, botón <span class="boton">Reporte imprimible</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Use <span class="campo">Buscar</span>, <span class="campo">Facultad</span> y <span class="campo">Estado</span> para dejar en el listado las escuelas o departamentos que necesita.</li>
+      <li>Pulse <span class="boton">Buscar</span> para aplicar el texto escrito antes de abrir el reporte.</li>
+      <li>Pulse <span class="boton">Reporte imprimible</span>.</li>
+      <li>Revise los filtros aplicados, los totales y las columnas <span class="valor">Escuela / Departamento</span>, <span class="valor">Código</span>, <span class="valor">Director</span> y <span class="valor">Estado</span>.</li>
+      <li>Pulse <span class="boton">Imprimir / Guardar como PDF</span> para abrir las opciones de impresión del navegador.</li>
+    </ol>
+    <h3>Qué pasa después</h3>
+    <p>El navegador ofrece sus opciones para imprimir o guardar el reporte. El reporte incluye la fecha y hora de generación; no cambia las escuelas o departamentos.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«No hay Escuelas/Departamentos que coincidan con los filtros aplicados.»: vuelva al listado, quite o cambie los filtros y abra de nuevo el reporte.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-escuelas">Consultar, crear o editar una escuela o departamento</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-materias">
+    <h2>Consultar, crear o editar una materia</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para mantener las materias de la institución, sus créditos y la escuela o departamento al que pertenecen. Esa elección determina qué coordinación consulta sus grupos de estudiantes y en qué escuela se cuentan en los reportes.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">materias.ver</span> para el listado, <span class="valor">materias.ver_detalles</span> para el detalle, <span class="valor">materias.crear</span> para crear o <span class="valor">materias.editar</span> para editar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Materias</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar</h4>
+    <ol>
+      <li>Escriba un nombre, código o parte de la descripción en <span class="campo">Buscar</span>.</li>
+      <li>Pulse <span class="boton">Buscar</span>.</li>
+      <li>Elija un <span class="campo">Tipo</span> si desea limitar los resultados.</li>
+      <li>Pulse el nombre de la materia para revisar sus datos, sus requisitos, sus instrumentos de evaluación y sus grupos de estudiantes con los profesores que la imparten.</li>
+    </ol>
+    <h4>Crear o editar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Nueva materia</span> en el listado, o <span class="boton">Editar</span> en una materia existente.</li>
+      <li>Escriba el <span class="campo">Nombre</span> y el <span class="campo">Código</span>, por ejemplo <span class="valor">Materia de Ejemplo</span> y <span class="valor">EJ101</span>.</li>
+      <li>Elija el <span class="campo">Tipo</span>, o deje <span class="valor">Sin especificar</span>.</li>
+      <li>Escriba los <span class="campo">Créditos</span>, entre 0 y 10.</li>
+      <li>Elija <span class="campo">Escuela a la que pertenece</span>.</li>
+      <li>Escriba la <span class="campo">Descripción</span> si necesita explicar los contenidos o el enfoque de la materia.</li>
+      <li>Revise la casilla <span class="campo">Materia activa</span>.</li>
+      <li>Pulse <span class="boton">Crear materia</span> o <span class="boton">Guardar cambios</span>, según corresponda.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-05">
+      <figcaption>Formulario Nueva materia con Materia de Ejemplo, código EJ101, tres créditos y Escuela de Ejemplo elegida. Resalte Escuela a la que pertenece, Materia activa y Crear materia.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>PDI vuelve al listado con «Materia creada exitosamente» o «Materia actualizada exitosamente». Cambiar la escuela o departamento cambia qué coordinadores ven sus grupos de estudiantes y dónde la cuentan los reportes. Los profesores que imparten la materia se asignan desde el grupo de estudiantes.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Ya existe una materia con este código»: cambie el <span class="campo">Código</span> o edite la materia existente.</li>
+      <li>«Seleccione la escuela de la materia.»: elija <span class="campo">Escuela a la que pertenece</span>; si no hay opciones, prepare una escuela o departamento activo.</li>
+      <li><span class="valor">Sin escuela</span> en el listado: ninguna coordinación ve sus grupos de estudiantes ni se cuenta en los reportes por escuela; edite la materia y asígnele la escuela o departamento.</li>
+      <li><span class="valor">Ninguna materia coincide con la búsqueda</span>: pulse <span class="boton">Quitar filtros</span> o pruebe otro nombre, código o tipo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-escuelas">Consultar, crear o editar una escuela o departamento</a></li>
+      <li><a href="#c05-requisitos">Definir los requisitos de una materia</a></li>
+      <li><a href="#c05-instrumentos">Consultar, asignar o quitar instrumentos de una materia</a></li>
+      <li><a href="#c07">Capítulo 7, Estudiantes y grupos</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-requisitos">
+    <h2>Definir los requisitos de una materia</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar qué materias debe haber cursado antes el estudiante para inscribir una materia.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">materias.editar</span>. Para abrir el detalle necesita <span class="valor">materias.ver_detalles</span> y para llegar desde el listado, <span class="valor">materias.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Materias</span>, nombre de la materia, apartado <span class="valor">Requisitos</span>.</p>
+    <h3>Pasos</h3>
+    <ol>
+      <li>Abra el detalle de la materia que pide haber cursado otra antes.</li>
+      <li>Elija esa otra materia en <span class="campo">Agregar requisito</span>.</li>
+      <li>Pulse <span class="boton">Agregar</span>.</li>
+      <li>Revise la lista de requisitos y cualquier aviso que aparezca junto a ellos.</li>
+      <li>Pulse el icono <span class="boton">Quitar requisito</span> si necesita retirar uno de la lista.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-06">
+      <figcaption>Detalle de Materia de Ejemplo II con Requisitos: Materia de Ejemplo I como requisito, el icono Quitar requisito y la lista Agregar requisito. Resalte La piden si hay otra materia de ejemplo que la requiera.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>La lista se actualiza y muestra qué materias se deben cursar antes. <span class="valor">La piden</span> muestra las materias que tienen a esta como requisito. Si aparece un aviso sobre los bloques de un plan de estudios, revise el orden de las materias de ese plan.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>No aparece la materia que desea agregar: la lista ofrece materias activas de la misma institución, excluye la propia y las que ya son requisitos.</li>
+      <li>El sistema avisa que quedarían bloqueadas las dos materias: el requisito elegido ya pide esta materia, directamente o a través de otras. Corrija esa dependencia antes de agregarlo.</li>
+      <li>«Ese requisito ya no está.»: ya se había quitado; revise la lista actual.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c09-carreras-planes">Crear carreras y planes de estudio</a></li>
+      <li><a href="#c09-inscribir-materias">Inscribir y retirar materias</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-instrumentos">
+    <h2>Consultar, asignar o quitar instrumentos de una materia</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para indicar qué instrumentos de evaluación se usan en una materia durante un período académico y revisar cuánto suman en la nota.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">materias.ver_instrumentos</span> para consultar todos los períodos o <span class="valor">materias.asignar_instrumentos</span> para abrir la pantalla de asignación y asignar. Para quitar desde cualquiera de esas pantallas necesita además <span class="valor">materias.quitar_instrumentos</span>. El listado de materias requiere <span class="valor">materias.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Materias</span>, número de la columna <span class="valor">Instrumentos</span> para consultar, o icono <span class="boton">Asignar instrumentos</span>. También está el enlace <span class="boton">Asignar instrumentos</span> en el detalle de la materia.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar y asignar</h4>
+    <ol>
+      <li>Pulse el número de <span class="valor">Instrumentos</span> de la materia para revisar sus asignaciones por período académico.</li>
+      <li>Pulse <span class="boton">Asignar instrumentos</span> para abrir el formulario de asignación; si la materia aún no tiene instrumentos, use ese icono desde el listado.</li>
+      <li>Elija el <span class="campo">Período</span>; la lista de asignados se actualiza.</li>
+      <li>Elija el <span class="campo">Instrumento</span> en <span class="valor">Agregar instrumento</span>.</li>
+      <li>Revise el <span class="campo">Orden</span> y la casilla <span class="campo">Obligatorio</span>.</li>
+      <li>Revise cuánto sumaría la nota con el instrumento elegido.</li>
+      <li>Pulse el botón <span class="boton">Asignar a</span> seguido del nombre del período académico.</li>
+      <li>Pulse <span class="boton">Ver todos los períodos</span> si necesita revisar de nuevo todas las asignaciones y tiene permiso para consultarlas.</li>
+    </ol>
+    <h4>Quitar</h4>
+    <ol>
+      <li>Localice el instrumento de evaluación en el período académico correspondiente.</li>
+      <li>Pulse el icono <span class="boton">Quitar de la materia</span>.</li>
+      <li>Confirme que desea quitarlo de la materia en ese período académico.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-07">
+      <figcaption>Pantalla Asignar instrumentos de Materia de Ejemplo con un período elegido y dos instrumentos de ejemplo que suman 100 %. Muestre Agregar instrumento con Instrumento, Orden, Obligatorio y el botón Asignar a seguido del nombre del período.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Al asignar aparece «Instrumento asignado a la materia.». Al quitar aparece «Instrumento quitado de la materia. Sus evaluaciones se conservan.». El instrumento de evaluación se usa una sola vez en cada materia, aunque las asignaciones se consulten por período académico.</p>
+    <p>La columna <span class="valor">Vale</span> muestra la suma de los porcentajes de sus rúbricas. La pantalla avisa cuánto falta o sobra para llegar al 100 % del período académico. Esos porcentajes se ajustan en las rúbricas del instrumento, como se explica en <a href="#c12">capítulo 12, Rúbricas e instrumentos</a>.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li><span class="valor">La institución no tiene períodos académicos</span>: cree primero un período académico.</li>
+      <li>No quedan instrumentos activos sin asignar a la materia: cree otro instrumento de evaluación o revise en qué período académico ya está asignado el que busca.</li>
+      <li>El sistema indica que el instrumento ya está en la materia: no puede asignarlo de nuevo en otro período académico de esa misma materia.</li>
+      <li><span class="valor">Sin rúbrica: asignar</span>: agregue una rúbrica al instrumento de evaluación para poder evaluar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-crear-editar-periodo">Crear o editar un período académico</a></li>
+      <li><a href="#c12">Capítulo 12, Rúbricas e instrumentos</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-desactivar-eliminar-materia">
+    <h2>Desactivar, reactivar o eliminar una materia</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para dejar de ofrecer una materia conservando su historial, volver a ofrecerla o eliminar una que no esté en uso.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">materias.editar</span> para cambiar la disponibilidad o <span class="valor">materias.eliminar</span> para eliminar. El listado requiere <span class="valor">materias.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Materias</span>, iconos <span class="boton">Editar</span> y <span class="boton">Eliminar</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Desactivar o reactivar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Editar</span> en la materia.</li>
+      <li>Desmarque <span class="campo">Materia activa</span> para desactivarla, o márquela para reactivarla.</li>
+      <li>Pulse <span class="boton">Guardar cambios</span>.</li>
+    </ol>
+    <h4>Eliminar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Eliminar</span> en la materia.</li>
+      <li>Revise el nombre y los datos de la pantalla de eliminación.</li>
+      <li>Pulse <span class="boton">Eliminar definitivamente</span> para borrarla, o <span class="boton">Cancelar</span> para conservarla.</li>
+    </ol>
+    <aside class="aviso">
+      <p>La eliminación no se puede deshacer. Si la materia tiene grupos de estudiantes, profesores, instrumentos de evaluación, lecciones u otros datos asociados, consérvela y desactívela.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>La materia queda <span class="valor">Inactiva</span> o <span class="valor">Activa</span>. Desactivada conserva su historial. Si se elimina, desaparece del listado con «Materia eliminada exitosamente».</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La papelera está deshabilitada: la materia está en uso. Pulse <span class="boton">Editar</span> y desmarque <span class="campo">Materia activa</span>.</li>
+      <li>«No se puede eliminar: la materia está en uso.»: revise los datos asociados que muestra la pantalla; también pueden impedirlo la asistencia, los cuadernos calificadores o los requisitos. Use <span class="boton">Editar y desactivar</span> si tiene permiso para editar.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-materias">Consultar, crear o editar una materia</a></li>
+      <li><a href="#c05-instrumentos">Consultar, asignar o quitar instrumentos de una materia</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-tipos-grupo">
+    <h2>Consultar, crear o editar un tipo de grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para preparar las categorías con las que se organizan los grupos de estudiantes y revisar cuáles usan cada tipo.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">tipos_grupo.ver</span> para el listado, <span class="valor">tipos_grupo.ver_detalles</span> para el detalle, <span class="valor">tipos_grupo.crear</span> para crear o <span class="valor">tipos_grupo.editar</span> para editar.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Tipos de grupo</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Consultar</h4>
+    <ol>
+      <li>Revise las columnas <span class="valor">Nombre</span>, <span class="valor">Estado</span> y <span class="valor">Grupos</span>.</li>
+      <li>Pulse el nombre del tipo de grupo, o su cantidad de grupos de estudiantes, para abrir el detalle.</li>
+      <li>Revise <span class="valor">Grupos de este tipo</span>, con sus períodos académicos y estados.</li>
+    </ol>
+    <h4>Crear o editar</h4>
+    <ol>
+      <li>Pulse <span class="boton">Nuevo tipo</span> en el listado, o <span class="boton">Editar</span> en el tipo de grupo existente.</li>
+      <li>Escriba el <span class="campo">Nombre</span>, por ejemplo <span class="valor">Sección</span>.</li>
+      <li>Elija <span class="valor">Activo</span> o <span class="valor">Inactivo</span> en <span class="campo">Estado</span>.</li>
+      <li>Pulse <span class="boton">Crear tipo</span> o <span class="boton">Guardar cambios</span>, según corresponda.</li>
+    </ol>
+    <figure class="captura" data-captura="c05-08">
+      <figcaption>Listado Tipos de grupo con el tipo Sección, una cantidad de grupos de estudiantes y el control Activo. Resalte Nuevo tipo y los iconos Editar y Eliminar, con la papelera deshabilitada en un tipo que esté en uso.</figcaption>
+    </figure>
+    <h3>Qué pasa después</h3>
+    <p>Se abre el detalle del tipo de grupo. Un cambio de nombre se refleja en todos los grupos de estudiantes que lo usan. Los tipos activos se ofrecen al crear o editar grupos de estudiantes; los ya existentes conservan un tipo que se desactive.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>«Ya existe un tipo de grupo con este nombre»: use otro <span class="campo">Nombre</span> o edite el existente.</li>
+      <li>El detalle indica que ningún grupo de estudiantes usa el tipo todavía: asígnelo al crear o editar un grupo de estudiantes, como se explica en <a href="#c07">capítulo 7, Estudiantes y grupos</a>.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-estado-eliminacion-tipo">Cambiar el estado o eliminar un tipo de grupo</a></li>
+      <li><a href="#c07">Capítulo 7, Estudiantes y grupos</a></li>
+    </ul>
+  </section>
+
+  <section class="tarea" id="c05-estado-eliminacion-tipo">
+    <h2>Cambiar el estado o eliminar un tipo de grupo</h2>
+    <h3>Para qué sirve</h3>
+    <p>Para dejar de ofrecer un tipo de grupo, volver a ofrecerlo o eliminarlo si ningún grupo de estudiantes lo usa.</p>
+    <h3>Quién puede hacerla</h3>
+    <p>Quien tenga <span class="valor">tipos_grupo.cambiar_estado</span> para usar el control del listado, <span class="valor">tipos_grupo.editar</span> para cambiar el estado en el formulario o <span class="valor">tipos_grupo.eliminar</span> para eliminar. El listado requiere <span class="valor">tipos_grupo.ver</span>.</p>
+    <h3>Dónde está</h3>
+    <p><span class="ruta">Configuración › Estructura académica › Tipos de grupo</span>.</p>
+    <h3>Pasos</h3>
+    <h4>Cambiar el estado</h4>
+    <ol>
+      <li>Localice el tipo de grupo en el listado.</li>
+      <li>Pulse el control <span class="boton">Activo</span> o <span class="boton">Inactivo</span> de su fila para cambiar al otro estado.</li>
+      <li>Compruebe el nuevo texto del control y la cantidad de tipos activos que aparece sobre la tabla.</li>
+    </ol>
+    <h4>Eliminar</h4>
+    <ol>
+      <li>Pulse el icono <span class="boton">Eliminar</span> del tipo de grupo.</li>
+      <li>Revise el nombre y la cantidad de grupos de estudiantes que lo usan.</li>
+      <li>Pulse <span class="boton">Eliminar definitivamente</span> para borrarlo, o <span class="boton">Cancelar</span> para conservarlo.</li>
+    </ol>
+    <aside class="aviso">
+      <p>La eliminación no se puede deshacer. Si un grupo de estudiantes usa el tipo, desactívelo o cambie el tipo de ese grupo antes de intentar eliminarlo.</p>
+    </aside>
+    <h3>Qué pasa después</h3>
+    <p>El estado cambia entre <span class="valor">Activo</span> e <span class="valor">Inactivo</span> sin salir del listado. También puede cambiarlo desde <span class="boton">Editar</span>, elegir el <span class="campo">Estado</span> y pulsar <span class="boton">Guardar cambios</span>. Si lo elimina, el tipo desaparece del listado.</p>
+    <h3>Errores frecuentes</h3>
+    <ul>
+      <li>La papelera está deshabilitada: uno o más grupos de estudiantes usan ese tipo; desactívelo para conservarlos.</li>
+      <li>El estado aparece como texto y no como control: no tiene el permiso para cambiarlo desde el listado. Use <span class="boton">Editar</span> si dispone del permiso de edición.</li>
+      <li>«No se pudo cambiar el estado»: el cambio no se completó; revise el mensaje y vuelva a intentarlo.</li>
+    </ul>
+    <h3>Tareas relacionadas</h3>
+    <ul>
+      <li><a href="#c05-tipos-grupo">Consultar, crear o editar un tipo de grupo</a></li>
+      <li><a href="#c07">Capítulo 7, Estudiantes y grupos</a></li>
+    </ul>
+  </section>
+</section>
